@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V18" />
+  <SW.Blocks.InstanceDB ID="0">
+    <AttributeList>
+      <AutoNumber>true</AutoNumber>
+      <DBAccessibleFromOPCUA>true</DBAccessibleFromOPCUA>
+      <DBAccessibleFromWebserver>true</DBAccessibleFromWebserver>
+      <HeaderAuthor />
+      <HeaderFamily />
+      <HeaderName />
+      <HeaderVersion>0.1</HeaderVersion>
+      <InstanceOfName>SireneMain</InstanceOfName>
+      <InstanceOfType>FB</InstanceOfType>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Input" />
+  <Section Name="Output" />
+  <Section Name="InOut" />
+  <Section Name="Static">
+    <Member Name="sirene_Instance" Datatype="&quot;sirene_v2&quot;" Accessibility="Public">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+      <Sections>
+        <Section Name="Input">
+          <Member Name="bitStartUp" Datatype="Bool" />
+        </Section>
+        <Section Name="Output">
+          <Member Name="sir_start" Datatype="Bool" />
+          <Member Name="sirena_1" Datatype="Bool" />
+          <Member Name="sirena_2" Datatype="Bool" />
+          <Member Name="sirena_3" Datatype="Bool" />
+          <Member Name="sirena_4" Datatype="Bool" />
+          <Member Name="sirena_5" Datatype="Bool" />
+          <Member Name="sirena_6" Datatype="Bool" />
+        </Section>
+        <Section Name="InOut">
+          <Member Name="greenTrigger" Datatype="Bool" />
+          <Member Name="yellowTrigger" Datatype="Bool" />
+          <Member Name="redTrigger" Datatype="Bool" />
+          <Member Name="greenSettings" Datatype="&quot;UDT_settingsSirene&quot;">
+            <Sections>
+              <Section Name="None" />
+            </Sections>
+          </Member>
+          <Member Name="yellowSettings" Datatype="&quot;UDT_settingsSirene&quot;">
+            <Sections>
+              <Section Name="None" />
+            </Sections>
+          </Member>
+          <Member Name="redSettings" Datatype="&quot;UDT_settingsSirene&quot;">
+            <Sections>
+              <Section Name="None" />
+            </Sections>
+          </Member>
+        </Section>
+        <Section Name="Static">
+          <Member Name="step" Datatype="Int" />
+          <Member Name="fpBit_green" Datatype="Bool" />
+          <Member Name="fpBit_yellow" Datatype="Bool" />
+          <Member Name="fpBit_red" Datatype="Bool" />
+          <Member Name="fpBit_greenTest" Datatype="Bool" />
+          <Member Name="fpBit_yellowTest" Datatype="Bool" />
+          <Member Name="fpBit_redTest" Datatype="Bool" />
+          <Member Name="IEC_Timer_step1" Datatype="IEC_TIMER" Version="1.0">
+            <Sections>
+              <Section Name="None">
+                <Member Name="PT" Datatype="Time" />
+                <Member Name="ET" Datatype="Time" />
+                <Member Name="IN" Datatype="Bool" />
+                <Member Name="Q" Datatype="Bool" />
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="toneSelect" Datatype="Int" />
+          <Member Name="toneDuration" Datatype="Time" />
+          <Member Name="IEC_Timer_toneDuration" Datatype="IEC_TIMER" Version="1.0">
+            <Sections>
+              <Section Name="None">
+                <Member Name="PT" Datatype="Time" />
+                <Member Name="ET" Datatype="Time" />
+                <Member Name="IN" Datatype="Bool" />
+                <Member Name="Q" Datatype="Bool" />
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="IEC_Timer_step2" Datatype="IEC_TIMER" Version="1.0">
+            <Sections>
+              <Section Name="None">
+                <Member Name="PT" Datatype="Time" />
+                <Member Name="ET" Datatype="Time" />
+                <Member Name="IN" Datatype="Bool" />
+                <Member Name="Q" Datatype="Bool" />
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="sirenaArray" Datatype="Array[0..15] of Bool" />
+        </Section>
+      </Sections>
+    </Member>
+  </Section>
+</Sections></Interface>
+      <Name>SireneMain_DB</Name>
+      <Namespace />
+      <Number>10</Number>
+      <ProgrammingLanguage>DB</ProgrammingLanguage>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>cs-CZ</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <MultilingualText ID="4" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="5" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="6" CompositionName="Items">
+            <AttributeList>
+              <Culture>cs-CZ</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.InstanceDB>
+</Document>

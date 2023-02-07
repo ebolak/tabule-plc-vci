@@ -1,0 +1,16 @@
+﻿FUNCTION "tod_diff" : Time
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+   VAR_INPUT 
+      endTOD : Time_Of_Day;
+      actual_begin_TOD : Time_Of_Day;
+   END_VAR
+
+
+BEGIN
+	#tod_diff := #endTOD - #actual_begin_TOD;
+	IF #tod_diff < T#0ms THEN
+	    #tod_diff := #tod_diff + T#24h;
+	END_IF;
+END_FUNCTION
+

@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V18" />
+  <SW.Blocks.GlobalDB ID="0">
+    <AttributeList>
+      <AutoNumber>true</AutoNumber>
+      <DBAccessibleFromOPCUA>true</DBAccessibleFromOPCUA>
+      <DBAccessibleFromWebserver>true</DBAccessibleFromWebserver>
+      <HeaderAuthor />
+      <HeaderFamily />
+      <HeaderName />
+      <HeaderVersion>0.1</HeaderVersion>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Static">
+    <Member Name="Andon1" Datatype="&quot;UDT_andonIO&quot;" Remanence="NonRetain" Accessibility="Public">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+      <Sections>
+        <Section Name="None">
+          <Member Name="I_greenBtn" Datatype="Bool" />
+          <Member Name="I_yellowBtn" Datatype="Bool" />
+          <Member Name="I_redBtn" Datatype="Bool" />
+          <Member Name="O_greenBtnLed" Datatype="Bool" />
+          <Member Name="O_yellowBtnLed" Datatype="Bool" />
+          <Member Name="O_redBtnLed" Datatype="Bool" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="Andon2" Datatype="&quot;UDT_andonIO&quot;" Remanence="NonRetain" Accessibility="Public">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+      <Sections>
+        <Section Name="None">
+          <Member Name="I_greenBtn" Datatype="Bool" />
+          <Member Name="I_yellowBtn" Datatype="Bool" />
+          <Member Name="I_redBtn" Datatype="Bool" />
+          <Member Name="O_greenBtnLed" Datatype="Bool" />
+          <Member Name="O_yellowBtnLed" Datatype="Bool" />
+          <Member Name="O_redBtnLed" Datatype="Bool" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="Andon3" Datatype="&quot;UDT_andonIO&quot;" Remanence="NonRetain" Accessibility="Public">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+      <Sections>
+        <Section Name="None">
+          <Member Name="I_greenBtn" Datatype="Bool" />
+          <Member Name="I_yellowBtn" Datatype="Bool" />
+          <Member Name="I_redBtn" Datatype="Bool" />
+          <Member Name="O_greenBtnLed" Datatype="Bool" />
+          <Member Name="O_yellowBtnLed" Datatype="Bool" />
+          <Member Name="O_redBtnLed" Datatype="Bool" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="Andon4" Datatype="&quot;UDT_andonIO&quot;" Remanence="NonRetain" Accessibility="Public">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+      <Sections>
+        <Section Name="None">
+          <Member Name="I_greenBtn" Datatype="Bool" />
+          <Member Name="I_yellowBtn" Datatype="Bool" />
+          <Member Name="I_redBtn" Datatype="Bool" />
+          <Member Name="O_greenBtnLed" Datatype="Bool" />
+          <Member Name="O_yellowBtnLed" Datatype="Bool" />
+          <Member Name="O_redBtnLed" Datatype="Bool" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="Andon5" Datatype="&quot;UDT_andonIO&quot;" Remanence="NonRetain" Accessibility="Public">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+      <Sections>
+        <Section Name="None">
+          <Member Name="I_greenBtn" Datatype="Bool" />
+          <Member Name="I_yellowBtn" Datatype="Bool" />
+          <Member Name="I_redBtn" Datatype="Bool" />
+          <Member Name="O_greenBtnLed" Datatype="Bool" />
+          <Member Name="O_yellowBtnLed" Datatype="Bool" />
+          <Member Name="O_redBtnLed" Datatype="Bool" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="Andon6" Datatype="&quot;UDT_andonIO&quot;" Remanence="NonRetain" Accessibility="Public">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+      <Sections>
+        <Section Name="None">
+          <Member Name="I_greenBtn" Datatype="Bool" />
+          <Member Name="I_yellowBtn" Datatype="Bool" />
+          <Member Name="I_redBtn" Datatype="Bool" />
+          <Member Name="O_greenBtnLed" Datatype="Bool" />
+          <Member Name="O_yellowBtnLed" Datatype="Bool" />
+          <Member Name="O_redBtnLed" Datatype="Bool" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="Andon7" Datatype="&quot;UDT_andonIO&quot;" Remanence="NonRetain" Accessibility="Public">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+      <Sections>
+        <Section Name="None">
+          <Member Name="I_greenBtn" Datatype="Bool" />
+          <Member Name="I_yellowBtn" Datatype="Bool" />
+          <Member Name="I_redBtn" Datatype="Bool" />
+          <Member Name="O_greenBtnLed" Datatype="Bool" />
+          <Member Name="O_yellowBtnLed" Datatype="Bool" />
+          <Member Name="O_redBtnLed" Datatype="Bool" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="Andon8" Datatype="&quot;UDT_andonIO&quot;" Remanence="NonRetain" Accessibility="Public">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+      <Sections>
+        <Section Name="None">
+          <Member Name="I_greenBtn" Datatype="Bool" />
+          <Member Name="I_yellowBtn" Datatype="Bool" />
+          <Member Name="I_redBtn" Datatype="Bool" />
+          <Member Name="O_greenBtnLed" Datatype="Bool" />
+          <Member Name="O_yellowBtnLed" Datatype="Bool" />
+          <Member Name="O_redBtnLed" Datatype="Bool" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="Andon9" Datatype="&quot;UDT_andonIO&quot;" Remanence="NonRetain" Accessibility="Public">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+      <Sections>
+        <Section Name="None">
+          <Member Name="I_greenBtn" Datatype="Bool" />
+          <Member Name="I_yellowBtn" Datatype="Bool" />
+          <Member Name="I_redBtn" Datatype="Bool" />
+          <Member Name="O_greenBtnLed" Datatype="Bool" />
+          <Member Name="O_yellowBtnLed" Datatype="Bool" />
+          <Member Name="O_redBtnLed" Datatype="Bool" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="Andon10" Datatype="&quot;UDT_andonIO&quot;" Remanence="NonRetain" Accessibility="Public">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+      <Sections>
+        <Section Name="None">
+          <Member Name="I_greenBtn" Datatype="Bool" />
+          <Member Name="I_yellowBtn" Datatype="Bool" />
+          <Member Name="I_redBtn" Datatype="Bool" />
+          <Member Name="O_greenBtnLed" Datatype="Bool" />
+          <Member Name="O_yellowBtnLed" Datatype="Bool" />
+          <Member Name="O_redBtnLed" Datatype="Bool" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="Sirene" Datatype="&quot;UDT_sireneIO&quot;" Remanence="NonRetain" Accessibility="Public">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+      <Sections>
+        <Section Name="None">
+          <Member Name="O_sir_start" Datatype="Bool" />
+          <Member Name="O_sirena_1" Datatype="Bool" />
+          <Member Name="O_sirena_2" Datatype="Bool" />
+          <Member Name="O_sirena_3" Datatype="Bool" />
+          <Member Name="O_sirena_4" Datatype="Bool" />
+          <Member Name="O_sirena_5" Datatype="Bool" />
+          <Member Name="O_sirena_6" Datatype="Bool" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="SignalColumn" Datatype="&quot;UDT_signalColumn&quot;" Remanence="NonRetain" Accessibility="Public">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+      <Sections>
+        <Section Name="None">
+          <Member Name="O_green" Datatype="Bool" />
+          <Member Name="O_yellow" Datatype="Bool" />
+          <Member Name="O_red" Datatype="Bool" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="NokButton1" Datatype="&quot;UDT_nokButtonIO&quot;" Remanence="NonRetain" Accessibility="Public">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+      <Sections>
+        <Section Name="None">
+          <Member Name="I_Button" Datatype="Bool" />
+          <Member Name="O_Led" Datatype="Bool" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="NokButton2" Datatype="&quot;UDT_nokButtonIO&quot;" Remanence="NonRetain" Accessibility="Public">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+      <Sections>
+        <Section Name="None">
+          <Member Name="I_Button" Datatype="Bool" />
+          <Member Name="O_Led" Datatype="Bool" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="I_PartProduced" Datatype="Bool" Remanence="NonRetain" Accessibility="Public">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+    </Member>
+  </Section>
+</Sections></Interface>
+      <IsOnlyStoredInLoadMemory>false</IsOnlyStoredInLoadMemory>
+      <IsRetainMemResEnabled>false</IsRetainMemResEnabled>
+      <IsWriteProtectedInAS>false</IsWriteProtectedInAS>
+      <MemoryLayout>Optimized</MemoryLayout>
+      <MemoryReserve>100</MemoryReserve>
+      <Name>gDb_IO</Name>
+      <Namespace />
+      <Number>20</Number>
+      <ProgrammingLanguage>DB</ProgrammingLanguage>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>cs-CZ</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <MultilingualText ID="4" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="5" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="6" CompositionName="Items">
+            <AttributeList>
+              <Culture>cs-CZ</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.GlobalDB>
+</Document>

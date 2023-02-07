@@ -1,0 +1,1880 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V18" />
+  <SW.Blocks.InstanceDB ID="0">
+    <AttributeList>
+      <AutoNumber>true</AutoNumber>
+      <DBAccessibleFromOPCUA>true</DBAccessibleFromOPCUA>
+      <DBAccessibleFromWebserver>true</DBAccessibleFromWebserver>
+      <HeaderAuthor />
+      <HeaderFamily />
+      <HeaderName />
+      <HeaderVersion>0.1</HeaderVersion>
+      <InstanceOfName>AndonMain</InstanceOfName>
+      <InstanceOfType>FB</InstanceOfType>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Input" />
+  <Section Name="Output" />
+  <Section Name="InOut" />
+  <Section Name="Static">
+    <Member Name="fpBit_greenTrigger" Datatype="Bool" Remanence="NonRetain" Accessibility="Public">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="AndonBoxASi_v2_Instance_8" Datatype="&quot;AndonBoxASi&quot;" Accessibility="Public">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+      <Sections>
+        <Section Name="Input">
+          <Member Name="I_greenBtn" Datatype="Bool" />
+          <Member Name="I_yellowBtn" Datatype="Bool" />
+          <Member Name="I_redBtn" Datatype="Bool" />
+          <Member Name="I_FlashingPeriod" Datatype="Time" />
+          <Member Name="I_greenFlashingDuration" Datatype="Time" />
+          <Member Name="I_yellowFlashingDuration" Datatype="Time" />
+          <Member Name="I_redFlashingDuration" Datatype="Time" />
+        </Section>
+        <Section Name="Output">
+          <Member Name="O_state" Datatype="Int" />
+          <Member Name="O_greenBtnLed" Datatype="Bool" />
+          <Member Name="O_yellowBtnLed" Datatype="Bool" />
+          <Member Name="O_redBtnLed" Datatype="Bool" />
+        </Section>
+        <Section Name="InOut">
+          <Member Name="IO_sireneGreenTrigger" Datatype="Bool" />
+          <Member Name="IO_sireneYellowTrigger" Datatype="Bool" />
+          <Member Name="IO_sireneRedTrigger" Datatype="Bool" />
+        </Section>
+        <Section Name="Static">
+          <Member Name="fpBit_greenBtn" Datatype="Bool" />
+          <Member Name="fpBit_yellowBtn" Datatype="Bool" />
+          <Member Name="fpBit_redBtn" Datatype="Bool" />
+          <Member Name="memState" Datatype="Int" />
+          <Member Name="IEC_Timer_0_Instance" Datatype="TP_TIME" Version="1.0">
+            <Sections>
+              <Section Name="None">
+                <Member Name="PT" Datatype="Time" />
+                <Member Name="ET" Datatype="Time" />
+                <Member Name="IN" Datatype="Bool" />
+                <Member Name="Q" Datatype="Bool" />
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="BtnLedAppearance_Instance" Datatype="&quot;BtnLedAppearance&quot;">
+            <Sections>
+              <Section Name="Input">
+                <Member Name="REQ" Datatype="Bool" />
+                <Member Name="FlashingPeriod" Datatype="Time" />
+                <Member Name="FlashingDuration" Datatype="Time" />
+              </Section>
+              <Section Name="Output">
+                <Member Name="LED" Datatype="Bool" />
+              </Section>
+              <Section Name="InOut" />
+              <Section Name="Static">
+                <Member Name="IEC_Timer_ON" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_OFF" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_TONE_ELAPSED" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="BtnLedAppearance_Instance_1" Datatype="&quot;BtnLedAppearance&quot;">
+            <Sections>
+              <Section Name="Input">
+                <Member Name="REQ" Datatype="Bool" />
+                <Member Name="FlashingPeriod" Datatype="Time" />
+                <Member Name="FlashingDuration" Datatype="Time" />
+              </Section>
+              <Section Name="Output">
+                <Member Name="LED" Datatype="Bool" />
+              </Section>
+              <Section Name="InOut" />
+              <Section Name="Static">
+                <Member Name="IEC_Timer_ON" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_OFF" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_TONE_ELAPSED" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="BtnLedAppearance_Instance_2" Datatype="&quot;BtnLedAppearance&quot;">
+            <Sections>
+              <Section Name="Input">
+                <Member Name="REQ" Datatype="Bool" />
+                <Member Name="FlashingPeriod" Datatype="Time" />
+                <Member Name="FlashingDuration" Datatype="Time" />
+              </Section>
+              <Section Name="Output">
+                <Member Name="LED" Datatype="Bool" />
+              </Section>
+              <Section Name="InOut" />
+              <Section Name="Static">
+                <Member Name="IEC_Timer_ON" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_OFF" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_TONE_ELAPSED" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+              </Section>
+            </Sections>
+          </Member>
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="AndonBoxASi_v2_Instance_9" Datatype="&quot;AndonBoxASi&quot;" Accessibility="Public">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+      <Sections>
+        <Section Name="Input">
+          <Member Name="I_greenBtn" Datatype="Bool" />
+          <Member Name="I_yellowBtn" Datatype="Bool" />
+          <Member Name="I_redBtn" Datatype="Bool" />
+          <Member Name="I_FlashingPeriod" Datatype="Time" />
+          <Member Name="I_greenFlashingDuration" Datatype="Time" />
+          <Member Name="I_yellowFlashingDuration" Datatype="Time" />
+          <Member Name="I_redFlashingDuration" Datatype="Time" />
+        </Section>
+        <Section Name="Output">
+          <Member Name="O_state" Datatype="Int" />
+          <Member Name="O_greenBtnLed" Datatype="Bool" />
+          <Member Name="O_yellowBtnLed" Datatype="Bool" />
+          <Member Name="O_redBtnLed" Datatype="Bool" />
+        </Section>
+        <Section Name="InOut">
+          <Member Name="IO_sireneGreenTrigger" Datatype="Bool" />
+          <Member Name="IO_sireneYellowTrigger" Datatype="Bool" />
+          <Member Name="IO_sireneRedTrigger" Datatype="Bool" />
+        </Section>
+        <Section Name="Static">
+          <Member Name="fpBit_greenBtn" Datatype="Bool" />
+          <Member Name="fpBit_yellowBtn" Datatype="Bool" />
+          <Member Name="fpBit_redBtn" Datatype="Bool" />
+          <Member Name="memState" Datatype="Int" />
+          <Member Name="IEC_Timer_0_Instance" Datatype="TP_TIME" Version="1.0">
+            <Sections>
+              <Section Name="None">
+                <Member Name="PT" Datatype="Time" />
+                <Member Name="ET" Datatype="Time" />
+                <Member Name="IN" Datatype="Bool" />
+                <Member Name="Q" Datatype="Bool" />
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="BtnLedAppearance_Instance" Datatype="&quot;BtnLedAppearance&quot;">
+            <Sections>
+              <Section Name="Input">
+                <Member Name="REQ" Datatype="Bool" />
+                <Member Name="FlashingPeriod" Datatype="Time" />
+                <Member Name="FlashingDuration" Datatype="Time" />
+              </Section>
+              <Section Name="Output">
+                <Member Name="LED" Datatype="Bool" />
+              </Section>
+              <Section Name="InOut" />
+              <Section Name="Static">
+                <Member Name="IEC_Timer_ON" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_OFF" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_TONE_ELAPSED" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="BtnLedAppearance_Instance_1" Datatype="&quot;BtnLedAppearance&quot;">
+            <Sections>
+              <Section Name="Input">
+                <Member Name="REQ" Datatype="Bool" />
+                <Member Name="FlashingPeriod" Datatype="Time" />
+                <Member Name="FlashingDuration" Datatype="Time" />
+              </Section>
+              <Section Name="Output">
+                <Member Name="LED" Datatype="Bool" />
+              </Section>
+              <Section Name="InOut" />
+              <Section Name="Static">
+                <Member Name="IEC_Timer_ON" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_OFF" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_TONE_ELAPSED" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="BtnLedAppearance_Instance_2" Datatype="&quot;BtnLedAppearance&quot;">
+            <Sections>
+              <Section Name="Input">
+                <Member Name="REQ" Datatype="Bool" />
+                <Member Name="FlashingPeriod" Datatype="Time" />
+                <Member Name="FlashingDuration" Datatype="Time" />
+              </Section>
+              <Section Name="Output">
+                <Member Name="LED" Datatype="Bool" />
+              </Section>
+              <Section Name="InOut" />
+              <Section Name="Static">
+                <Member Name="IEC_Timer_ON" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_OFF" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_TONE_ELAPSED" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+              </Section>
+            </Sections>
+          </Member>
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="AndonBoxASi_v2_Instance1" Datatype="&quot;AndonBoxASi&quot;" Accessibility="Public">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+      <Sections>
+        <Section Name="Input">
+          <Member Name="I_greenBtn" Datatype="Bool" />
+          <Member Name="I_yellowBtn" Datatype="Bool" />
+          <Member Name="I_redBtn" Datatype="Bool" />
+          <Member Name="I_FlashingPeriod" Datatype="Time" />
+          <Member Name="I_greenFlashingDuration" Datatype="Time" />
+          <Member Name="I_yellowFlashingDuration" Datatype="Time" />
+          <Member Name="I_redFlashingDuration" Datatype="Time" />
+        </Section>
+        <Section Name="Output">
+          <Member Name="O_state" Datatype="Int" />
+          <Member Name="O_greenBtnLed" Datatype="Bool" />
+          <Member Name="O_yellowBtnLed" Datatype="Bool" />
+          <Member Name="O_redBtnLed" Datatype="Bool" />
+        </Section>
+        <Section Name="InOut">
+          <Member Name="IO_sireneGreenTrigger" Datatype="Bool" />
+          <Member Name="IO_sireneYellowTrigger" Datatype="Bool" />
+          <Member Name="IO_sireneRedTrigger" Datatype="Bool" />
+        </Section>
+        <Section Name="Static">
+          <Member Name="fpBit_greenBtn" Datatype="Bool" />
+          <Member Name="fpBit_yellowBtn" Datatype="Bool" />
+          <Member Name="fpBit_redBtn" Datatype="Bool" />
+          <Member Name="memState" Datatype="Int" />
+          <Member Name="IEC_Timer_0_Instance" Datatype="TP_TIME" Version="1.0">
+            <Sections>
+              <Section Name="None">
+                <Member Name="PT" Datatype="Time" />
+                <Member Name="ET" Datatype="Time" />
+                <Member Name="IN" Datatype="Bool" />
+                <Member Name="Q" Datatype="Bool" />
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="BtnLedAppearance_Instance" Datatype="&quot;BtnLedAppearance&quot;">
+            <Sections>
+              <Section Name="Input">
+                <Member Name="REQ" Datatype="Bool" />
+                <Member Name="FlashingPeriod" Datatype="Time" />
+                <Member Name="FlashingDuration" Datatype="Time" />
+              </Section>
+              <Section Name="Output">
+                <Member Name="LED" Datatype="Bool" />
+              </Section>
+              <Section Name="InOut" />
+              <Section Name="Static">
+                <Member Name="IEC_Timer_ON" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_OFF" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_TONE_ELAPSED" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="BtnLedAppearance_Instance_1" Datatype="&quot;BtnLedAppearance&quot;">
+            <Sections>
+              <Section Name="Input">
+                <Member Name="REQ" Datatype="Bool" />
+                <Member Name="FlashingPeriod" Datatype="Time" />
+                <Member Name="FlashingDuration" Datatype="Time" />
+              </Section>
+              <Section Name="Output">
+                <Member Name="LED" Datatype="Bool" />
+              </Section>
+              <Section Name="InOut" />
+              <Section Name="Static">
+                <Member Name="IEC_Timer_ON" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_OFF" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_TONE_ELAPSED" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="BtnLedAppearance_Instance_2" Datatype="&quot;BtnLedAppearance&quot;">
+            <Sections>
+              <Section Name="Input">
+                <Member Name="REQ" Datatype="Bool" />
+                <Member Name="FlashingPeriod" Datatype="Time" />
+                <Member Name="FlashingDuration" Datatype="Time" />
+              </Section>
+              <Section Name="Output">
+                <Member Name="LED" Datatype="Bool" />
+              </Section>
+              <Section Name="InOut" />
+              <Section Name="Static">
+                <Member Name="IEC_Timer_ON" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_OFF" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_TONE_ELAPSED" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+              </Section>
+            </Sections>
+          </Member>
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="AndonBoxASi_v2_Instance2" Datatype="&quot;AndonBoxASi&quot;" Accessibility="Public">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+      <Sections>
+        <Section Name="Input">
+          <Member Name="I_greenBtn" Datatype="Bool" />
+          <Member Name="I_yellowBtn" Datatype="Bool" />
+          <Member Name="I_redBtn" Datatype="Bool" />
+          <Member Name="I_FlashingPeriod" Datatype="Time" />
+          <Member Name="I_greenFlashingDuration" Datatype="Time" />
+          <Member Name="I_yellowFlashingDuration" Datatype="Time" />
+          <Member Name="I_redFlashingDuration" Datatype="Time" />
+        </Section>
+        <Section Name="Output">
+          <Member Name="O_state" Datatype="Int" />
+          <Member Name="O_greenBtnLed" Datatype="Bool" />
+          <Member Name="O_yellowBtnLed" Datatype="Bool" />
+          <Member Name="O_redBtnLed" Datatype="Bool" />
+        </Section>
+        <Section Name="InOut">
+          <Member Name="IO_sireneGreenTrigger" Datatype="Bool" />
+          <Member Name="IO_sireneYellowTrigger" Datatype="Bool" />
+          <Member Name="IO_sireneRedTrigger" Datatype="Bool" />
+        </Section>
+        <Section Name="Static">
+          <Member Name="fpBit_greenBtn" Datatype="Bool" />
+          <Member Name="fpBit_yellowBtn" Datatype="Bool" />
+          <Member Name="fpBit_redBtn" Datatype="Bool" />
+          <Member Name="memState" Datatype="Int" />
+          <Member Name="IEC_Timer_0_Instance" Datatype="TP_TIME" Version="1.0">
+            <Sections>
+              <Section Name="None">
+                <Member Name="PT" Datatype="Time" />
+                <Member Name="ET" Datatype="Time" />
+                <Member Name="IN" Datatype="Bool" />
+                <Member Name="Q" Datatype="Bool" />
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="BtnLedAppearance_Instance" Datatype="&quot;BtnLedAppearance&quot;">
+            <Sections>
+              <Section Name="Input">
+                <Member Name="REQ" Datatype="Bool" />
+                <Member Name="FlashingPeriod" Datatype="Time" />
+                <Member Name="FlashingDuration" Datatype="Time" />
+              </Section>
+              <Section Name="Output">
+                <Member Name="LED" Datatype="Bool" />
+              </Section>
+              <Section Name="InOut" />
+              <Section Name="Static">
+                <Member Name="IEC_Timer_ON" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_OFF" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_TONE_ELAPSED" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="BtnLedAppearance_Instance_1" Datatype="&quot;BtnLedAppearance&quot;">
+            <Sections>
+              <Section Name="Input">
+                <Member Name="REQ" Datatype="Bool" />
+                <Member Name="FlashingPeriod" Datatype="Time" />
+                <Member Name="FlashingDuration" Datatype="Time" />
+              </Section>
+              <Section Name="Output">
+                <Member Name="LED" Datatype="Bool" />
+              </Section>
+              <Section Name="InOut" />
+              <Section Name="Static">
+                <Member Name="IEC_Timer_ON" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_OFF" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_TONE_ELAPSED" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="BtnLedAppearance_Instance_2" Datatype="&quot;BtnLedAppearance&quot;">
+            <Sections>
+              <Section Name="Input">
+                <Member Name="REQ" Datatype="Bool" />
+                <Member Name="FlashingPeriod" Datatype="Time" />
+                <Member Name="FlashingDuration" Datatype="Time" />
+              </Section>
+              <Section Name="Output">
+                <Member Name="LED" Datatype="Bool" />
+              </Section>
+              <Section Name="InOut" />
+              <Section Name="Static">
+                <Member Name="IEC_Timer_ON" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_OFF" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_TONE_ELAPSED" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+              </Section>
+            </Sections>
+          </Member>
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="AndonBoxASi_v2_Instance3" Datatype="&quot;AndonBoxASi&quot;" Accessibility="Public">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+      <Sections>
+        <Section Name="Input">
+          <Member Name="I_greenBtn" Datatype="Bool" />
+          <Member Name="I_yellowBtn" Datatype="Bool" />
+          <Member Name="I_redBtn" Datatype="Bool" />
+          <Member Name="I_FlashingPeriod" Datatype="Time" />
+          <Member Name="I_greenFlashingDuration" Datatype="Time" />
+          <Member Name="I_yellowFlashingDuration" Datatype="Time" />
+          <Member Name="I_redFlashingDuration" Datatype="Time" />
+        </Section>
+        <Section Name="Output">
+          <Member Name="O_state" Datatype="Int" />
+          <Member Name="O_greenBtnLed" Datatype="Bool" />
+          <Member Name="O_yellowBtnLed" Datatype="Bool" />
+          <Member Name="O_redBtnLed" Datatype="Bool" />
+        </Section>
+        <Section Name="InOut">
+          <Member Name="IO_sireneGreenTrigger" Datatype="Bool" />
+          <Member Name="IO_sireneYellowTrigger" Datatype="Bool" />
+          <Member Name="IO_sireneRedTrigger" Datatype="Bool" />
+        </Section>
+        <Section Name="Static">
+          <Member Name="fpBit_greenBtn" Datatype="Bool" />
+          <Member Name="fpBit_yellowBtn" Datatype="Bool" />
+          <Member Name="fpBit_redBtn" Datatype="Bool" />
+          <Member Name="memState" Datatype="Int" />
+          <Member Name="IEC_Timer_0_Instance" Datatype="TP_TIME" Version="1.0">
+            <Sections>
+              <Section Name="None">
+                <Member Name="PT" Datatype="Time" />
+                <Member Name="ET" Datatype="Time" />
+                <Member Name="IN" Datatype="Bool" />
+                <Member Name="Q" Datatype="Bool" />
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="BtnLedAppearance_Instance" Datatype="&quot;BtnLedAppearance&quot;">
+            <Sections>
+              <Section Name="Input">
+                <Member Name="REQ" Datatype="Bool" />
+                <Member Name="FlashingPeriod" Datatype="Time" />
+                <Member Name="FlashingDuration" Datatype="Time" />
+              </Section>
+              <Section Name="Output">
+                <Member Name="LED" Datatype="Bool" />
+              </Section>
+              <Section Name="InOut" />
+              <Section Name="Static">
+                <Member Name="IEC_Timer_ON" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_OFF" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_TONE_ELAPSED" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="BtnLedAppearance_Instance_1" Datatype="&quot;BtnLedAppearance&quot;">
+            <Sections>
+              <Section Name="Input">
+                <Member Name="REQ" Datatype="Bool" />
+                <Member Name="FlashingPeriod" Datatype="Time" />
+                <Member Name="FlashingDuration" Datatype="Time" />
+              </Section>
+              <Section Name="Output">
+                <Member Name="LED" Datatype="Bool" />
+              </Section>
+              <Section Name="InOut" />
+              <Section Name="Static">
+                <Member Name="IEC_Timer_ON" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_OFF" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_TONE_ELAPSED" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="BtnLedAppearance_Instance_2" Datatype="&quot;BtnLedAppearance&quot;">
+            <Sections>
+              <Section Name="Input">
+                <Member Name="REQ" Datatype="Bool" />
+                <Member Name="FlashingPeriod" Datatype="Time" />
+                <Member Name="FlashingDuration" Datatype="Time" />
+              </Section>
+              <Section Name="Output">
+                <Member Name="LED" Datatype="Bool" />
+              </Section>
+              <Section Name="InOut" />
+              <Section Name="Static">
+                <Member Name="IEC_Timer_ON" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_OFF" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_TONE_ELAPSED" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+              </Section>
+            </Sections>
+          </Member>
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="AndonBoxASi_v2_Instance4" Datatype="&quot;AndonBoxASi&quot;" Accessibility="Public">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+      <Sections>
+        <Section Name="Input">
+          <Member Name="I_greenBtn" Datatype="Bool" />
+          <Member Name="I_yellowBtn" Datatype="Bool" />
+          <Member Name="I_redBtn" Datatype="Bool" />
+          <Member Name="I_FlashingPeriod" Datatype="Time" />
+          <Member Name="I_greenFlashingDuration" Datatype="Time" />
+          <Member Name="I_yellowFlashingDuration" Datatype="Time" />
+          <Member Name="I_redFlashingDuration" Datatype="Time" />
+        </Section>
+        <Section Name="Output">
+          <Member Name="O_state" Datatype="Int" />
+          <Member Name="O_greenBtnLed" Datatype="Bool" />
+          <Member Name="O_yellowBtnLed" Datatype="Bool" />
+          <Member Name="O_redBtnLed" Datatype="Bool" />
+        </Section>
+        <Section Name="InOut">
+          <Member Name="IO_sireneGreenTrigger" Datatype="Bool" />
+          <Member Name="IO_sireneYellowTrigger" Datatype="Bool" />
+          <Member Name="IO_sireneRedTrigger" Datatype="Bool" />
+        </Section>
+        <Section Name="Static">
+          <Member Name="fpBit_greenBtn" Datatype="Bool" />
+          <Member Name="fpBit_yellowBtn" Datatype="Bool" />
+          <Member Name="fpBit_redBtn" Datatype="Bool" />
+          <Member Name="memState" Datatype="Int" />
+          <Member Name="IEC_Timer_0_Instance" Datatype="TP_TIME" Version="1.0">
+            <Sections>
+              <Section Name="None">
+                <Member Name="PT" Datatype="Time" />
+                <Member Name="ET" Datatype="Time" />
+                <Member Name="IN" Datatype="Bool" />
+                <Member Name="Q" Datatype="Bool" />
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="BtnLedAppearance_Instance" Datatype="&quot;BtnLedAppearance&quot;">
+            <Sections>
+              <Section Name="Input">
+                <Member Name="REQ" Datatype="Bool" />
+                <Member Name="FlashingPeriod" Datatype="Time" />
+                <Member Name="FlashingDuration" Datatype="Time" />
+              </Section>
+              <Section Name="Output">
+                <Member Name="LED" Datatype="Bool" />
+              </Section>
+              <Section Name="InOut" />
+              <Section Name="Static">
+                <Member Name="IEC_Timer_ON" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_OFF" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_TONE_ELAPSED" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="BtnLedAppearance_Instance_1" Datatype="&quot;BtnLedAppearance&quot;">
+            <Sections>
+              <Section Name="Input">
+                <Member Name="REQ" Datatype="Bool" />
+                <Member Name="FlashingPeriod" Datatype="Time" />
+                <Member Name="FlashingDuration" Datatype="Time" />
+              </Section>
+              <Section Name="Output">
+                <Member Name="LED" Datatype="Bool" />
+              </Section>
+              <Section Name="InOut" />
+              <Section Name="Static">
+                <Member Name="IEC_Timer_ON" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_OFF" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_TONE_ELAPSED" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="BtnLedAppearance_Instance_2" Datatype="&quot;BtnLedAppearance&quot;">
+            <Sections>
+              <Section Name="Input">
+                <Member Name="REQ" Datatype="Bool" />
+                <Member Name="FlashingPeriod" Datatype="Time" />
+                <Member Name="FlashingDuration" Datatype="Time" />
+              </Section>
+              <Section Name="Output">
+                <Member Name="LED" Datatype="Bool" />
+              </Section>
+              <Section Name="InOut" />
+              <Section Name="Static">
+                <Member Name="IEC_Timer_ON" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_OFF" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_TONE_ELAPSED" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+              </Section>
+            </Sections>
+          </Member>
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="AndonBoxASi_v2_Instance5" Datatype="&quot;AndonBoxASi&quot;" Accessibility="Public">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+      <Sections>
+        <Section Name="Input">
+          <Member Name="I_greenBtn" Datatype="Bool" />
+          <Member Name="I_yellowBtn" Datatype="Bool" />
+          <Member Name="I_redBtn" Datatype="Bool" />
+          <Member Name="I_FlashingPeriod" Datatype="Time" />
+          <Member Name="I_greenFlashingDuration" Datatype="Time" />
+          <Member Name="I_yellowFlashingDuration" Datatype="Time" />
+          <Member Name="I_redFlashingDuration" Datatype="Time" />
+        </Section>
+        <Section Name="Output">
+          <Member Name="O_state" Datatype="Int" />
+          <Member Name="O_greenBtnLed" Datatype="Bool" />
+          <Member Name="O_yellowBtnLed" Datatype="Bool" />
+          <Member Name="O_redBtnLed" Datatype="Bool" />
+        </Section>
+        <Section Name="InOut">
+          <Member Name="IO_sireneGreenTrigger" Datatype="Bool" />
+          <Member Name="IO_sireneYellowTrigger" Datatype="Bool" />
+          <Member Name="IO_sireneRedTrigger" Datatype="Bool" />
+        </Section>
+        <Section Name="Static">
+          <Member Name="fpBit_greenBtn" Datatype="Bool" />
+          <Member Name="fpBit_yellowBtn" Datatype="Bool" />
+          <Member Name="fpBit_redBtn" Datatype="Bool" />
+          <Member Name="memState" Datatype="Int" />
+          <Member Name="IEC_Timer_0_Instance" Datatype="TP_TIME" Version="1.0">
+            <Sections>
+              <Section Name="None">
+                <Member Name="PT" Datatype="Time" />
+                <Member Name="ET" Datatype="Time" />
+                <Member Name="IN" Datatype="Bool" />
+                <Member Name="Q" Datatype="Bool" />
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="BtnLedAppearance_Instance" Datatype="&quot;BtnLedAppearance&quot;">
+            <Sections>
+              <Section Name="Input">
+                <Member Name="REQ" Datatype="Bool" />
+                <Member Name="FlashingPeriod" Datatype="Time" />
+                <Member Name="FlashingDuration" Datatype="Time" />
+              </Section>
+              <Section Name="Output">
+                <Member Name="LED" Datatype="Bool" />
+              </Section>
+              <Section Name="InOut" />
+              <Section Name="Static">
+                <Member Name="IEC_Timer_ON" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_OFF" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_TONE_ELAPSED" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="BtnLedAppearance_Instance_1" Datatype="&quot;BtnLedAppearance&quot;">
+            <Sections>
+              <Section Name="Input">
+                <Member Name="REQ" Datatype="Bool" />
+                <Member Name="FlashingPeriod" Datatype="Time" />
+                <Member Name="FlashingDuration" Datatype="Time" />
+              </Section>
+              <Section Name="Output">
+                <Member Name="LED" Datatype="Bool" />
+              </Section>
+              <Section Name="InOut" />
+              <Section Name="Static">
+                <Member Name="IEC_Timer_ON" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_OFF" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_TONE_ELAPSED" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="BtnLedAppearance_Instance_2" Datatype="&quot;BtnLedAppearance&quot;">
+            <Sections>
+              <Section Name="Input">
+                <Member Name="REQ" Datatype="Bool" />
+                <Member Name="FlashingPeriod" Datatype="Time" />
+                <Member Name="FlashingDuration" Datatype="Time" />
+              </Section>
+              <Section Name="Output">
+                <Member Name="LED" Datatype="Bool" />
+              </Section>
+              <Section Name="InOut" />
+              <Section Name="Static">
+                <Member Name="IEC_Timer_ON" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_OFF" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_TONE_ELAPSED" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+              </Section>
+            </Sections>
+          </Member>
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="AndonBoxASi_v2_Instance6" Datatype="&quot;AndonBoxASi&quot;" Accessibility="Public">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+      <Sections>
+        <Section Name="Input">
+          <Member Name="I_greenBtn" Datatype="Bool" />
+          <Member Name="I_yellowBtn" Datatype="Bool" />
+          <Member Name="I_redBtn" Datatype="Bool" />
+          <Member Name="I_FlashingPeriod" Datatype="Time" />
+          <Member Name="I_greenFlashingDuration" Datatype="Time" />
+          <Member Name="I_yellowFlashingDuration" Datatype="Time" />
+          <Member Name="I_redFlashingDuration" Datatype="Time" />
+        </Section>
+        <Section Name="Output">
+          <Member Name="O_state" Datatype="Int" />
+          <Member Name="O_greenBtnLed" Datatype="Bool" />
+          <Member Name="O_yellowBtnLed" Datatype="Bool" />
+          <Member Name="O_redBtnLed" Datatype="Bool" />
+        </Section>
+        <Section Name="InOut">
+          <Member Name="IO_sireneGreenTrigger" Datatype="Bool" />
+          <Member Name="IO_sireneYellowTrigger" Datatype="Bool" />
+          <Member Name="IO_sireneRedTrigger" Datatype="Bool" />
+        </Section>
+        <Section Name="Static">
+          <Member Name="fpBit_greenBtn" Datatype="Bool" />
+          <Member Name="fpBit_yellowBtn" Datatype="Bool" />
+          <Member Name="fpBit_redBtn" Datatype="Bool" />
+          <Member Name="memState" Datatype="Int" />
+          <Member Name="IEC_Timer_0_Instance" Datatype="TP_TIME" Version="1.0">
+            <Sections>
+              <Section Name="None">
+                <Member Name="PT" Datatype="Time" />
+                <Member Name="ET" Datatype="Time" />
+                <Member Name="IN" Datatype="Bool" />
+                <Member Name="Q" Datatype="Bool" />
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="BtnLedAppearance_Instance" Datatype="&quot;BtnLedAppearance&quot;">
+            <Sections>
+              <Section Name="Input">
+                <Member Name="REQ" Datatype="Bool" />
+                <Member Name="FlashingPeriod" Datatype="Time" />
+                <Member Name="FlashingDuration" Datatype="Time" />
+              </Section>
+              <Section Name="Output">
+                <Member Name="LED" Datatype="Bool" />
+              </Section>
+              <Section Name="InOut" />
+              <Section Name="Static">
+                <Member Name="IEC_Timer_ON" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_OFF" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_TONE_ELAPSED" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="BtnLedAppearance_Instance_1" Datatype="&quot;BtnLedAppearance&quot;">
+            <Sections>
+              <Section Name="Input">
+                <Member Name="REQ" Datatype="Bool" />
+                <Member Name="FlashingPeriod" Datatype="Time" />
+                <Member Name="FlashingDuration" Datatype="Time" />
+              </Section>
+              <Section Name="Output">
+                <Member Name="LED" Datatype="Bool" />
+              </Section>
+              <Section Name="InOut" />
+              <Section Name="Static">
+                <Member Name="IEC_Timer_ON" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_OFF" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_TONE_ELAPSED" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="BtnLedAppearance_Instance_2" Datatype="&quot;BtnLedAppearance&quot;">
+            <Sections>
+              <Section Name="Input">
+                <Member Name="REQ" Datatype="Bool" />
+                <Member Name="FlashingPeriod" Datatype="Time" />
+                <Member Name="FlashingDuration" Datatype="Time" />
+              </Section>
+              <Section Name="Output">
+                <Member Name="LED" Datatype="Bool" />
+              </Section>
+              <Section Name="InOut" />
+              <Section Name="Static">
+                <Member Name="IEC_Timer_ON" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_OFF" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_TONE_ELAPSED" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+              </Section>
+            </Sections>
+          </Member>
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="AndonBoxASi_v2_Instance7" Datatype="&quot;AndonBoxASi&quot;" Accessibility="Public">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+      <Sections>
+        <Section Name="Input">
+          <Member Name="I_greenBtn" Datatype="Bool" />
+          <Member Name="I_yellowBtn" Datatype="Bool" />
+          <Member Name="I_redBtn" Datatype="Bool" />
+          <Member Name="I_FlashingPeriod" Datatype="Time" />
+          <Member Name="I_greenFlashingDuration" Datatype="Time" />
+          <Member Name="I_yellowFlashingDuration" Datatype="Time" />
+          <Member Name="I_redFlashingDuration" Datatype="Time" />
+        </Section>
+        <Section Name="Output">
+          <Member Name="O_state" Datatype="Int" />
+          <Member Name="O_greenBtnLed" Datatype="Bool" />
+          <Member Name="O_yellowBtnLed" Datatype="Bool" />
+          <Member Name="O_redBtnLed" Datatype="Bool" />
+        </Section>
+        <Section Name="InOut">
+          <Member Name="IO_sireneGreenTrigger" Datatype="Bool" />
+          <Member Name="IO_sireneYellowTrigger" Datatype="Bool" />
+          <Member Name="IO_sireneRedTrigger" Datatype="Bool" />
+        </Section>
+        <Section Name="Static">
+          <Member Name="fpBit_greenBtn" Datatype="Bool" />
+          <Member Name="fpBit_yellowBtn" Datatype="Bool" />
+          <Member Name="fpBit_redBtn" Datatype="Bool" />
+          <Member Name="memState" Datatype="Int" />
+          <Member Name="IEC_Timer_0_Instance" Datatype="TP_TIME" Version="1.0">
+            <Sections>
+              <Section Name="None">
+                <Member Name="PT" Datatype="Time" />
+                <Member Name="ET" Datatype="Time" />
+                <Member Name="IN" Datatype="Bool" />
+                <Member Name="Q" Datatype="Bool" />
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="BtnLedAppearance_Instance" Datatype="&quot;BtnLedAppearance&quot;">
+            <Sections>
+              <Section Name="Input">
+                <Member Name="REQ" Datatype="Bool" />
+                <Member Name="FlashingPeriod" Datatype="Time" />
+                <Member Name="FlashingDuration" Datatype="Time" />
+              </Section>
+              <Section Name="Output">
+                <Member Name="LED" Datatype="Bool" />
+              </Section>
+              <Section Name="InOut" />
+              <Section Name="Static">
+                <Member Name="IEC_Timer_ON" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_OFF" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_TONE_ELAPSED" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="BtnLedAppearance_Instance_1" Datatype="&quot;BtnLedAppearance&quot;">
+            <Sections>
+              <Section Name="Input">
+                <Member Name="REQ" Datatype="Bool" />
+                <Member Name="FlashingPeriod" Datatype="Time" />
+                <Member Name="FlashingDuration" Datatype="Time" />
+              </Section>
+              <Section Name="Output">
+                <Member Name="LED" Datatype="Bool" />
+              </Section>
+              <Section Name="InOut" />
+              <Section Name="Static">
+                <Member Name="IEC_Timer_ON" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_OFF" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_TONE_ELAPSED" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="BtnLedAppearance_Instance_2" Datatype="&quot;BtnLedAppearance&quot;">
+            <Sections>
+              <Section Name="Input">
+                <Member Name="REQ" Datatype="Bool" />
+                <Member Name="FlashingPeriod" Datatype="Time" />
+                <Member Name="FlashingDuration" Datatype="Time" />
+              </Section>
+              <Section Name="Output">
+                <Member Name="LED" Datatype="Bool" />
+              </Section>
+              <Section Name="InOut" />
+              <Section Name="Static">
+                <Member Name="IEC_Timer_ON" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_OFF" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_TONE_ELAPSED" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+              </Section>
+            </Sections>
+          </Member>
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="AndonBoxASi_v2_Instance10" Datatype="&quot;AndonBoxASi&quot;" Accessibility="Public">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+      <Sections>
+        <Section Name="Input">
+          <Member Name="I_greenBtn" Datatype="Bool" />
+          <Member Name="I_yellowBtn" Datatype="Bool" />
+          <Member Name="I_redBtn" Datatype="Bool" />
+          <Member Name="I_FlashingPeriod" Datatype="Time" />
+          <Member Name="I_greenFlashingDuration" Datatype="Time" />
+          <Member Name="I_yellowFlashingDuration" Datatype="Time" />
+          <Member Name="I_redFlashingDuration" Datatype="Time" />
+        </Section>
+        <Section Name="Output">
+          <Member Name="O_state" Datatype="Int" />
+          <Member Name="O_greenBtnLed" Datatype="Bool" />
+          <Member Name="O_yellowBtnLed" Datatype="Bool" />
+          <Member Name="O_redBtnLed" Datatype="Bool" />
+        </Section>
+        <Section Name="InOut">
+          <Member Name="IO_sireneGreenTrigger" Datatype="Bool" />
+          <Member Name="IO_sireneYellowTrigger" Datatype="Bool" />
+          <Member Name="IO_sireneRedTrigger" Datatype="Bool" />
+        </Section>
+        <Section Name="Static">
+          <Member Name="fpBit_greenBtn" Datatype="Bool" />
+          <Member Name="fpBit_yellowBtn" Datatype="Bool" />
+          <Member Name="fpBit_redBtn" Datatype="Bool" />
+          <Member Name="memState" Datatype="Int" />
+          <Member Name="IEC_Timer_0_Instance" Datatype="TP_TIME" Version="1.0">
+            <Sections>
+              <Section Name="None">
+                <Member Name="PT" Datatype="Time" />
+                <Member Name="ET" Datatype="Time" />
+                <Member Name="IN" Datatype="Bool" />
+                <Member Name="Q" Datatype="Bool" />
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="BtnLedAppearance_Instance" Datatype="&quot;BtnLedAppearance&quot;">
+            <Sections>
+              <Section Name="Input">
+                <Member Name="REQ" Datatype="Bool" />
+                <Member Name="FlashingPeriod" Datatype="Time" />
+                <Member Name="FlashingDuration" Datatype="Time" />
+              </Section>
+              <Section Name="Output">
+                <Member Name="LED" Datatype="Bool" />
+              </Section>
+              <Section Name="InOut" />
+              <Section Name="Static">
+                <Member Name="IEC_Timer_ON" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_OFF" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_TONE_ELAPSED" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="BtnLedAppearance_Instance_1" Datatype="&quot;BtnLedAppearance&quot;">
+            <Sections>
+              <Section Name="Input">
+                <Member Name="REQ" Datatype="Bool" />
+                <Member Name="FlashingPeriod" Datatype="Time" />
+                <Member Name="FlashingDuration" Datatype="Time" />
+              </Section>
+              <Section Name="Output">
+                <Member Name="LED" Datatype="Bool" />
+              </Section>
+              <Section Name="InOut" />
+              <Section Name="Static">
+                <Member Name="IEC_Timer_ON" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_OFF" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_TONE_ELAPSED" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="BtnLedAppearance_Instance_2" Datatype="&quot;BtnLedAppearance&quot;">
+            <Sections>
+              <Section Name="Input">
+                <Member Name="REQ" Datatype="Bool" />
+                <Member Name="FlashingPeriod" Datatype="Time" />
+                <Member Name="FlashingDuration" Datatype="Time" />
+              </Section>
+              <Section Name="Output">
+                <Member Name="LED" Datatype="Bool" />
+              </Section>
+              <Section Name="InOut" />
+              <Section Name="Static">
+                <Member Name="IEC_Timer_ON" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_OFF" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="IEC_Timer_TONE_ELAPSED" Datatype="TON_TIME" Version="1.0">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="PT" Datatype="Time" />
+                      <Member Name="ET" Datatype="Time" />
+                      <Member Name="IN" Datatype="Bool" />
+                      <Member Name="Q" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+              </Section>
+            </Sections>
+          </Member>
+        </Section>
+      </Sections>
+    </Member>
+  </Section>
+</Sections></Interface>
+      <Name>AndonMain_DB</Name>
+      <Namespace />
+      <Number>5</Number>
+      <ProgrammingLanguage>DB</ProgrammingLanguage>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>cs-CZ</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <MultilingualText ID="4" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="5" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="6" CompositionName="Items">
+            <AttributeList>
+              <Culture>cs-CZ</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.InstanceDB>
+</Document>

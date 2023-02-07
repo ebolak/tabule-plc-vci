@@ -1,0 +1,36 @@
+﻿FUNCTION_BLOCK "BtnLedAppearance"
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+   VAR_INPUT 
+      REQ : Bool;
+      FlashingPeriod : Time;
+      FlashingDuration : Time;
+   END_VAR
+
+   VAR_OUTPUT 
+      LED : Bool;
+   END_VAR
+
+   VAR 
+      IEC_Timer_ON {InstructionName := 'TON_TIME'; LibVersion := '1.0'} : TON_TIME;
+      IEC_Timer_OFF {InstructionName := 'TON_TIME'; LibVersion := '1.0'} : TON_TIME;
+      IEC_Timer_TONE_ELAPSED {InstructionName := 'TON_TIME'; LibVersion := '1.0'} : TON_TIME;
+   END_VAR
+
+
+BEGIN
+	#IEC_Timer_ON(IN := #REQ AND NOT #IEC_Timer_OFF.Q,
+	              PT := #FlashingPeriod);
+	
+	#IEC_Timer_OFF(IN := #REQ AND #IEC_Timer_ON.Q AND NOT #IEC_Timer_OFF.Q,
+	               PT := #FlashingPeriod);
+	
+	
+	#IEC_Timer_TONE_ELAPSED(IN:=#REQ,
+	                        PT:=#FlashingDuration);
+	
+	
+	#LED := #IEC_Timer_ON.Q OR #IEC_Timer_TONE_ELAPSED.Q ;
+	
+END_FUNCTION_BLOCK
+

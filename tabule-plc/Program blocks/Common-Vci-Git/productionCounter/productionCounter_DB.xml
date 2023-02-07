@@ -1,0 +1,401 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V18" />
+  <SW.Blocks.InstanceDB ID="0">
+    <AttributeList>
+      <AutoNumber>true</AutoNumber>
+      <DBAccessibleFromOPCUA>true</DBAccessibleFromOPCUA>
+      <DBAccessibleFromWebserver>true</DBAccessibleFromWebserver>
+      <HeaderAuthor />
+      <HeaderFamily />
+      <HeaderName />
+      <HeaderVersion>0.1</HeaderVersion>
+      <InstanceOfName>productionCounter</InstanceOfName>
+      <InstanceOfType>FB</InstanceOfType>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Input">
+    <Member Name="I_partProduced" Datatype="Bool" Remanence="NonRetain" Accessibility="Public">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="I_nokPart" Datatype="Bool" Remanence="NonRetain" Accessibility="Public">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+    </Member>
+  </Section>
+  <Section Name="Output" />
+  <Section Name="InOut">
+    <Member Name="IO_actualValues" Datatype="&quot;UDT_actualValues&quot;" Accessibility="Public">
+      <Sections>
+        <Section Name="None">
+          <Member Name="target" Datatype="DInt" />
+          <Member Name="actual" Datatype="DInt" />
+          <Member Name="ok" Datatype="DInt" />
+          <Member Name="difference" Datatype="DInt" />
+          <Member Name="counterTactTime" Datatype="DInt" />
+          <Member Name="state" Datatype="DInt" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="IO_PreviousValues" Datatype="&quot;UDT_actualValues&quot;" Accessibility="Public">
+      <Sections>
+        <Section Name="None">
+          <Member Name="target" Datatype="DInt" />
+          <Member Name="actual" Datatype="DInt" />
+          <Member Name="ok" Datatype="DInt" />
+          <Member Name="difference" Datatype="DInt" />
+          <Member Name="counterTactTime" Datatype="DInt" />
+          <Member Name="state" Datatype="DInt" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="IO_settings" Datatype="&quot;UDT_settings&quot;" Accessibility="Public">
+      <Sections>
+        <Section Name="None">
+          <Member Name="taktTimeCntOption" Datatype="DInt" />
+          <Member Name="target" Datatype="DInt" />
+          <Member Name="taktTime" Datatype="DInt" />
+          <Member Name="countOption" Datatype="DInt" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="IO_control" Datatype="&quot;UDT_control&quot;" Accessibility="Public">
+      <Sections>
+        <Section Name="None">
+          <Member Name="resetCounters" Datatype="DInt" />
+          <Member Name="startTaktTimeCnt" Datatype="DInt" />
+          <Member Name="stopTaktTimeCnt" Datatype="DInt" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="IO_settingsShift1" Datatype="&quot;UDT_settingsShift&quot;" Accessibility="Public">
+      <Sections>
+        <Section Name="None">
+          <Member Name="shiftEN" Datatype="DInt" />
+          <Member Name="shiftBegin" Datatype="Time_Of_Day" />
+          <Member Name="shiftEnd" Datatype="Time_Of_Day" />
+          <Member Name="break1EN" Datatype="DInt" />
+          <Member Name="break1Begin" Datatype="Time_Of_Day" />
+          <Member Name="break1End" Datatype="Time_Of_Day" />
+          <Member Name="break2EN" Datatype="DInt" />
+          <Member Name="break2Begin" Datatype="Time_Of_Day" />
+          <Member Name="break2End" Datatype="Time_Of_Day" />
+          <Member Name="break3EN" Datatype="DInt" />
+          <Member Name="break3Begin" Datatype="Time_Of_Day" />
+          <Member Name="break3End" Datatype="Time_Of_Day" />
+          <Member Name="break4EN" Datatype="DInt" />
+          <Member Name="break4Begin" Datatype="Time_Of_Day" />
+          <Member Name="break4End" Datatype="Time_Of_Day" />
+          <Member Name="break5EN" Datatype="DInt" />
+          <Member Name="break5Begin" Datatype="Time_Of_Day" />
+          <Member Name="break5End" Datatype="Time_Of_Day" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="IO_settingsShift2" Datatype="&quot;UDT_settingsShift&quot;" Accessibility="Public">
+      <Sections>
+        <Section Name="None">
+          <Member Name="shiftEN" Datatype="DInt" />
+          <Member Name="shiftBegin" Datatype="Time_Of_Day" />
+          <Member Name="shiftEnd" Datatype="Time_Of_Day" />
+          <Member Name="break1EN" Datatype="DInt" />
+          <Member Name="break1Begin" Datatype="Time_Of_Day" />
+          <Member Name="break1End" Datatype="Time_Of_Day" />
+          <Member Name="break2EN" Datatype="DInt" />
+          <Member Name="break2Begin" Datatype="Time_Of_Day" />
+          <Member Name="break2End" Datatype="Time_Of_Day" />
+          <Member Name="break3EN" Datatype="DInt" />
+          <Member Name="break3Begin" Datatype="Time_Of_Day" />
+          <Member Name="break3End" Datatype="Time_Of_Day" />
+          <Member Name="break4EN" Datatype="DInt" />
+          <Member Name="break4Begin" Datatype="Time_Of_Day" />
+          <Member Name="break4End" Datatype="Time_Of_Day" />
+          <Member Name="break5EN" Datatype="DInt" />
+          <Member Name="break5Begin" Datatype="Time_Of_Day" />
+          <Member Name="break5End" Datatype="Time_Of_Day" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="IO_settingsShift3" Datatype="&quot;UDT_settingsShift&quot;" Accessibility="Public">
+      <Sections>
+        <Section Name="None">
+          <Member Name="shiftEN" Datatype="DInt" />
+          <Member Name="shiftBegin" Datatype="Time_Of_Day" />
+          <Member Name="shiftEnd" Datatype="Time_Of_Day" />
+          <Member Name="break1EN" Datatype="DInt" />
+          <Member Name="break1Begin" Datatype="Time_Of_Day" />
+          <Member Name="break1End" Datatype="Time_Of_Day" />
+          <Member Name="break2EN" Datatype="DInt" />
+          <Member Name="break2Begin" Datatype="Time_Of_Day" />
+          <Member Name="break2End" Datatype="Time_Of_Day" />
+          <Member Name="break3EN" Datatype="DInt" />
+          <Member Name="break3Begin" Datatype="Time_Of_Day" />
+          <Member Name="break3End" Datatype="Time_Of_Day" />
+          <Member Name="break4EN" Datatype="DInt" />
+          <Member Name="break4Begin" Datatype="Time_Of_Day" />
+          <Member Name="break4End" Datatype="Time_Of_Day" />
+          <Member Name="break5EN" Datatype="DInt" />
+          <Member Name="break5Begin" Datatype="Time_Of_Day" />
+          <Member Name="break5End" Datatype="Time_Of_Day" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="IO_locTime" Datatype="DTL" Version="1.0" Accessibility="Public" />
+  </Section>
+  <Section Name="Static">
+    <Member Name="fpBit_resetCounters" Datatype="Bool" Remanence="NonRetain" Accessibility="Public">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="fpBit_partProduced" Datatype="Bool" Remanence="NonRetain" Accessibility="Public">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="fpBit_nokPart" Datatype="Bool" Remanence="NonRetain" Accessibility="Public">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="fpBit_stop" Datatype="Bool" Remanence="NonRetain" Accessibility="Public">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="fpBit_start" Datatype="Bool" Remanence="NonRetain" Accessibility="Public">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="RS_taktTimeEn" Datatype="Bool" Remanence="NonRetain" Accessibility="Public">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="TIM_taktTime" Datatype="TONR_TIME" Version="1.0" Remanence="NonRetain" Accessibility="Public">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+      <Sections>
+        <Section Name="None">
+          <Member Name="PT" Datatype="Time" />
+          <Member Name="ET" Datatype="Time" />
+          <Member Name="IN" Datatype="Bool" />
+          <Member Name="Q" Datatype="Bool" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="memTaktTime" Datatype="DInt" Remanence="NonRetain" Accessibility="Public">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="shiftTrigger0" Datatype="&quot;shiftTrigger&quot;" Accessibility="Public">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+      <Sections>
+        <Section Name="Input">
+          <Member Name="autostartEnabled" Datatype="Bool" />
+          <Member Name="actualTOD" Datatype="Time_Of_Day" />
+          <Member Name="actualDTL" Datatype="DTL" Version="1.0" />
+          <Member Name="shiftSettings" Datatype="&quot;UDT_settingsShift&quot;">
+            <Sections>
+              <Section Name="None">
+                <Member Name="shiftEN" Datatype="DInt" />
+                <Member Name="shiftBegin" Datatype="Time_Of_Day" />
+                <Member Name="shiftEnd" Datatype="Time_Of_Day" />
+                <Member Name="break1EN" Datatype="DInt" />
+                <Member Name="break1Begin" Datatype="Time_Of_Day" />
+                <Member Name="break1End" Datatype="Time_Of_Day" />
+                <Member Name="break2EN" Datatype="DInt" />
+                <Member Name="break2Begin" Datatype="Time_Of_Day" />
+                <Member Name="break2End" Datatype="Time_Of_Day" />
+                <Member Name="break3EN" Datatype="DInt" />
+                <Member Name="break3Begin" Datatype="Time_Of_Day" />
+                <Member Name="break3End" Datatype="Time_Of_Day" />
+                <Member Name="break4EN" Datatype="DInt" />
+                <Member Name="break4Begin" Datatype="Time_Of_Day" />
+                <Member Name="break4End" Datatype="Time_Of_Day" />
+                <Member Name="break5EN" Datatype="DInt" />
+                <Member Name="break5Begin" Datatype="Time_Of_Day" />
+                <Member Name="break5End" Datatype="Time_Of_Day" />
+              </Section>
+            </Sections>
+          </Member>
+        </Section>
+        <Section Name="Output">
+          <Member Name="trigger" Datatype="Bool" />
+          <Member Name="shiftStartDetect" Datatype="Bool" />
+        </Section>
+        <Section Name="InOut" />
+        <Section Name="Static" />
+      </Sections>
+    </Member>
+    <Member Name="shiftTrigger1" Datatype="&quot;shiftTrigger&quot;" Accessibility="Public">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+      <Sections>
+        <Section Name="Input">
+          <Member Name="autostartEnabled" Datatype="Bool" />
+          <Member Name="actualTOD" Datatype="Time_Of_Day" />
+          <Member Name="actualDTL" Datatype="DTL" Version="1.0" />
+          <Member Name="shiftSettings" Datatype="&quot;UDT_settingsShift&quot;">
+            <Sections>
+              <Section Name="None">
+                <Member Name="shiftEN" Datatype="DInt" />
+                <Member Name="shiftBegin" Datatype="Time_Of_Day" />
+                <Member Name="shiftEnd" Datatype="Time_Of_Day" />
+                <Member Name="break1EN" Datatype="DInt" />
+                <Member Name="break1Begin" Datatype="Time_Of_Day" />
+                <Member Name="break1End" Datatype="Time_Of_Day" />
+                <Member Name="break2EN" Datatype="DInt" />
+                <Member Name="break2Begin" Datatype="Time_Of_Day" />
+                <Member Name="break2End" Datatype="Time_Of_Day" />
+                <Member Name="break3EN" Datatype="DInt" />
+                <Member Name="break3Begin" Datatype="Time_Of_Day" />
+                <Member Name="break3End" Datatype="Time_Of_Day" />
+                <Member Name="break4EN" Datatype="DInt" />
+                <Member Name="break4Begin" Datatype="Time_Of_Day" />
+                <Member Name="break4End" Datatype="Time_Of_Day" />
+                <Member Name="break5EN" Datatype="DInt" />
+                <Member Name="break5Begin" Datatype="Time_Of_Day" />
+                <Member Name="break5End" Datatype="Time_Of_Day" />
+              </Section>
+            </Sections>
+          </Member>
+        </Section>
+        <Section Name="Output">
+          <Member Name="trigger" Datatype="Bool" />
+          <Member Name="shiftStartDetect" Datatype="Bool" />
+        </Section>
+        <Section Name="InOut" />
+        <Section Name="Static" />
+      </Sections>
+    </Member>
+    <Member Name="shiftTrigger2" Datatype="&quot;shiftTrigger&quot;" Accessibility="Public">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+      <Sections>
+        <Section Name="Input">
+          <Member Name="autostartEnabled" Datatype="Bool" />
+          <Member Name="actualTOD" Datatype="Time_Of_Day" />
+          <Member Name="actualDTL" Datatype="DTL" Version="1.0" />
+          <Member Name="shiftSettings" Datatype="&quot;UDT_settingsShift&quot;">
+            <Sections>
+              <Section Name="None">
+                <Member Name="shiftEN" Datatype="DInt" />
+                <Member Name="shiftBegin" Datatype="Time_Of_Day" />
+                <Member Name="shiftEnd" Datatype="Time_Of_Day" />
+                <Member Name="break1EN" Datatype="DInt" />
+                <Member Name="break1Begin" Datatype="Time_Of_Day" />
+                <Member Name="break1End" Datatype="Time_Of_Day" />
+                <Member Name="break2EN" Datatype="DInt" />
+                <Member Name="break2Begin" Datatype="Time_Of_Day" />
+                <Member Name="break2End" Datatype="Time_Of_Day" />
+                <Member Name="break3EN" Datatype="DInt" />
+                <Member Name="break3Begin" Datatype="Time_Of_Day" />
+                <Member Name="break3End" Datatype="Time_Of_Day" />
+                <Member Name="break4EN" Datatype="DInt" />
+                <Member Name="break4Begin" Datatype="Time_Of_Day" />
+                <Member Name="break4End" Datatype="Time_Of_Day" />
+                <Member Name="break5EN" Datatype="DInt" />
+                <Member Name="break5Begin" Datatype="Time_Of_Day" />
+                <Member Name="break5End" Datatype="Time_Of_Day" />
+              </Section>
+            </Sections>
+          </Member>
+        </Section>
+        <Section Name="Output">
+          <Member Name="trigger" Datatype="Bool" />
+          <Member Name="shiftStartDetect" Datatype="Bool" />
+        </Section>
+        <Section Name="InOut" />
+        <Section Name="Static" />
+      </Sections>
+    </Member>
+  </Section>
+</Sections></Interface>
+      <Name>productionCounter_DB</Name>
+      <Namespace />
+      <Number>18</Number>
+      <ProgrammingLanguage>DB</ProgrammingLanguage>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>cs-CZ</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <MultilingualText ID="4" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="5" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="6" CompositionName="Items">
+            <AttributeList>
+              <Culture>cs-CZ</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.InstanceDB>
+</Document>
