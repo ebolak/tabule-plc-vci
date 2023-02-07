@@ -1,0 +1,45 @@
+﻿FUNCTION "inputConfig" : Void
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+
+BEGIN
+	(*
+	//Andon1
+	"gDb_IO".Andon1.I_greenBtn := "Andon1_greenBtn";
+	"gDb_IO".Andon1.I_yellowBtn := "Andon1_yellowBtn";
+	"gDb_IO".Andon1.I_redBtn := "Andon1_redBtn";
+	//Andon2
+	"gDb_IO".Andon2.I_greenBtn := "Andon2_greenBtn";
+	"gDb_IO".Andon2.I_yellowBtn := "Andon2_yellowBtn";
+	"gDb_IO".Andon2.I_redBtn := "Andon2_redBtn";
+	//Andon7
+	"gDb_IO".Andon3.I_greenBtn := "Andon3_greenBtn";
+	"gDb_IO".Andon3.I_yellowBtn := "Andon3_yellowBtn";
+	"gDb_IO".Andon3.I_redBtn := "Andon3_redBtn";
+	//Andon4
+	"gDb_IO".Andon4.I_greenBtn := "Andon4_greenBtn";
+	"gDb_IO".Andon4.I_yellowBtn := "Andon4_yellowBtn";
+	"gDb_IO".Andon4.I_redBtn := "Andon4_redBtn";
+	//Andon6
+	"gDb_IO".Andon5.I_greenBtn := "Andon5_greenBtn";
+	"gDb_IO".Andon5.I_yellowBtn := "Andon5_yellowBtn";
+	"gDb_IO".Andon5.I_redBtn := "Andon5_redBtn";
+	//Andon6
+	"gDb_IO".Andon6.I_greenBtn := "Andon6_greenBtn";
+	"gDb_IO".Andon6.I_yellowBtn := "Andon6_yellowBtn";
+	"gDb_IO".Andon6.I_redBtn := "Andon6_redBtn";
+	//Andon7
+	"gDb_IO".Andon7.I_greenBtn := "Andon7_greenBtn";
+	"gDb_IO".Andon7.I_yellowBtn := "Andon7_yellowBtn";
+	"gDb_IO".Andon7.I_redBtn := "Andon7_redBtn";
+	//Andon8
+	"gDb_IO".Andon8.I_greenBtn := "Andon8_greenBtn";
+	"gDb_IO".Andon8.I_yellowBtn := "Andon8_yellowBtn";
+	"gDb_IO".Andon8.I_redBtn := "Andon8_redBtn";
+	//Andon9
+	"gDb_IO".Andon9.I_greenBtn := "Andon9_greenBtn";
+	"gDb_IO".Andon9.I_yellowBtn := "Andon9_yellowBtn";
+	"gDb_IO".Andon9.I_redBtn := "Andon9_redBtn";
+	*)
+END_FUNCTION
+
