@@ -20,7 +20,6 @@ BEGIN
 	// Line name
 	"webData".lineName := WSTRING#'LXX';
 	
-	
 	// Andon text
 	"webData".andon1Text := WSTRING#'Andon1';
 	"webData".andon2Text := WSTRING#'Andon2';
