@@ -12,14 +12,14 @@
       <HeaderVersion>0.1</HeaderVersion>
       <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
   <Section Name="Static">
-    <Member Name="lineName" Datatype="String" Remanence="NonRetain" Accessibility="Public">
+    <Member Name="lineName" Datatype="WString" Remanence="NonRetain" Accessibility="Public">
       <AttributeList>
         <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
         <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
         <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
         <BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute>
       </AttributeList>
-      <StartValue>'L14'</StartValue>
+      <StartValue>WSTRING#'L14'</StartValue>
     </Member>
     <Member Name="andon1Text" Datatype="WString" Remanence="NonRetain" Accessibility="Public">
       <AttributeList>

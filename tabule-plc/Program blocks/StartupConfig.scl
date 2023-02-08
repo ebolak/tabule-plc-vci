@@ -4,7 +4,7 @@ TITLE = "Complete Restart"
 VERSION : 0.1
 
 BEGIN
-	// AndonBox config
+	// AndonBox enable
 	"gDb_AndonBoxConfig".flashingPeriod := T#200ms;
 	"gDb_AndonBoxConfig".EnableAndon1 := true;
 	"gDb_AndonBoxConfig".EnableAndon2 := true;
@@ -16,6 +16,21 @@ BEGIN
 	"gDb_AndonBoxConfig".EnableAndon8 := true;
 	"gDb_AndonBoxConfig".EnableAndon9 := true;
 	"gDb_AndonBoxConfig".EnableAndon10 := true;
+	
+	// Line name
+	"webData".lineName := WSTRING#'LXX';
+	
+	// Andon text
+	"webData".andon1Text := WSTRING#'Andon1';
+	"webData".andon2Text := WSTRING#'Andon2';
+	"webData".andon3Text := WSTRING#'Andon3';
+	"webData".andon4Text := WSTRING#'Andon4';
+	"webData".andon5Text := WSTRING#'Andon5';
+	"webData".andon6Text := WSTRING#'Andon6';
+	"webData".andon7Text := WSTRING#'Andon7';
+	"webData".andon8Text := WSTRING#'Andon8';
+	"webData".andon9Text := WSTRING#'Andon9';
+	"webData".andon10Text := WSTRING#'Andon10';
 	
 	
 END_ORGANIZATION_BLOCK
