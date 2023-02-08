@@ -31,7 +31,5 @@ BEGIN
 	"webData".andon8Text := WSTRING#'Andon8';
 	"webData".andon9Text := WSTRING#'Andon9';
 	"webData".andon10Text := WSTRING#'Andon10';
-	
-	
 END_ORGANIZATION_BLOCK
 
