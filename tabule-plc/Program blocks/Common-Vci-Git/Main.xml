@@ -57,6 +57,58 @@
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
+    <Call UId="21">
+      <CallInfo Name="inputConfig" BlockType="FC" />
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="23">
+      <OpenCon UId="22" />
+      <NameCon UId="21" Name="en" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>FBD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="5" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="6" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="7" CompositionName="Items">
+                <AttributeList>
+                  <Culture>cs-CZ</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="8" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="9" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Inputs</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>cs-CZ</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="B" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
     <Access Scope="LocalVariable" UId="21">
       <Symbol>
         <Component Name="RET_VAL" />
@@ -89,62 +141,6 @@
           <ProgrammingLanguage>FBD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="5" CompositionName="Comment">
-            <ObjectList>
-              <MultilingualTextItem ID="6" CompositionName="Items">
-                <AttributeList>
-                  <Culture>en-US</Culture>
-                  <Text />
-                </AttributeList>
-              </MultilingualTextItem>
-              <MultilingualTextItem ID="7" CompositionName="Items">
-                <AttributeList>
-                  <Culture>cs-CZ</Culture>
-                  <Text />
-                </AttributeList>
-              </MultilingualTextItem>
-            </ObjectList>
-          </MultilingualText>
-          <MultilingualText ID="8" CompositionName="Title">
-            <ObjectList>
-              <MultilingualTextItem ID="9" CompositionName="Items">
-                <AttributeList>
-                  <Culture>en-US</Culture>
-                  <Text>Local time</Text>
-                </AttributeList>
-              </MultilingualTextItem>
-              <MultilingualTextItem ID="A" CompositionName="Items">
-                <AttributeList>
-                  <Culture>cs-CZ</Culture>
-                  <Text />
-                </AttributeList>
-              </MultilingualTextItem>
-            </ObjectList>
-          </MultilingualText>
-        </ObjectList>
-      </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="B" CompositionName="CompileUnits">
-        <AttributeList>
-          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
-  <Parts>
-    <Call UId="21">
-      <CallInfo Name="AndonMain" BlockType="FB">
-        <Instance Scope="GlobalVariable" UId="22">
-          <Component Name="AndonMain_DB" />
-        </Instance>
-      </CallInfo>
-    </Call>
-  </Parts>
-  <Wires>
-    <Wire UId="24">
-      <OpenCon UId="23" />
-      <NameCon UId="21" Name="en" />
-    </Wire>
-  </Wires>
-</FlgNet></NetworkSource>
-          <ProgrammingLanguage>FBD</ProgrammingLanguage>
-        </AttributeList>
-        <ObjectList>
           <MultilingualText ID="C" CompositionName="Comment">
             <ObjectList>
               <MultilingualTextItem ID="D" CompositionName="Items">
@@ -166,7 +162,7 @@
               <MultilingualTextItem ID="10" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
-                  <Text>Andon</Text>
+                  <Text>Local time</Text>
                 </AttributeList>
               </MultilingualTextItem>
               <MultilingualTextItem ID="11" CompositionName="Items">
@@ -184,9 +180,9 @@
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
     <Call UId="21">
-      <CallInfo Name="SireneMain" BlockType="FB">
+      <CallInfo Name="AndonMain" BlockType="FB">
         <Instance Scope="GlobalVariable" UId="22">
-          <Component Name="SireneMain_DB" />
+          <Component Name="AndonMain_DB" />
         </Instance>
       </CallInfo>
     </Call>
@@ -222,7 +218,7 @@
               <MultilingualTextItem ID="17" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
-                  <Text>Sirene</Text>
+                  <Text>Andon</Text>
                 </AttributeList>
               </MultilingualTextItem>
               <MultilingualTextItem ID="18" CompositionName="Items">
@@ -240,9 +236,9 @@
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
     <Call UId="21">
-      <CallInfo Name="nokButtonMain" BlockType="FB">
+      <CallInfo Name="SireneMain" BlockType="FB">
         <Instance Scope="GlobalVariable" UId="22">
-          <Component Name="nokButtonMain_DB" />
+          <Component Name="SireneMain_DB" />
         </Instance>
       </CallInfo>
     </Call>
@@ -278,7 +274,7 @@
               <MultilingualTextItem ID="1E" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
-                  <Text>Nok button</Text>
+                  <Text>Sirene</Text>
                 </AttributeList>
               </MultilingualTextItem>
               <MultilingualTextItem ID="1F" CompositionName="Items">
@@ -292,6 +288,62 @@
         </ObjectList>
       </SW.Blocks.CompileUnit>
       <SW.Blocks.CompileUnit ID="20" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Call UId="21">
+      <CallInfo Name="nokButtonMain" BlockType="FB">
+        <Instance Scope="GlobalVariable" UId="22">
+          <Component Name="nokButtonMain_DB" />
+        </Instance>
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="24">
+      <OpenCon UId="23" />
+      <NameCon UId="21" Name="en" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>FBD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="21" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="22" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="23" CompositionName="Items">
+                <AttributeList>
+                  <Culture>cs-CZ</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="24" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="25" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Nok button</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="26" CompositionName="Items">
+                <AttributeList>
+                  <Culture>cs-CZ</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="27" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -418,62 +470,6 @@
           <ProgrammingLanguage>FBD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="21" CompositionName="Comment">
-            <ObjectList>
-              <MultilingualTextItem ID="22" CompositionName="Items">
-                <AttributeList>
-                  <Culture>en-US</Culture>
-                  <Text />
-                </AttributeList>
-              </MultilingualTextItem>
-              <MultilingualTextItem ID="23" CompositionName="Items">
-                <AttributeList>
-                  <Culture>cs-CZ</Culture>
-                  <Text />
-                </AttributeList>
-              </MultilingualTextItem>
-            </ObjectList>
-          </MultilingualText>
-          <MultilingualText ID="24" CompositionName="Title">
-            <ObjectList>
-              <MultilingualTextItem ID="25" CompositionName="Items">
-                <AttributeList>
-                  <Culture>en-US</Culture>
-                  <Text>Production Counter</Text>
-                </AttributeList>
-              </MultilingualTextItem>
-              <MultilingualTextItem ID="26" CompositionName="Items">
-                <AttributeList>
-                  <Culture>cs-CZ</Culture>
-                  <Text />
-                </AttributeList>
-              </MultilingualTextItem>
-            </ObjectList>
-          </MultilingualText>
-        </ObjectList>
-      </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="27" CompositionName="CompileUnits">
-        <AttributeList>
-          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
-  <Parts>
-    <Call UId="21">
-      <CallInfo Name="wwwMain" BlockType="FB">
-        <Instance Scope="GlobalVariable" UId="22">
-          <Component Name="wwwMain_DB" />
-        </Instance>
-      </CallInfo>
-    </Call>
-  </Parts>
-  <Wires>
-    <Wire UId="24">
-      <OpenCon UId="23" />
-      <NameCon UId="21" Name="en" />
-    </Wire>
-  </Wires>
-</FlgNet></NetworkSource>
-          <ProgrammingLanguage>FBD</ProgrammingLanguage>
-        </AttributeList>
-        <ObjectList>
           <MultilingualText ID="28" CompositionName="Comment">
             <ObjectList>
               <MultilingualTextItem ID="29" CompositionName="Items">
@@ -495,7 +491,7 @@
               <MultilingualTextItem ID="2C" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
-                  <Text>www</Text>
+                  <Text>Production Counter</Text>
                 </AttributeList>
               </MultilingualTextItem>
               <MultilingualTextItem ID="2D" CompositionName="Items">
@@ -508,15 +504,163 @@
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <MultilingualText ID="2E" CompositionName="Title">
+      <SW.Blocks.CompileUnit ID="2E" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Call UId="21">
+      <CallInfo Name="wwwMain" BlockType="FB">
+        <Instance Scope="GlobalVariable" UId="22">
+          <Component Name="wwwMain_DB" />
+        </Instance>
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="24">
+      <OpenCon UId="23" />
+      <NameCon UId="21" Name="en" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>FBD</ProgrammingLanguage>
+        </AttributeList>
         <ObjectList>
-          <MultilingualTextItem ID="2F" CompositionName="Items">
+          <MultilingualText ID="2F" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="30" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="31" CompositionName="Items">
+                <AttributeList>
+                  <Culture>cs-CZ</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="32" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="33" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>www</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="34" CompositionName="Items">
+                <AttributeList>
+                  <Culture>cs-CZ</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="35" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Call UId="21">
+      <CallInfo Name="outputConfig" BlockType="FC" />
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="23">
+      <OpenCon UId="22" />
+      <NameCon UId="21" Name="en" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>FBD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="36" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="37" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="38" CompositionName="Items">
+                <AttributeList>
+                  <Culture>cs-CZ</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="39" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="3A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Outputs</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="3B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>cs-CZ</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="3C" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>FBD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="3D" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="3E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="3F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>cs-CZ</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="40" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="41" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="42" CompositionName="Items">
+                <AttributeList>
+                  <Culture>cs-CZ</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <MultilingualText ID="43" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="44" CompositionName="Items">
             <AttributeList>
               <Culture>en-US</Culture>
               <Text>"Main Program Sweep (Cycle)"</Text>
             </AttributeList>
           </MultilingualTextItem>
-          <MultilingualTextItem ID="30" CompositionName="Items">
+          <MultilingualTextItem ID="45" CompositionName="Items">
             <AttributeList>
               <Culture>cs-CZ</Culture>
               <Text>"Main Program Sweep (Cycle)"</Text>
