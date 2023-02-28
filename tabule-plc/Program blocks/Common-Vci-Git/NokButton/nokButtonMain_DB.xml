@@ -87,6 +87,76 @@
         </Section>
       </Sections>
     </Member>
+    <Member Name="nokButton3" Datatype="&quot;nokButton&quot;" Accessibility="Public">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+      <Sections>
+        <Section Name="Input">
+          <Member Name="I_button" Datatype="Bool" />
+        </Section>
+        <Section Name="Output">
+          <Member Name="O_buttonLed" Datatype="Bool" />
+        </Section>
+        <Section Name="InOut">
+          <Member Name="buttonQue" Datatype="Int" />
+        </Section>
+        <Section Name="Static">
+          <Member Name="fpBit_button" Datatype="Bool" />
+          <Member Name="SR_ButtonActive" Datatype="Bool" />
+          <Member Name="fpBit_buttonActive" Datatype="Bool" />
+          <Member Name="TO_Non_filter" Datatype="TON_TIME" Version="1.0">
+            <Sections>
+              <Section Name="None">
+                <Member Name="PT" Datatype="Time" />
+                <Member Name="ET" Datatype="Time" />
+                <Member Name="IN" Datatype="Bool" />
+                <Member Name="Q" Datatype="Bool" />
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="buttonActive" Datatype="Bool" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="nokButton4" Datatype="&quot;nokButton&quot;" Accessibility="Public">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+      <Sections>
+        <Section Name="Input">
+          <Member Name="I_button" Datatype="Bool" />
+        </Section>
+        <Section Name="Output">
+          <Member Name="O_buttonLed" Datatype="Bool" />
+        </Section>
+        <Section Name="InOut">
+          <Member Name="buttonQue" Datatype="Int" />
+        </Section>
+        <Section Name="Static">
+          <Member Name="fpBit_button" Datatype="Bool" />
+          <Member Name="SR_ButtonActive" Datatype="Bool" />
+          <Member Name="fpBit_buttonActive" Datatype="Bool" />
+          <Member Name="TO_Non_filter" Datatype="TON_TIME" Version="1.0">
+            <Sections>
+              <Section Name="None">
+                <Member Name="PT" Datatype="Time" />
+                <Member Name="ET" Datatype="Time" />
+                <Member Name="IN" Datatype="Bool" />
+                <Member Name="Q" Datatype="Bool" />
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="buttonActive" Datatype="Bool" />
+        </Section>
+      </Sections>
+    </Member>
     <Member Name="nokButtonQUE_Instance" Datatype="&quot;nokButtonQUE&quot;" Accessibility="Public">
       <AttributeList>
         <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>

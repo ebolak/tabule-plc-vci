@@ -254,6 +254,34 @@
         </Section>
       </Sections>
     </Member>
+    <Member Name="NokButton3" Datatype="&quot;UDT_nokButtonIO&quot;" Remanence="NonRetain" Accessibility="Public">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+      <Sections>
+        <Section Name="None">
+          <Member Name="I_Button" Datatype="Bool" />
+          <Member Name="O_Led" Datatype="Bool" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="NokButton4" Datatype="&quot;UDT_nokButtonIO&quot;" Remanence="NonRetain" Accessibility="Public">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+      <Sections>
+        <Section Name="None">
+          <Member Name="I_Button" Datatype="Bool" />
+          <Member Name="O_Led" Datatype="Bool" />
+        </Section>
+      </Sections>
+    </Member>
     <Member Name="I_PartProduced" Datatype="Bool" Remanence="NonRetain" Accessibility="Public">
       <AttributeList>
         <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>

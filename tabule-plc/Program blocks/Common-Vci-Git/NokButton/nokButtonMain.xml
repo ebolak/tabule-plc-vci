@@ -83,6 +83,76 @@
         </Section>
       </Sections>
     </Member>
+    <Member Name="nokButton3" Datatype="&quot;nokButton&quot;" Accessibility="Public">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+      <Sections>
+        <Section Name="Input">
+          <Member Name="I_button" Datatype="Bool" />
+        </Section>
+        <Section Name="Output">
+          <Member Name="O_buttonLed" Datatype="Bool" />
+        </Section>
+        <Section Name="InOut">
+          <Member Name="buttonQue" Datatype="Int" />
+        </Section>
+        <Section Name="Static">
+          <Member Name="fpBit_button" Datatype="Bool" />
+          <Member Name="SR_ButtonActive" Datatype="Bool" />
+          <Member Name="fpBit_buttonActive" Datatype="Bool" />
+          <Member Name="TO_Non_filter" Datatype="TON_TIME" Version="1.0">
+            <Sections>
+              <Section Name="None">
+                <Member Name="PT" Datatype="Time" />
+                <Member Name="ET" Datatype="Time" />
+                <Member Name="IN" Datatype="Bool" />
+                <Member Name="Q" Datatype="Bool" />
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="buttonActive" Datatype="Bool" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="nokButton4" Datatype="&quot;nokButton&quot;" Accessibility="Public">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+      <Sections>
+        <Section Name="Input">
+          <Member Name="I_button" Datatype="Bool" />
+        </Section>
+        <Section Name="Output">
+          <Member Name="O_buttonLed" Datatype="Bool" />
+        </Section>
+        <Section Name="InOut">
+          <Member Name="buttonQue" Datatype="Int" />
+        </Section>
+        <Section Name="Static">
+          <Member Name="fpBit_button" Datatype="Bool" />
+          <Member Name="SR_ButtonActive" Datatype="Bool" />
+          <Member Name="fpBit_buttonActive" Datatype="Bool" />
+          <Member Name="TO_Non_filter" Datatype="TON_TIME" Version="1.0">
+            <Sections>
+              <Section Name="None">
+                <Member Name="PT" Datatype="Time" />
+                <Member Name="ET" Datatype="Time" />
+                <Member Name="IN" Datatype="Bool" />
+                <Member Name="Q" Datatype="Bool" />
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="buttonActive" Datatype="Bool" />
+        </Section>
+      </Sections>
+    </Member>
     <Member Name="nokButtonQUE_Instance" Datatype="&quot;nokButtonQUE&quot;" Accessibility="Public">
       <AttributeList>
         <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
@@ -346,6 +416,188 @@
   <Parts>
     <Access Scope="GlobalVariable" UId="21">
       <Symbol>
+        <Component Name="gDb_IO" />
+        <Component Name="NokButton3" />
+        <Component Name="I_Button" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="22">
+      <Symbol>
+        <Component Name="gdb_nokButton" />
+        <Component Name="ButtonQue" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="23">
+      <Symbol>
+        <Component Name="gDb_IO" />
+        <Component Name="NokButton3" />
+        <Component Name="O_Led" />
+      </Symbol>
+    </Access>
+    <Call UId="24">
+      <CallInfo Name="nokButton" BlockType="FB">
+        <Instance Scope="LocalVariable" UId="25">
+          <Component Name="nokButton3" />
+        </Instance>
+        <Parameter Name="I_button" Section="Input" Type="Bool" />
+        <Parameter Name="O_buttonLed" Section="Output" Type="Bool" />
+        <Parameter Name="buttonQue" Section="InOut" Type="Int" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="27">
+      <OpenCon UId="26" />
+      <NameCon UId="24" Name="en" />
+    </Wire>
+    <Wire UId="28">
+      <IdentCon UId="21" />
+      <NameCon UId="24" Name="I_button" />
+    </Wire>
+    <Wire UId="29">
+      <IdentCon UId="22" />
+      <NameCon UId="24" Name="buttonQue" />
+    </Wire>
+    <Wire UId="30">
+      <NameCon UId="24" Name="O_buttonLed" />
+      <IdentCon UId="23" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>FBD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="13" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="14" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="15" CompositionName="Items">
+                <AttributeList>
+                  <Culture>cs-CZ</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="16" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="17" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>NokButton3</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="18" CompositionName="Items">
+                <AttributeList>
+                  <Culture>cs-CZ</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="19" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="GlobalVariable" UId="21">
+      <Symbol>
+        <Component Name="gDb_IO" />
+        <Component Name="NokButton4" />
+        <Component Name="I_Button" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="22">
+      <Symbol>
+        <Component Name="gdb_nokButton" />
+        <Component Name="ButtonQue" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="23">
+      <Symbol>
+        <Component Name="gDb_IO" />
+        <Component Name="NokButton4" />
+        <Component Name="O_Led" />
+      </Symbol>
+    </Access>
+    <Call UId="24">
+      <CallInfo Name="nokButton" BlockType="FB">
+        <Instance Scope="LocalVariable" UId="25">
+          <Component Name="nokButton4" />
+        </Instance>
+        <Parameter Name="I_button" Section="Input" Type="Bool" />
+        <Parameter Name="O_buttonLed" Section="Output" Type="Bool" />
+        <Parameter Name="buttonQue" Section="InOut" Type="Int" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="27">
+      <OpenCon UId="26" />
+      <NameCon UId="24" Name="en" />
+    </Wire>
+    <Wire UId="28">
+      <IdentCon UId="21" />
+      <NameCon UId="24" Name="I_button" />
+    </Wire>
+    <Wire UId="29">
+      <IdentCon UId="22" />
+      <NameCon UId="24" Name="buttonQue" />
+    </Wire>
+    <Wire UId="30">
+      <NameCon UId="24" Name="O_buttonLed" />
+      <IdentCon UId="23" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>FBD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="1A" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="1B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="1C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>cs-CZ</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="1D" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="1E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>NokButton2</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="1F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>cs-CZ</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="20" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="GlobalVariable" UId="21">
+      <Symbol>
         <Component Name="gdb_nokButton" />
         <Component Name="ButtonQue" />
       </Symbol>
@@ -384,15 +636,15 @@
           <ProgrammingLanguage>FBD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="13" CompositionName="Comment">
+          <MultilingualText ID="21" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="14" CompositionName="Items">
+              <MultilingualTextItem ID="22" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text />
                 </AttributeList>
               </MultilingualTextItem>
-              <MultilingualTextItem ID="15" CompositionName="Items">
+              <MultilingualTextItem ID="23" CompositionName="Items">
                 <AttributeList>
                   <Culture>cs-CZ</Culture>
                   <Text />
@@ -400,15 +652,15 @@
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="16" CompositionName="Title">
+          <MultilingualText ID="24" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="17" CompositionName="Items">
+              <MultilingualTextItem ID="25" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>button QUE</Text>
                 </AttributeList>
               </MultilingualTextItem>
-              <MultilingualTextItem ID="18" CompositionName="Items">
+              <MultilingualTextItem ID="26" CompositionName="Items">
                 <AttributeList>
                   <Culture>cs-CZ</Culture>
                   <Text />
@@ -418,21 +670,21 @@
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="19" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="27" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource />
           <ProgrammingLanguage>FBD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="1A" CompositionName="Comment">
+          <MultilingualText ID="28" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="1B" CompositionName="Items">
+              <MultilingualTextItem ID="29" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text />
                 </AttributeList>
               </MultilingualTextItem>
-              <MultilingualTextItem ID="1C" CompositionName="Items">
+              <MultilingualTextItem ID="2A" CompositionName="Items">
                 <AttributeList>
                   <Culture>cs-CZ</Culture>
                   <Text />
@@ -440,15 +692,15 @@
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="1D" CompositionName="Title">
+          <MultilingualText ID="2B" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="1E" CompositionName="Items">
+              <MultilingualTextItem ID="2C" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text />
                 </AttributeList>
               </MultilingualTextItem>
-              <MultilingualTextItem ID="1F" CompositionName="Items">
+              <MultilingualTextItem ID="2D" CompositionName="Items">
                 <AttributeList>
                   <Culture>cs-CZ</Culture>
                   <Text />
@@ -458,15 +710,15 @@
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <MultilingualText ID="20" CompositionName="Title">
+      <MultilingualText ID="2E" CompositionName="Title">
         <ObjectList>
-          <MultilingualTextItem ID="21" CompositionName="Items">
+          <MultilingualTextItem ID="2F" CompositionName="Items">
             <AttributeList>
               <Culture>en-US</Culture>
               <Text />
             </AttributeList>
           </MultilingualTextItem>
-          <MultilingualTextItem ID="22" CompositionName="Items">
+          <MultilingualTextItem ID="30" CompositionName="Items">
             <AttributeList>
               <Culture>cs-CZ</Culture>
               <Text />
