@@ -2,6 +2,7 @@
 { S7_Optimized_Access := 'TRUE' }
 VERSION : 0.1
    VAR_INPUT 
+      Enabled : DInt;
       beginTOD : Time_Of_Day;
       endTOD : Time_Of_Day;
       actualTOD : Time_Of_Day;
@@ -17,7 +18,7 @@ BEGIN
 	#T_diff1 := "tod_diff"(endTOD := #endTOD, actual_begin_TOD := #actualTOD);
 	#T_diff2 := "tod_diff"(endTOD := #endTOD, actual_begin_TOD := #beginTOD);
 	
-	IF #T_diff1 <= #T_diff2 THEN
+	IF #T_diff1 <= #T_diff2 AND #Enabled = 1 THEN
 	    #active := TRUE;
 	ELSE
 	    #active := FALSE;

@@ -254,27 +254,34 @@
     <Access Scope="LocalVariable" UId="21">
       <Symbol>
         <Component Name="shiftSettings" />
-        <Component Name="shiftBegin" />
+        <Component Name="shiftEN" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="22">
       <Symbol>
         <Component Name="shiftSettings" />
-        <Component Name="shiftEnd" />
+        <Component Name="shiftBegin" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="23">
       <Symbol>
-        <Component Name="actualTOD" />
+        <Component Name="shiftSettings" />
+        <Component Name="shiftEnd" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="24">
       <Symbol>
+        <Component Name="actualTOD" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
         <Component Name="T_shiftActive" />
       </Symbol>
     </Access>
-    <Call UId="25">
+    <Call UId="26">
       <CallInfo Name="active" BlockType="FC">
+        <Parameter Name="Enabled" Section="Input" Type="DInt" />
         <Parameter Name="beginTOD" Section="Input" Type="Time_Of_Day" />
         <Parameter Name="endTOD" Section="Input" Type="Time_Of_Day" />
         <Parameter Name="actualTOD" Section="Input" Type="Time_Of_Day" />
@@ -283,25 +290,29 @@
     </Call>
   </Parts>
   <Wires>
-    <Wire UId="27">
-      <OpenCon UId="26" />
-      <NameCon UId="25" Name="en" />
-    </Wire>
     <Wire UId="28">
-      <IdentCon UId="21" />
-      <NameCon UId="25" Name="beginTOD" />
+      <OpenCon UId="27" />
+      <NameCon UId="26" Name="en" />
     </Wire>
     <Wire UId="29">
-      <IdentCon UId="22" />
-      <NameCon UId="25" Name="endTOD" />
+      <IdentCon UId="21" />
+      <NameCon UId="26" Name="Enabled" />
     </Wire>
     <Wire UId="30">
-      <IdentCon UId="23" />
-      <NameCon UId="25" Name="actualTOD" />
+      <IdentCon UId="22" />
+      <NameCon UId="26" Name="beginTOD" />
     </Wire>
     <Wire UId="31">
-      <NameCon UId="25" Name="Ret_Val" />
+      <IdentCon UId="23" />
+      <NameCon UId="26" Name="endTOD" />
+    </Wire>
+    <Wire UId="32">
       <IdentCon UId="24" />
+      <NameCon UId="26" Name="actualTOD" />
+    </Wire>
+    <Wire UId="33">
+      <NameCon UId="26" Name="Ret_Val" />
+      <IdentCon UId="25" />
     </Wire>
   </Wires>
 </FlgNet></NetworkSource>
@@ -349,27 +360,34 @@
     <Access Scope="LocalVariable" UId="21">
       <Symbol>
         <Component Name="shiftSettings" />
-        <Component Name="break1Begin" />
+        <Component Name="break1EN" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="22">
       <Symbol>
         <Component Name="shiftSettings" />
-        <Component Name="break1End" />
+        <Component Name="break1Begin" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="23">
       <Symbol>
-        <Component Name="actualTOD" />
+        <Component Name="shiftSettings" />
+        <Component Name="break1End" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="24">
       <Symbol>
+        <Component Name="actualTOD" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
         <Component Name="T_break1Active" />
       </Symbol>
     </Access>
-    <Call UId="25">
+    <Call UId="26">
       <CallInfo Name="active" BlockType="FC">
+        <Parameter Name="Enabled" Section="Input" Type="DInt" />
         <Parameter Name="beginTOD" Section="Input" Type="Time_Of_Day" />
         <Parameter Name="endTOD" Section="Input" Type="Time_Of_Day" />
         <Parameter Name="actualTOD" Section="Input" Type="Time_Of_Day" />
@@ -378,25 +396,29 @@
     </Call>
   </Parts>
   <Wires>
-    <Wire UId="27">
-      <OpenCon UId="26" />
-      <NameCon UId="25" Name="en" />
-    </Wire>
     <Wire UId="28">
-      <IdentCon UId="21" />
-      <NameCon UId="25" Name="beginTOD" />
+      <OpenCon UId="27" />
+      <NameCon UId="26" Name="en" />
     </Wire>
     <Wire UId="29">
-      <IdentCon UId="22" />
-      <NameCon UId="25" Name="endTOD" />
+      <IdentCon UId="21" />
+      <NameCon UId="26" Name="Enabled" />
     </Wire>
     <Wire UId="30">
-      <IdentCon UId="23" />
-      <NameCon UId="25" Name="actualTOD" />
+      <IdentCon UId="22" />
+      <NameCon UId="26" Name="beginTOD" />
     </Wire>
     <Wire UId="31">
-      <NameCon UId="25" Name="Ret_Val" />
+      <IdentCon UId="23" />
+      <NameCon UId="26" Name="endTOD" />
+    </Wire>
+    <Wire UId="32">
       <IdentCon UId="24" />
+      <NameCon UId="26" Name="actualTOD" />
+    </Wire>
+    <Wire UId="33">
+      <NameCon UId="26" Name="Ret_Val" />
+      <IdentCon UId="25" />
     </Wire>
   </Wires>
 </FlgNet></NetworkSource>
@@ -444,27 +466,34 @@
     <Access Scope="LocalVariable" UId="21">
       <Symbol>
         <Component Name="shiftSettings" />
-        <Component Name="break2Begin" />
+        <Component Name="break2EN" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="22">
       <Symbol>
         <Component Name="shiftSettings" />
-        <Component Name="break2End" />
+        <Component Name="break2Begin" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="23">
       <Symbol>
-        <Component Name="actualTOD" />
+        <Component Name="shiftSettings" />
+        <Component Name="break2End" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="24">
       <Symbol>
+        <Component Name="actualTOD" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
         <Component Name="T_break2Active" />
       </Symbol>
     </Access>
-    <Call UId="25">
+    <Call UId="26">
       <CallInfo Name="active" BlockType="FC">
+        <Parameter Name="Enabled" Section="Input" Type="DInt" />
         <Parameter Name="beginTOD" Section="Input" Type="Time_Of_Day" />
         <Parameter Name="endTOD" Section="Input" Type="Time_Of_Day" />
         <Parameter Name="actualTOD" Section="Input" Type="Time_Of_Day" />
@@ -473,25 +502,29 @@
     </Call>
   </Parts>
   <Wires>
-    <Wire UId="27">
-      <OpenCon UId="26" />
-      <NameCon UId="25" Name="en" />
-    </Wire>
     <Wire UId="28">
-      <IdentCon UId="21" />
-      <NameCon UId="25" Name="beginTOD" />
+      <OpenCon UId="27" />
+      <NameCon UId="26" Name="en" />
     </Wire>
     <Wire UId="29">
-      <IdentCon UId="22" />
-      <NameCon UId="25" Name="endTOD" />
+      <IdentCon UId="21" />
+      <NameCon UId="26" Name="Enabled" />
     </Wire>
     <Wire UId="30">
-      <IdentCon UId="23" />
-      <NameCon UId="25" Name="actualTOD" />
+      <IdentCon UId="22" />
+      <NameCon UId="26" Name="beginTOD" />
     </Wire>
     <Wire UId="31">
-      <NameCon UId="25" Name="Ret_Val" />
+      <IdentCon UId="23" />
+      <NameCon UId="26" Name="endTOD" />
+    </Wire>
+    <Wire UId="32">
       <IdentCon UId="24" />
+      <NameCon UId="26" Name="actualTOD" />
+    </Wire>
+    <Wire UId="33">
+      <NameCon UId="26" Name="Ret_Val" />
+      <IdentCon UId="25" />
     </Wire>
   </Wires>
 </FlgNet></NetworkSource>
@@ -539,27 +572,34 @@
     <Access Scope="LocalVariable" UId="21">
       <Symbol>
         <Component Name="shiftSettings" />
-        <Component Name="break3Begin" />
+        <Component Name="break3EN" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="22">
       <Symbol>
         <Component Name="shiftSettings" />
-        <Component Name="break3End" />
+        <Component Name="break3Begin" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="23">
       <Symbol>
-        <Component Name="actualTOD" />
+        <Component Name="shiftSettings" />
+        <Component Name="break3End" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="24">
       <Symbol>
+        <Component Name="actualTOD" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
         <Component Name="T_break3Active" />
       </Symbol>
     </Access>
-    <Call UId="25">
+    <Call UId="26">
       <CallInfo Name="active" BlockType="FC">
+        <Parameter Name="Enabled" Section="Input" Type="DInt" />
         <Parameter Name="beginTOD" Section="Input" Type="Time_Of_Day" />
         <Parameter Name="endTOD" Section="Input" Type="Time_Of_Day" />
         <Parameter Name="actualTOD" Section="Input" Type="Time_Of_Day" />
@@ -568,25 +608,29 @@
     </Call>
   </Parts>
   <Wires>
-    <Wire UId="27">
-      <OpenCon UId="26" />
-      <NameCon UId="25" Name="en" />
-    </Wire>
     <Wire UId="28">
-      <IdentCon UId="21" />
-      <NameCon UId="25" Name="beginTOD" />
+      <OpenCon UId="27" />
+      <NameCon UId="26" Name="en" />
     </Wire>
     <Wire UId="29">
-      <IdentCon UId="22" />
-      <NameCon UId="25" Name="endTOD" />
+      <IdentCon UId="21" />
+      <NameCon UId="26" Name="Enabled" />
     </Wire>
     <Wire UId="30">
-      <IdentCon UId="23" />
-      <NameCon UId="25" Name="actualTOD" />
+      <IdentCon UId="22" />
+      <NameCon UId="26" Name="beginTOD" />
     </Wire>
     <Wire UId="31">
-      <NameCon UId="25" Name="Ret_Val" />
+      <IdentCon UId="23" />
+      <NameCon UId="26" Name="endTOD" />
+    </Wire>
+    <Wire UId="32">
       <IdentCon UId="24" />
+      <NameCon UId="26" Name="actualTOD" />
+    </Wire>
+    <Wire UId="33">
+      <NameCon UId="26" Name="Ret_Val" />
+      <IdentCon UId="25" />
     </Wire>
   </Wires>
 </FlgNet></NetworkSource>
@@ -634,27 +678,34 @@
     <Access Scope="LocalVariable" UId="21">
       <Symbol>
         <Component Name="shiftSettings" />
-        <Component Name="break3Begin" />
+        <Component Name="break4EN" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="22">
       <Symbol>
         <Component Name="shiftSettings" />
-        <Component Name="break3End" />
+        <Component Name="break4Begin" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="23">
       <Symbol>
-        <Component Name="actualTOD" />
+        <Component Name="shiftSettings" />
+        <Component Name="break4End" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="24">
       <Symbol>
-        <Component Name="T_break3Active" />
+        <Component Name="actualTOD" />
       </Symbol>
     </Access>
-    <Call UId="25">
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="T_break4Active" />
+      </Symbol>
+    </Access>
+    <Call UId="26">
       <CallInfo Name="active" BlockType="FC">
+        <Parameter Name="Enabled" Section="Input" Type="DInt" />
         <Parameter Name="beginTOD" Section="Input" Type="Time_Of_Day" />
         <Parameter Name="endTOD" Section="Input" Type="Time_Of_Day" />
         <Parameter Name="actualTOD" Section="Input" Type="Time_Of_Day" />
@@ -663,25 +714,29 @@
     </Call>
   </Parts>
   <Wires>
-    <Wire UId="27">
-      <OpenCon UId="26" />
-      <NameCon UId="25" Name="en" />
-    </Wire>
     <Wire UId="28">
-      <IdentCon UId="21" />
-      <NameCon UId="25" Name="beginTOD" />
+      <OpenCon UId="27" />
+      <NameCon UId="26" Name="en" />
     </Wire>
     <Wire UId="29">
-      <IdentCon UId="22" />
-      <NameCon UId="25" Name="endTOD" />
+      <IdentCon UId="21" />
+      <NameCon UId="26" Name="Enabled" />
     </Wire>
     <Wire UId="30">
-      <IdentCon UId="23" />
-      <NameCon UId="25" Name="actualTOD" />
+      <IdentCon UId="22" />
+      <NameCon UId="26" Name="beginTOD" />
     </Wire>
     <Wire UId="31">
-      <NameCon UId="25" Name="Ret_Val" />
+      <IdentCon UId="23" />
+      <NameCon UId="26" Name="endTOD" />
+    </Wire>
+    <Wire UId="32">
       <IdentCon UId="24" />
+      <NameCon UId="26" Name="actualTOD" />
+    </Wire>
+    <Wire UId="33">
+      <NameCon UId="26" Name="Ret_Val" />
+      <IdentCon UId="25" />
     </Wire>
   </Wires>
 </FlgNet></NetworkSource>
@@ -709,7 +764,7 @@
               <MultilingualTextItem ID="2C" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
-                  <Text>Settings break3 begin-end</Text>
+                  <Text>Settings break4 begin-end</Text>
                 </AttributeList>
               </MultilingualTextItem>
               <MultilingualTextItem ID="2D" CompositionName="Items">
@@ -729,27 +784,34 @@
     <Access Scope="LocalVariable" UId="21">
       <Symbol>
         <Component Name="shiftSettings" />
-        <Component Name="break4Begin" />
+        <Component Name="break5EN" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="22">
       <Symbol>
         <Component Name="shiftSettings" />
-        <Component Name="break4End" />
+        <Component Name="break5Begin" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="23">
       <Symbol>
-        <Component Name="actualTOD" />
+        <Component Name="shiftSettings" />
+        <Component Name="break5End" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="24">
       <Symbol>
-        <Component Name="T_break4Active" />
+        <Component Name="actualTOD" />
       </Symbol>
     </Access>
-    <Call UId="25">
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="T_break5Active" />
+      </Symbol>
+    </Access>
+    <Call UId="26">
       <CallInfo Name="active" BlockType="FC">
+        <Parameter Name="Enabled" Section="Input" Type="DInt" />
         <Parameter Name="beginTOD" Section="Input" Type="Time_Of_Day" />
         <Parameter Name="endTOD" Section="Input" Type="Time_Of_Day" />
         <Parameter Name="actualTOD" Section="Input" Type="Time_Of_Day" />
@@ -758,25 +820,29 @@
     </Call>
   </Parts>
   <Wires>
-    <Wire UId="27">
-      <OpenCon UId="26" />
-      <NameCon UId="25" Name="en" />
-    </Wire>
     <Wire UId="28">
-      <IdentCon UId="21" />
-      <NameCon UId="25" Name="beginTOD" />
+      <OpenCon UId="27" />
+      <NameCon UId="26" Name="en" />
     </Wire>
     <Wire UId="29">
-      <IdentCon UId="22" />
-      <NameCon UId="25" Name="endTOD" />
+      <IdentCon UId="21" />
+      <NameCon UId="26" Name="Enabled" />
     </Wire>
     <Wire UId="30">
-      <IdentCon UId="23" />
-      <NameCon UId="25" Name="actualTOD" />
+      <IdentCon UId="22" />
+      <NameCon UId="26" Name="beginTOD" />
     </Wire>
     <Wire UId="31">
-      <NameCon UId="25" Name="Ret_Val" />
+      <IdentCon UId="23" />
+      <NameCon UId="26" Name="endTOD" />
+    </Wire>
+    <Wire UId="32">
       <IdentCon UId="24" />
+      <NameCon UId="26" Name="actualTOD" />
+    </Wire>
+    <Wire UId="33">
+      <NameCon UId="26" Name="Ret_Val" />
+      <IdentCon UId="25" />
     </Wire>
   </Wires>
 </FlgNet></NetworkSource>
@@ -804,7 +870,7 @@
               <MultilingualTextItem ID="33" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
-                  <Text>Settings break4 begin-end</Text>
+                  <Text>Settings break5 begin-end</Text>
                 </AttributeList>
               </MultilingualTextItem>
               <MultilingualTextItem ID="34" CompositionName="Items">
@@ -823,32 +889,31 @@
   <Parts>
     <Access Scope="LocalVariable" UId="21">
       <Symbol>
-        <Component Name="shiftSettings" />
-        <Component Name="break5Begin" />
+        <Component Name="actualDTL" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="22">
       <Symbol>
         <Component Name="shiftSettings" />
-        <Component Name="break5End" />
+        <Component Name="shiftBegin" />
       </Symbol>
     </Access>
-    <Access Scope="LocalVariable" UId="23">
-      <Symbol>
-        <Component Name="actualTOD" />
-      </Symbol>
+    <Access Scope="TypedConstant" UId="23">
+      <Constant>
+        <ConstantValue>T#1m</ConstantValue>
+      </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="24">
       <Symbol>
-        <Component Name="T_break5Active" />
+        <Component Name="T_endShiftStartDetect" />
       </Symbol>
     </Access>
     <Call UId="25">
-      <CallInfo Name="active" BlockType="FC">
-        <Parameter Name="beginTOD" Section="Input" Type="Time_Of_Day" />
-        <Parameter Name="endTOD" Section="Input" Type="Time_Of_Day" />
-        <Parameter Name="actualTOD" Section="Input" Type="Time_Of_Day" />
-        <Parameter Name="Ret_Val" Section="Return" Type="Bool" />
+      <CallInfo Name="tod_add" BlockType="FC">
+        <Parameter Name="i_actualDTL" Section="Input" Type="DTL" />
+        <Parameter Name="i_TOD" Section="Input" Type="Time_Of_Day" />
+        <Parameter Name="i_TIME" Section="Input" Type="Time" />
+        <Parameter Name="o_TOD" Section="Output" Type="Time_Of_Day" />
       </CallInfo>
     </Call>
   </Parts>
@@ -859,18 +924,18 @@
     </Wire>
     <Wire UId="28">
       <IdentCon UId="21" />
-      <NameCon UId="25" Name="beginTOD" />
+      <NameCon UId="25" Name="i_actualDTL" />
     </Wire>
     <Wire UId="29">
       <IdentCon UId="22" />
-      <NameCon UId="25" Name="endTOD" />
+      <NameCon UId="25" Name="i_TOD" />
     </Wire>
     <Wire UId="30">
       <IdentCon UId="23" />
-      <NameCon UId="25" Name="actualTOD" />
+      <NameCon UId="25" Name="i_TIME" />
     </Wire>
     <Wire UId="31">
-      <NameCon UId="25" Name="Ret_Val" />
+      <NameCon UId="25" Name="o_TOD" />
       <IdentCon UId="24" />
     </Wire>
   </Wires>
@@ -899,7 +964,7 @@
               <MultilingualTextItem ID="3A" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
-                  <Text>Settings break5 begin-end</Text>
+                  <Text>shift start detect signal duration</Text>
                 </AttributeList>
               </MultilingualTextItem>
               <MultilingualTextItem ID="3B" CompositionName="Items">
@@ -918,7 +983,8 @@
   <Parts>
     <Access Scope="LocalVariable" UId="21">
       <Symbol>
-        <Component Name="actualDTL" />
+        <Component Name="shiftSettings" />
+        <Component Name="shiftEN" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="22">
@@ -927,47 +993,24 @@
         <Component Name="shiftBegin" />
       </Symbol>
     </Access>
-    <Access Scope="TypedConstant" UId="23">
-      <Constant>
-        <ConstantValue>T#1m</ConstantValue>
-      </Constant>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="T_endShiftStartDetect" />
+      </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="24">
-      <Symbol>
-        <Component Name="T_endShiftStartDetect" />
-      </Symbol>
-    </Access>
-    <Access Scope="LocalVariable" UId="25">
-      <Symbol>
-        <Component Name="shiftSettings" />
-        <Component Name="shiftBegin" />
-      </Symbol>
-    </Access>
-    <Access Scope="LocalVariable" UId="26">
-      <Symbol>
-        <Component Name="T_endShiftStartDetect" />
-      </Symbol>
-    </Access>
-    <Access Scope="LocalVariable" UId="27">
       <Symbol>
         <Component Name="actualTOD" />
       </Symbol>
     </Access>
-    <Access Scope="LocalVariable" UId="28">
+    <Access Scope="LocalVariable" UId="25">
       <Symbol>
         <Component Name="shiftStartDetect" />
       </Symbol>
     </Access>
-    <Call UId="29">
-      <CallInfo Name="tod_add" BlockType="FC">
-        <Parameter Name="i_actualDTL" Section="Input" Type="DTL" />
-        <Parameter Name="i_TOD" Section="Input" Type="Time_Of_Day" />
-        <Parameter Name="i_TIME" Section="Input" Type="Time" />
-        <Parameter Name="o_TOD" Section="Output" Type="Time_Of_Day" />
-      </CallInfo>
-    </Call>
-    <Call UId="30">
+    <Call UId="26">
       <CallInfo Name="active" BlockType="FC">
+        <Parameter Name="Enabled" Section="Input" Type="DInt" />
         <Parameter Name="beginTOD" Section="Input" Type="Time_Of_Day" />
         <Parameter Name="endTOD" Section="Input" Type="Time_Of_Day" />
         <Parameter Name="actualTOD" Section="Input" Type="Time_Of_Day" />
@@ -976,45 +1019,29 @@
     </Call>
   </Parts>
   <Wires>
+    <Wire UId="28">
+      <OpenCon UId="27" />
+      <NameCon UId="26" Name="en" />
+    </Wire>
+    <Wire UId="29">
+      <IdentCon UId="21" />
+      <NameCon UId="26" Name="Enabled" />
+    </Wire>
+    <Wire UId="30">
+      <IdentCon UId="22" />
+      <NameCon UId="26" Name="beginTOD" />
+    </Wire>
+    <Wire UId="31">
+      <IdentCon UId="23" />
+      <NameCon UId="26" Name="endTOD" />
+    </Wire>
     <Wire UId="32">
-      <OpenCon UId="31" />
-      <NameCon UId="29" Name="en" />
+      <IdentCon UId="24" />
+      <NameCon UId="26" Name="actualTOD" />
     </Wire>
     <Wire UId="33">
-      <IdentCon UId="21" />
-      <NameCon UId="29" Name="i_actualDTL" />
-    </Wire>
-    <Wire UId="34">
-      <IdentCon UId="22" />
-      <NameCon UId="29" Name="i_TOD" />
-    </Wire>
-    <Wire UId="35">
-      <IdentCon UId="23" />
-      <NameCon UId="29" Name="i_TIME" />
-    </Wire>
-    <Wire UId="36">
-      <NameCon UId="29" Name="o_TOD" />
-      <IdentCon UId="24" />
-    </Wire>
-    <Wire UId="37">
-      <NameCon UId="29" Name="eno" />
-      <NameCon UId="30" Name="en" />
-    </Wire>
-    <Wire UId="38">
+      <NameCon UId="26" Name="Ret_Val" />
       <IdentCon UId="25" />
-      <NameCon UId="30" Name="beginTOD" />
-    </Wire>
-    <Wire UId="39">
-      <IdentCon UId="26" />
-      <NameCon UId="30" Name="endTOD" />
-    </Wire>
-    <Wire UId="40">
-      <IdentCon UId="27" />
-      <NameCon UId="30" Name="actualTOD" />
-    </Wire>
-    <Wire UId="41">
-      <NameCon UId="30" Name="Ret_Val" />
-      <IdentCon UId="28" />
     </Wire>
   </Wires>
 </FlgNet></NetworkSource>
@@ -1042,7 +1069,7 @@
               <MultilingualTextItem ID="41" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
-                  <Text>shift start detect</Text>
+                  <Text>shift start detect signal</Text>
                 </AttributeList>
               </MultilingualTextItem>
               <MultilingualTextItem ID="42" CompositionName="Items">
