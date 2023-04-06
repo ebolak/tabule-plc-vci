@@ -339,7 +339,7 @@
     <Access Scope="GlobalVariable" UId="23">
       <Symbol>
         <Component Name="gDb_IO" />
-        <Component Name="NokButton1" />
+        <Component Name="NokButton2" />
         <Component Name="O_Led" />
       </Symbol>
     </Access>
