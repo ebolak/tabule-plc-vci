@@ -47,13 +47,19 @@
         <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
       </AttributeList>
     </Member>
+    <Member Name="TaktTimeElapsed" Datatype="Time">
+      <AttributeList>
+        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+    </Member>
   </Section>
   <Section Name="Temp">
-    <Member Name="T_resetTactTimeTimer" Datatype="Bool" />
-    <Member Name="T_changeTactTimeTimer" Datatype="Bool" />
+    <Member Name="T_resetTaktTimeTimer" Datatype="Bool" />
+    <Member Name="T_changeTaktTimeTimer" Datatype="Bool" />
     <Member Name="T_actualTOD" Datatype="Time_Of_Day" />
     <Member Name="T_shiftTrigger" Datatype="Array[0..2] of Struct">
-      <Member Name="trigger" Datatype="Bool" />
+      <Member Name="active" Datatype="Bool" />
+      <Member Name="taktTimeEn" Datatype="Bool" />
       <Member Name="startDetect" Datatype="Bool" />
     </Member>
     <Member Name="T_control" Datatype="Struct">
@@ -140,6 +146,77 @@
   <Parts>
     <Access Scope="LocalVariable" UId="21">
       <Symbol>
+        <Component Name="IO_locTime" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="T_actualTOD" />
+      </Symbol>
+    </Access>
+    <Part Name="T_CONV" Version="1.2" UId="23">
+      <TemplateValue Name="src_type" Type="Type">DTL</TemplateValue>
+      <TemplateValue Name="dest_type" Type="Type">Time_Of_Day</TemplateValue>
+    </Part>
+  </Parts>
+  <Wires>
+    <Wire UId="25">
+      <OpenCon UId="24" />
+      <NameCon UId="23" Name="en" />
+    </Wire>
+    <Wire UId="26">
+      <IdentCon UId="21" />
+      <NameCon UId="23" Name="IN" />
+    </Wire>
+    <Wire UId="27">
+      <NameCon UId="23" Name="OUT" />
+      <IdentCon UId="22" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>FBD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="C" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>cs-CZ</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="F" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="10" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>actual TOD</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="11" CompositionName="Items">
+                <AttributeList>
+                  <Culture>cs-CZ</Culture>
+                  <Text>Convert actual local time to TOD</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="12" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
         <Component Name="IO_settings" />
         <Component Name="taktTimeCntOption" />
       </Symbol>
@@ -183,77 +260,6 @@
           <ProgrammingLanguage>FBD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="C" CompositionName="Comment">
-            <ObjectList>
-              <MultilingualTextItem ID="D" CompositionName="Items">
-                <AttributeList>
-                  <Culture>en-US</Culture>
-                  <Text />
-                </AttributeList>
-              </MultilingualTextItem>
-              <MultilingualTextItem ID="E" CompositionName="Items">
-                <AttributeList>
-                  <Culture>cs-CZ</Culture>
-                  <Text />
-                </AttributeList>
-              </MultilingualTextItem>
-            </ObjectList>
-          </MultilingualText>
-          <MultilingualText ID="F" CompositionName="Title">
-            <ObjectList>
-              <MultilingualTextItem ID="10" CompositionName="Items">
-                <AttributeList>
-                  <Culture>en-US</Culture>
-                  <Text>#IO_settings.taktTimeCntOption ->  T_settings.autostartEnabled</Text>
-                </AttributeList>
-              </MultilingualTextItem>
-              <MultilingualTextItem ID="11" CompositionName="Items">
-                <AttributeList>
-                  <Culture>cs-CZ</Culture>
-                  <Text>T_settings autostartEnabled</Text>
-                </AttributeList>
-              </MultilingualTextItem>
-            </ObjectList>
-          </MultilingualText>
-        </ObjectList>
-      </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="12" CompositionName="CompileUnits">
-        <AttributeList>
-          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
-  <Parts>
-    <Access Scope="LocalVariable" UId="21">
-      <Symbol>
-        <Component Name="IO_locTime" />
-      </Symbol>
-    </Access>
-    <Access Scope="LocalVariable" UId="22">
-      <Symbol>
-        <Component Name="T_actualTOD" />
-      </Symbol>
-    </Access>
-    <Part Name="T_CONV" Version="1.2" UId="23">
-      <TemplateValue Name="src_type" Type="Type">DTL</TemplateValue>
-      <TemplateValue Name="dest_type" Type="Type">Time_Of_Day</TemplateValue>
-    </Part>
-  </Parts>
-  <Wires>
-    <Wire UId="25">
-      <OpenCon UId="24" />
-      <NameCon UId="23" Name="en" />
-    </Wire>
-    <Wire UId="26">
-      <IdentCon UId="21" />
-      <NameCon UId="23" Name="IN" />
-    </Wire>
-    <Wire UId="27">
-      <NameCon UId="23" Name="OUT" />
-      <IdentCon UId="22" />
-    </Wire>
-  </Wires>
-</FlgNet></NetworkSource>
-          <ProgrammingLanguage>FBD</ProgrammingLanguage>
-        </AttributeList>
-        <ObjectList>
           <MultilingualText ID="13" CompositionName="Comment">
             <ObjectList>
               <MultilingualTextItem ID="14" CompositionName="Items">
@@ -275,13 +281,13 @@
               <MultilingualTextItem ID="17" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
-                  <Text>actual TOD</Text>
+                  <Text> T_settings.autostartEnabled</Text>
                 </AttributeList>
               </MultilingualTextItem>
               <MultilingualTextItem ID="18" CompositionName="Items">
                 <AttributeList>
                   <Culture>cs-CZ</Culture>
-                  <Text>Convert actual local time to TOD</Text>
+                  <Text>T_settings autostartEnabled</Text>
                 </AttributeList>
               </MultilingualTextItem>
             </ObjectList>
@@ -323,7 +329,7 @@
             </Constant>
           </Access>
         </Component>
-        <Component Name="trigger" />
+        <Component Name="active" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="26">
@@ -336,51 +342,69 @@
             </Constant>
           </Access>
         </Component>
+        <Component Name="taktTimeEn" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="27">
+      <Symbol>
+        <Component Name="T_shiftTrigger" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>0</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
         <Component Name="startDetect" />
       </Symbol>
     </Access>
-    <Call UId="27">
+    <Call UId="28">
       <CallInfo Name="shiftTrigger" BlockType="FB">
-        <Instance Scope="LocalVariable" UId="28">
+        <Instance Scope="LocalVariable" UId="29">
           <Component Name="shiftTrigger0" />
         </Instance>
         <Parameter Name="autostartEnabled" Section="Input" Type="Bool" />
         <Parameter Name="actualTOD" Section="Input" Type="Time_Of_Day" />
         <Parameter Name="actualDTL" Section="Input" Type="DTL" />
         <Parameter Name="shiftSettings" Section="Input" Type="&quot;UDT_settingsShift&quot;" />
-        <Parameter Name="trigger" Section="Output" Type="Bool" />
+        <Parameter Name="active" Section="Output" Type="Bool" />
+        <Parameter Name="taktTimeEn" Section="Output" Type="Bool" />
         <Parameter Name="shiftStartDetect" Section="Output" Type="Bool" />
       </CallInfo>
     </Call>
   </Parts>
   <Wires>
-    <Wire UId="30">
-      <OpenCon UId="29" />
-      <NameCon UId="27" Name="en" />
-    </Wire>
     <Wire UId="31">
-      <IdentCon UId="21" />
-      <NameCon UId="27" Name="autostartEnabled" />
+      <OpenCon UId="30" />
+      <NameCon UId="28" Name="en" />
     </Wire>
     <Wire UId="32">
-      <IdentCon UId="22" />
-      <NameCon UId="27" Name="actualTOD" />
+      <IdentCon UId="21" />
+      <NameCon UId="28" Name="autostartEnabled" />
     </Wire>
     <Wire UId="33">
-      <IdentCon UId="23" />
-      <NameCon UId="27" Name="actualDTL" />
+      <IdentCon UId="22" />
+      <NameCon UId="28" Name="actualTOD" />
     </Wire>
     <Wire UId="34">
-      <IdentCon UId="24" />
-      <NameCon UId="27" Name="shiftSettings" />
+      <IdentCon UId="23" />
+      <NameCon UId="28" Name="actualDTL" />
     </Wire>
     <Wire UId="35">
-      <NameCon UId="27" Name="trigger" />
-      <IdentCon UId="25" />
+      <IdentCon UId="24" />
+      <NameCon UId="28" Name="shiftSettings" />
     </Wire>
     <Wire UId="36">
-      <NameCon UId="27" Name="shiftStartDetect" />
+      <NameCon UId="28" Name="active" />
+      <IdentCon UId="25" />
+    </Wire>
+    <Wire UId="37">
+      <NameCon UId="28" Name="taktTimeEn" />
       <IdentCon UId="26" />
+    </Wire>
+    <Wire UId="38">
+      <NameCon UId="28" Name="shiftStartDetect" />
+      <IdentCon UId="27" />
     </Wire>
   </Wires>
 </FlgNet></NetworkSource>
@@ -456,7 +480,7 @@
             </Constant>
           </Access>
         </Component>
-        <Component Name="trigger" />
+        <Component Name="active" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="26">
@@ -469,51 +493,69 @@
             </Constant>
           </Access>
         </Component>
+        <Component Name="taktTimeEn" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="27">
+      <Symbol>
+        <Component Name="T_shiftTrigger" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
         <Component Name="startDetect" />
       </Symbol>
     </Access>
-    <Call UId="27">
+    <Call UId="28">
       <CallInfo Name="shiftTrigger" BlockType="FB">
-        <Instance Scope="LocalVariable" UId="28">
+        <Instance Scope="LocalVariable" UId="29">
           <Component Name="shiftTrigger1" />
         </Instance>
         <Parameter Name="autostartEnabled" Section="Input" Type="Bool" />
         <Parameter Name="actualTOD" Section="Input" Type="Time_Of_Day" />
         <Parameter Name="actualDTL" Section="Input" Type="DTL" />
         <Parameter Name="shiftSettings" Section="Input" Type="&quot;UDT_settingsShift&quot;" />
-        <Parameter Name="trigger" Section="Output" Type="Bool" />
+        <Parameter Name="active" Section="Output" Type="Bool" />
+        <Parameter Name="taktTimeEn" Section="Output" Type="Bool" />
         <Parameter Name="shiftStartDetect" Section="Output" Type="Bool" />
       </CallInfo>
     </Call>
   </Parts>
   <Wires>
-    <Wire UId="30">
-      <OpenCon UId="29" />
-      <NameCon UId="27" Name="en" />
-    </Wire>
     <Wire UId="31">
-      <IdentCon UId="21" />
-      <NameCon UId="27" Name="autostartEnabled" />
+      <OpenCon UId="30" />
+      <NameCon UId="28" Name="en" />
     </Wire>
     <Wire UId="32">
-      <IdentCon UId="22" />
-      <NameCon UId="27" Name="actualTOD" />
+      <IdentCon UId="21" />
+      <NameCon UId="28" Name="autostartEnabled" />
     </Wire>
     <Wire UId="33">
-      <IdentCon UId="23" />
-      <NameCon UId="27" Name="actualDTL" />
+      <IdentCon UId="22" />
+      <NameCon UId="28" Name="actualTOD" />
     </Wire>
     <Wire UId="34">
-      <IdentCon UId="24" />
-      <NameCon UId="27" Name="shiftSettings" />
+      <IdentCon UId="23" />
+      <NameCon UId="28" Name="actualDTL" />
     </Wire>
     <Wire UId="35">
-      <NameCon UId="27" Name="trigger" />
-      <IdentCon UId="25" />
+      <IdentCon UId="24" />
+      <NameCon UId="28" Name="shiftSettings" />
     </Wire>
     <Wire UId="36">
-      <NameCon UId="27" Name="shiftStartDetect" />
+      <NameCon UId="28" Name="active" />
+      <IdentCon UId="25" />
+    </Wire>
+    <Wire UId="37">
+      <NameCon UId="28" Name="taktTimeEn" />
       <IdentCon UId="26" />
+    </Wire>
+    <Wire UId="38">
+      <NameCon UId="28" Name="shiftStartDetect" />
+      <IdentCon UId="27" />
     </Wire>
   </Wires>
 </FlgNet></NetworkSource>
@@ -589,7 +631,7 @@
             </Constant>
           </Access>
         </Component>
-        <Component Name="trigger" />
+        <Component Name="active" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="26">
@@ -602,51 +644,69 @@
             </Constant>
           </Access>
         </Component>
+        <Component Name="taktTimeEn" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="27">
+      <Symbol>
+        <Component Name="T_shiftTrigger" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>2</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
         <Component Name="startDetect" />
       </Symbol>
     </Access>
-    <Call UId="27">
+    <Call UId="28">
       <CallInfo Name="shiftTrigger" BlockType="FB">
-        <Instance Scope="LocalVariable" UId="28">
+        <Instance Scope="LocalVariable" UId="29">
           <Component Name="shiftTrigger2" />
         </Instance>
         <Parameter Name="autostartEnabled" Section="Input" Type="Bool" />
         <Parameter Name="actualTOD" Section="Input" Type="Time_Of_Day" />
         <Parameter Name="actualDTL" Section="Input" Type="DTL" />
         <Parameter Name="shiftSettings" Section="Input" Type="&quot;UDT_settingsShift&quot;" />
-        <Parameter Name="trigger" Section="Output" Type="Bool" />
+        <Parameter Name="active" Section="Output" Type="Bool" />
+        <Parameter Name="taktTimeEn" Section="Output" Type="Bool" />
         <Parameter Name="shiftStartDetect" Section="Output" Type="Bool" />
       </CallInfo>
     </Call>
   </Parts>
   <Wires>
-    <Wire UId="30">
-      <OpenCon UId="29" />
-      <NameCon UId="27" Name="en" />
-    </Wire>
     <Wire UId="31">
-      <IdentCon UId="21" />
-      <NameCon UId="27" Name="autostartEnabled" />
+      <OpenCon UId="30" />
+      <NameCon UId="28" Name="en" />
     </Wire>
     <Wire UId="32">
-      <IdentCon UId="22" />
-      <NameCon UId="27" Name="actualTOD" />
+      <IdentCon UId="21" />
+      <NameCon UId="28" Name="autostartEnabled" />
     </Wire>
     <Wire UId="33">
-      <IdentCon UId="23" />
-      <NameCon UId="27" Name="actualDTL" />
+      <IdentCon UId="22" />
+      <NameCon UId="28" Name="actualTOD" />
     </Wire>
     <Wire UId="34">
-      <IdentCon UId="24" />
-      <NameCon UId="27" Name="shiftSettings" />
+      <IdentCon UId="23" />
+      <NameCon UId="28" Name="actualDTL" />
     </Wire>
     <Wire UId="35">
-      <NameCon UId="27" Name="trigger" />
-      <IdentCon UId="25" />
+      <IdentCon UId="24" />
+      <NameCon UId="28" Name="shiftSettings" />
     </Wire>
     <Wire UId="36">
-      <NameCon UId="27" Name="shiftStartDetect" />
+      <NameCon UId="28" Name="active" />
+      <IdentCon UId="25" />
+    </Wire>
+    <Wire UId="37">
+      <NameCon UId="28" Name="taktTimeEn" />
       <IdentCon UId="26" />
+    </Wire>
+    <Wire UId="38">
+      <NameCon UId="28" Name="shiftStartDetect" />
+      <IdentCon UId="27" />
     </Wire>
   </Wires>
 </FlgNet></NetworkSource>
@@ -688,734 +748,6 @@
         </ObjectList>
       </SW.Blocks.CompileUnit>
       <SW.Blocks.CompileUnit ID="2E" CompositionName="CompileUnits">
-        <AttributeList>
-          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
-  <Parts>
-    <Access Scope="LocalVariable" UId="21">
-      <Symbol>
-        <Component Name="T_shiftTrigger" AccessModifier="Array">
-          <Access Scope="LiteralConstant">
-            <Constant>
-              <ConstantType>DInt</ConstantType>
-              <ConstantValue>0</ConstantValue>
-            </Constant>
-          </Access>
-        </Component>
-        <Component Name="trigger" />
-      </Symbol>
-    </Access>
-    <Access Scope="LocalVariable" UId="22">
-      <Symbol>
-        <Component Name="IO_settingsShift1" />
-        <Component Name="targetEN" />
-      </Symbol>
-    </Access>
-    <Access Scope="LiteralConstant" UId="23">
-      <Constant>
-        <ConstantType>DInt</ConstantType>
-        <ConstantValue>1</ConstantValue>
-      </Constant>
-    </Access>
-    <Access Scope="LocalVariable" UId="24">
-      <Symbol>
-        <Component Name="IO_settingsShift1" />
-        <Component Name="target" />
-      </Symbol>
-    </Access>
-    <Access Scope="GlobalVariable" UId="25">
-      <Symbol>
-        <Component Name="actualValues" />
-        <Component Name="target" />
-      </Symbol>
-    </Access>
-    <Access Scope="LocalVariable" UId="26">
-      <Symbol>
-        <Component Name="T_shiftTrigger" AccessModifier="Array">
-          <Access Scope="LiteralConstant">
-            <Constant>
-              <ConstantType>DInt</ConstantType>
-              <ConstantValue>1</ConstantValue>
-            </Constant>
-          </Access>
-        </Component>
-        <Component Name="trigger" />
-      </Symbol>
-    </Access>
-    <Access Scope="LocalVariable" UId="27">
-      <Symbol>
-        <Component Name="IO_settingsShift2" />
-        <Component Name="targetEN" />
-      </Symbol>
-    </Access>
-    <Access Scope="LiteralConstant" UId="28">
-      <Constant>
-        <ConstantType>DInt</ConstantType>
-        <ConstantValue>1</ConstantValue>
-      </Constant>
-    </Access>
-    <Access Scope="LocalVariable" UId="29">
-      <Symbol>
-        <Component Name="IO_settingsShift2" />
-        <Component Name="target" />
-      </Symbol>
-    </Access>
-    <Access Scope="GlobalVariable" UId="30">
-      <Symbol>
-        <Component Name="actualValues" />
-        <Component Name="target" />
-      </Symbol>
-    </Access>
-    <Access Scope="LocalVariable" UId="31">
-      <Symbol>
-        <Component Name="T_shiftTrigger" AccessModifier="Array">
-          <Access Scope="LiteralConstant">
-            <Constant>
-              <ConstantType>DInt</ConstantType>
-              <ConstantValue>2</ConstantValue>
-            </Constant>
-          </Access>
-        </Component>
-        <Component Name="trigger" />
-      </Symbol>
-    </Access>
-    <Access Scope="LocalVariable" UId="32">
-      <Symbol>
-        <Component Name="IO_settingsShift3" />
-        <Component Name="targetEN" />
-      </Symbol>
-    </Access>
-    <Access Scope="LiteralConstant" UId="33">
-      <Constant>
-        <ConstantType>DInt</ConstantType>
-        <ConstantValue>1</ConstantValue>
-      </Constant>
-    </Access>
-    <Access Scope="LocalVariable" UId="34">
-      <Symbol>
-        <Component Name="IO_settingsShift3" />
-        <Component Name="target" />
-      </Symbol>
-    </Access>
-    <Access Scope="GlobalVariable" UId="35">
-      <Symbol>
-        <Component Name="actualValues" />
-        <Component Name="target" />
-      </Symbol>
-    </Access>
-    <Access Scope="LiteralConstant" UId="36">
-      <Constant>
-        <ConstantType>DInt</ConstantType>
-        <ConstantValue>1</ConstantValue>
-      </Constant>
-    </Access>
-    <Access Scope="LocalVariable" UId="37">
-      <Symbol>
-        <Component Name="IO_settings" />
-        <Component Name="shiftTargetEn" />
-      </Symbol>
-    </Access>
-    <Access Scope="LiteralConstant" UId="38">
-      <Constant>
-        <ConstantType>DInt</ConstantType>
-        <ConstantValue>0</ConstantValue>
-      </Constant>
-    </Access>
-    <Access Scope="LocalVariable" UId="39">
-      <Symbol>
-        <Component Name="IO_settings" />
-        <Component Name="shiftTargetEn" />
-      </Symbol>
-    </Access>
-    <Access Scope="LocalVariable" UId="40">
-      <Symbol>
-        <Component Name="IO_settings" />
-        <Component Name="target" />
-      </Symbol>
-    </Access>
-    <Access Scope="LocalVariable" UId="41">
-      <Symbol>
-        <Component Name="IO_actualValues" />
-        <Component Name="target" />
-      </Symbol>
-    </Access>
-    <Part Name="Eq" UId="42">
-      <TemplateValue Name="SrcType" Type="Type">DInt</TemplateValue>
-    </Part>
-    <Part Name="A" UId="43">
-      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
-    </Part>
-    <Part Name="Move" UId="44" DisabledENO="true">
-      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
-    </Part>
-    <Part Name="Eq" UId="45">
-      <TemplateValue Name="SrcType" Type="Type">DInt</TemplateValue>
-    </Part>
-    <Part Name="A" UId="46">
-      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
-    </Part>
-    <Part Name="Move" UId="47" DisabledENO="true">
-      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
-    </Part>
-    <Part Name="Eq" UId="48">
-      <TemplateValue Name="SrcType" Type="Type">DInt</TemplateValue>
-    </Part>
-    <Part Name="A" UId="49">
-      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
-    </Part>
-    <Part Name="Move" UId="50" DisabledENO="true">
-      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
-    </Part>
-    <Part Name="O" UId="51">
-      <TemplateValue Name="Card" Type="Cardinality">3</TemplateValue>
-    </Part>
-    <Part Name="Move" UId="52" DisabledENO="true">
-      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
-      <Negated Name="eno" />
-    </Part>
-    <Part Name="Move" UId="53" DisabledENO="true">
-      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
-    </Part>
-    <Part Name="Move" UId="54" DisabledENO="true">
-      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
-    </Part>
-  </Parts>
-  <Wires>
-    <Wire UId="55">
-      <IdentCon UId="22" />
-      <NameCon UId="42" Name="in1" />
-    </Wire>
-    <Wire UId="56">
-      <IdentCon UId="23" />
-      <NameCon UId="42" Name="in2" />
-    </Wire>
-    <Wire UId="57">
-      <NameCon UId="42" Name="out" />
-      <NameCon UId="43" Name="in2" />
-    </Wire>
-    <Wire UId="58">
-      <IdentCon UId="21" />
-      <NameCon UId="43" Name="in1" />
-    </Wire>
-    <Wire UId="59">
-      <NameCon UId="43" Name="out" />
-      <NameCon UId="44" Name="en" />
-    </Wire>
-    <Wire UId="60">
-      <IdentCon UId="24" />
-      <NameCon UId="44" Name="in" />
-    </Wire>
-    <Wire UId="61">
-      <NameCon UId="44" Name="out1" />
-      <IdentCon UId="25" />
-    </Wire>
-    <Wire UId="62">
-      <NameCon UId="44" Name="eno" />
-      <NameCon UId="51" Name="in1" />
-    </Wire>
-    <Wire UId="63">
-      <IdentCon UId="27" />
-      <NameCon UId="45" Name="in1" />
-    </Wire>
-    <Wire UId="64">
-      <IdentCon UId="28" />
-      <NameCon UId="45" Name="in2" />
-    </Wire>
-    <Wire UId="65">
-      <NameCon UId="45" Name="out" />
-      <NameCon UId="46" Name="in2" />
-    </Wire>
-    <Wire UId="66">
-      <IdentCon UId="26" />
-      <NameCon UId="46" Name="in1" />
-    </Wire>
-    <Wire UId="67">
-      <NameCon UId="46" Name="out" />
-      <NameCon UId="47" Name="en" />
-    </Wire>
-    <Wire UId="68">
-      <IdentCon UId="29" />
-      <NameCon UId="47" Name="in" />
-    </Wire>
-    <Wire UId="69">
-      <NameCon UId="47" Name="out1" />
-      <IdentCon UId="30" />
-    </Wire>
-    <Wire UId="70">
-      <NameCon UId="47" Name="eno" />
-      <NameCon UId="51" Name="in2" />
-    </Wire>
-    <Wire UId="71">
-      <IdentCon UId="32" />
-      <NameCon UId="48" Name="in1" />
-    </Wire>
-    <Wire UId="72">
-      <IdentCon UId="33" />
-      <NameCon UId="48" Name="in2" />
-    </Wire>
-    <Wire UId="73">
-      <NameCon UId="48" Name="out" />
-      <NameCon UId="49" Name="in2" />
-    </Wire>
-    <Wire UId="74">
-      <IdentCon UId="31" />
-      <NameCon UId="49" Name="in1" />
-    </Wire>
-    <Wire UId="75">
-      <NameCon UId="49" Name="out" />
-      <NameCon UId="50" Name="en" />
-    </Wire>
-    <Wire UId="76">
-      <IdentCon UId="34" />
-      <NameCon UId="50" Name="in" />
-    </Wire>
-    <Wire UId="77">
-      <NameCon UId="50" Name="out1" />
-      <IdentCon UId="35" />
-    </Wire>
-    <Wire UId="78">
-      <NameCon UId="50" Name="eno" />
-      <NameCon UId="51" Name="in3" />
-    </Wire>
-    <Wire UId="79">
-      <NameCon UId="51" Name="out" />
-      <NameCon UId="52" Name="en" />
-    </Wire>
-    <Wire UId="80">
-      <IdentCon UId="36" />
-      <NameCon UId="52" Name="in" />
-    </Wire>
-    <Wire UId="81">
-      <NameCon UId="52" Name="out1" />
-      <IdentCon UId="37" />
-    </Wire>
-    <Wire UId="82">
-      <NameCon UId="52" Name="eno" />
-      <NameCon UId="53" Name="en" />
-    </Wire>
-    <Wire UId="83">
-      <IdentCon UId="38" />
-      <NameCon UId="53" Name="in" />
-    </Wire>
-    <Wire UId="84">
-      <NameCon UId="53" Name="out1" />
-      <IdentCon UId="39" />
-    </Wire>
-    <Wire UId="85">
-      <NameCon UId="53" Name="eno" />
-      <NameCon UId="54" Name="en" />
-    </Wire>
-    <Wire UId="86">
-      <IdentCon UId="40" />
-      <NameCon UId="54" Name="in" />
-    </Wire>
-    <Wire UId="87">
-      <NameCon UId="54" Name="out1" />
-      <IdentCon UId="41" />
-    </Wire>
-  </Wires>
-</FlgNet></NetworkSource>
-          <ProgrammingLanguage>FBD</ProgrammingLanguage>
-        </AttributeList>
-        <ObjectList>
-          <MultilingualText ID="2F" CompositionName="Comment">
-            <ObjectList>
-              <MultilingualTextItem ID="30" CompositionName="Items">
-                <AttributeList>
-                  <Culture>en-US</Culture>
-                  <Text />
-                </AttributeList>
-              </MultilingualTextItem>
-              <MultilingualTextItem ID="31" CompositionName="Items">
-                <AttributeList>
-                  <Culture>cs-CZ</Culture>
-                  <Text />
-                </AttributeList>
-              </MultilingualTextItem>
-            </ObjectList>
-          </MultilingualText>
-          <MultilingualText ID="32" CompositionName="Title">
-            <ObjectList>
-              <MultilingualTextItem ID="33" CompositionName="Items">
-                <AttributeList>
-                  <Culture>en-US</Culture>
-                  <Text>settings.target or settingsShift.target - > actualValues.target</Text>
-                </AttributeList>
-              </MultilingualTextItem>
-              <MultilingualTextItem ID="34" CompositionName="Items">
-                <AttributeList>
-                  <Culture>cs-CZ</Culture>
-                  <Text>mem tackt Time</Text>
-                </AttributeList>
-              </MultilingualTextItem>
-            </ObjectList>
-          </MultilingualText>
-        </ObjectList>
-      </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="35" CompositionName="CompileUnits">
-        <AttributeList>
-          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
-  <Parts>
-    <Access Scope="LocalVariable" UId="21">
-      <Symbol>
-        <Component Name="T_shiftTrigger" AccessModifier="Array">
-          <Access Scope="LiteralConstant">
-            <Constant>
-              <ConstantType>DInt</ConstantType>
-              <ConstantValue>0</ConstantValue>
-            </Constant>
-          </Access>
-        </Component>
-        <Component Name="trigger" />
-      </Symbol>
-    </Access>
-    <Access Scope="LocalVariable" UId="22">
-      <Symbol>
-        <Component Name="IO_settingsShift1" />
-        <Component Name="taktTimeEN" />
-      </Symbol>
-    </Access>
-    <Access Scope="LiteralConstant" UId="23">
-      <Constant>
-        <ConstantType>DInt</ConstantType>
-        <ConstantValue>1</ConstantValue>
-      </Constant>
-    </Access>
-    <Access Scope="LocalVariable" UId="24">
-      <Symbol>
-        <Component Name="IO_settingsShift1" />
-        <Component Name="taktTime" />
-      </Symbol>
-    </Access>
-    <Access Scope="GlobalVariable" UId="25">
-      <Symbol>
-        <Component Name="actualValues" />
-        <Component Name="taktTime" />
-      </Symbol>
-    </Access>
-    <Access Scope="LocalVariable" UId="26">
-      <Symbol>
-        <Component Name="T_shiftTrigger" AccessModifier="Array">
-          <Access Scope="LiteralConstant">
-            <Constant>
-              <ConstantType>DInt</ConstantType>
-              <ConstantValue>1</ConstantValue>
-            </Constant>
-          </Access>
-        </Component>
-        <Component Name="trigger" />
-      </Symbol>
-    </Access>
-    <Access Scope="LocalVariable" UId="27">
-      <Symbol>
-        <Component Name="IO_settingsShift2" />
-        <Component Name="taktTimeEN" />
-      </Symbol>
-    </Access>
-    <Access Scope="LiteralConstant" UId="28">
-      <Constant>
-        <ConstantType>DInt</ConstantType>
-        <ConstantValue>1</ConstantValue>
-      </Constant>
-    </Access>
-    <Access Scope="LocalVariable" UId="29">
-      <Symbol>
-        <Component Name="IO_settingsShift2" />
-        <Component Name="taktTime" />
-      </Symbol>
-    </Access>
-    <Access Scope="GlobalVariable" UId="30">
-      <Symbol>
-        <Component Name="actualValues" />
-        <Component Name="taktTime" />
-      </Symbol>
-    </Access>
-    <Access Scope="LocalVariable" UId="31">
-      <Symbol>
-        <Component Name="T_shiftTrigger" AccessModifier="Array">
-          <Access Scope="LiteralConstant">
-            <Constant>
-              <ConstantType>DInt</ConstantType>
-              <ConstantValue>2</ConstantValue>
-            </Constant>
-          </Access>
-        </Component>
-        <Component Name="trigger" />
-      </Symbol>
-    </Access>
-    <Access Scope="LocalVariable" UId="32">
-      <Symbol>
-        <Component Name="IO_settingsShift3" />
-        <Component Name="taktTimeEN" />
-      </Symbol>
-    </Access>
-    <Access Scope="LiteralConstant" UId="33">
-      <Constant>
-        <ConstantType>DInt</ConstantType>
-        <ConstantValue>1</ConstantValue>
-      </Constant>
-    </Access>
-    <Access Scope="LocalVariable" UId="34">
-      <Symbol>
-        <Component Name="IO_settingsShift3" />
-        <Component Name="taktTime" />
-      </Symbol>
-    </Access>
-    <Access Scope="GlobalVariable" UId="35">
-      <Symbol>
-        <Component Name="actualValues" />
-        <Component Name="taktTime" />
-      </Symbol>
-    </Access>
-    <Access Scope="LiteralConstant" UId="36">
-      <Constant>
-        <ConstantType>DInt</ConstantType>
-        <ConstantValue>1</ConstantValue>
-      </Constant>
-    </Access>
-    <Access Scope="LocalVariable" UId="37">
-      <Symbol>
-        <Component Name="IO_settings" />
-        <Component Name="shiftTaktTimeEn" />
-      </Symbol>
-    </Access>
-    <Access Scope="LiteralConstant" UId="38">
-      <Constant>
-        <ConstantType>DInt</ConstantType>
-        <ConstantValue>0</ConstantValue>
-      </Constant>
-    </Access>
-    <Access Scope="LocalVariable" UId="39">
-      <Symbol>
-        <Component Name="IO_settings" />
-        <Component Name="shiftTaktTimeEn" />
-      </Symbol>
-    </Access>
-    <Access Scope="GlobalVariable" UId="40">
-      <Symbol>
-        <Component Name="settings" />
-        <Component Name="taktTime" />
-      </Symbol>
-    </Access>
-    <Access Scope="GlobalVariable" UId="41">
-      <Symbol>
-        <Component Name="actualValues" />
-        <Component Name="taktTime" />
-      </Symbol>
-    </Access>
-    <Part Name="Eq" UId="42">
-      <TemplateValue Name="SrcType" Type="Type">DInt</TemplateValue>
-    </Part>
-    <Part Name="A" UId="43">
-      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
-    </Part>
-    <Part Name="Move" UId="44" DisabledENO="true">
-      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
-    </Part>
-    <Part Name="Eq" UId="45">
-      <TemplateValue Name="SrcType" Type="Type">DInt</TemplateValue>
-    </Part>
-    <Part Name="A" UId="46">
-      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
-    </Part>
-    <Part Name="Move" UId="47" DisabledENO="true">
-      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
-    </Part>
-    <Part Name="Eq" UId="48">
-      <TemplateValue Name="SrcType" Type="Type">DInt</TemplateValue>
-    </Part>
-    <Part Name="A" UId="49">
-      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
-    </Part>
-    <Part Name="Move" UId="50" DisabledENO="true">
-      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
-    </Part>
-    <Part Name="O" UId="51">
-      <TemplateValue Name="Card" Type="Cardinality">3</TemplateValue>
-    </Part>
-    <Part Name="Move" UId="52" DisabledENO="true">
-      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
-      <Negated Name="eno" />
-    </Part>
-    <Part Name="Move" UId="53" DisabledENO="true">
-      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
-    </Part>
-    <Part Name="Move" UId="54" DisabledENO="true">
-      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
-    </Part>
-  </Parts>
-  <Wires>
-    <Wire UId="55">
-      <IdentCon UId="22" />
-      <NameCon UId="42" Name="in1" />
-    </Wire>
-    <Wire UId="56">
-      <IdentCon UId="23" />
-      <NameCon UId="42" Name="in2" />
-    </Wire>
-    <Wire UId="57">
-      <NameCon UId="42" Name="out" />
-      <NameCon UId="43" Name="in2" />
-    </Wire>
-    <Wire UId="58">
-      <IdentCon UId="21" />
-      <NameCon UId="43" Name="in1" />
-    </Wire>
-    <Wire UId="59">
-      <NameCon UId="43" Name="out" />
-      <NameCon UId="44" Name="en" />
-    </Wire>
-    <Wire UId="60">
-      <IdentCon UId="24" />
-      <NameCon UId="44" Name="in" />
-    </Wire>
-    <Wire UId="61">
-      <NameCon UId="44" Name="out1" />
-      <IdentCon UId="25" />
-    </Wire>
-    <Wire UId="62">
-      <NameCon UId="44" Name="eno" />
-      <NameCon UId="51" Name="in1" />
-    </Wire>
-    <Wire UId="63">
-      <IdentCon UId="27" />
-      <NameCon UId="45" Name="in1" />
-    </Wire>
-    <Wire UId="64">
-      <IdentCon UId="28" />
-      <NameCon UId="45" Name="in2" />
-    </Wire>
-    <Wire UId="65">
-      <NameCon UId="45" Name="out" />
-      <NameCon UId="46" Name="in2" />
-    </Wire>
-    <Wire UId="66">
-      <IdentCon UId="26" />
-      <NameCon UId="46" Name="in1" />
-    </Wire>
-    <Wire UId="67">
-      <NameCon UId="46" Name="out" />
-      <NameCon UId="47" Name="en" />
-    </Wire>
-    <Wire UId="68">
-      <IdentCon UId="29" />
-      <NameCon UId="47" Name="in" />
-    </Wire>
-    <Wire UId="69">
-      <NameCon UId="47" Name="out1" />
-      <IdentCon UId="30" />
-    </Wire>
-    <Wire UId="70">
-      <NameCon UId="47" Name="eno" />
-      <NameCon UId="51" Name="in2" />
-    </Wire>
-    <Wire UId="71">
-      <IdentCon UId="32" />
-      <NameCon UId="48" Name="in1" />
-    </Wire>
-    <Wire UId="72">
-      <IdentCon UId="33" />
-      <NameCon UId="48" Name="in2" />
-    </Wire>
-    <Wire UId="73">
-      <NameCon UId="48" Name="out" />
-      <NameCon UId="49" Name="in2" />
-    </Wire>
-    <Wire UId="74">
-      <IdentCon UId="31" />
-      <NameCon UId="49" Name="in1" />
-    </Wire>
-    <Wire UId="75">
-      <NameCon UId="49" Name="out" />
-      <NameCon UId="50" Name="en" />
-    </Wire>
-    <Wire UId="76">
-      <IdentCon UId="34" />
-      <NameCon UId="50" Name="in" />
-    </Wire>
-    <Wire UId="77">
-      <NameCon UId="50" Name="out1" />
-      <IdentCon UId="35" />
-    </Wire>
-    <Wire UId="78">
-      <NameCon UId="50" Name="eno" />
-      <NameCon UId="51" Name="in3" />
-    </Wire>
-    <Wire UId="79">
-      <NameCon UId="51" Name="out" />
-      <NameCon UId="52" Name="en" />
-    </Wire>
-    <Wire UId="80">
-      <IdentCon UId="36" />
-      <NameCon UId="52" Name="in" />
-    </Wire>
-    <Wire UId="81">
-      <NameCon UId="52" Name="out1" />
-      <IdentCon UId="37" />
-    </Wire>
-    <Wire UId="82">
-      <NameCon UId="52" Name="eno" />
-      <NameCon UId="53" Name="en" />
-    </Wire>
-    <Wire UId="83">
-      <IdentCon UId="38" />
-      <NameCon UId="53" Name="in" />
-    </Wire>
-    <Wire UId="84">
-      <NameCon UId="53" Name="out1" />
-      <IdentCon UId="39" />
-    </Wire>
-    <Wire UId="85">
-      <NameCon UId="53" Name="eno" />
-      <NameCon UId="54" Name="en" />
-    </Wire>
-    <Wire UId="86">
-      <IdentCon UId="40" />
-      <NameCon UId="54" Name="in" />
-    </Wire>
-    <Wire UId="87">
-      <NameCon UId="54" Name="out1" />
-      <IdentCon UId="41" />
-    </Wire>
-  </Wires>
-</FlgNet></NetworkSource>
-          <ProgrammingLanguage>FBD</ProgrammingLanguage>
-        </AttributeList>
-        <ObjectList>
-          <MultilingualText ID="36" CompositionName="Comment">
-            <ObjectList>
-              <MultilingualTextItem ID="37" CompositionName="Items">
-                <AttributeList>
-                  <Culture>en-US</Culture>
-                  <Text />
-                </AttributeList>
-              </MultilingualTextItem>
-              <MultilingualTextItem ID="38" CompositionName="Items">
-                <AttributeList>
-                  <Culture>cs-CZ</Culture>
-                  <Text />
-                </AttributeList>
-              </MultilingualTextItem>
-            </ObjectList>
-          </MultilingualText>
-          <MultilingualText ID="39" CompositionName="Title">
-            <ObjectList>
-              <MultilingualTextItem ID="3A" CompositionName="Items">
-                <AttributeList>
-                  <Culture>en-US</Culture>
-                  <Text>settings.taktTime -> actualValues.taktTime</Text>
-                </AttributeList>
-              </MultilingualTextItem>
-              <MultilingualTextItem ID="3B" CompositionName="Items">
-                <AttributeList>
-                  <Culture>cs-CZ</Culture>
-                  <Text>settings.target > actualValues.target</Text>
-                </AttributeList>
-              </MultilingualTextItem>
-            </ObjectList>
-          </MultilingualText>
-        </ObjectList>
-      </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="3C" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -1498,15 +830,15 @@
           <ProgrammingLanguage>FBD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="3D" CompositionName="Comment">
+          <MultilingualText ID="2F" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="3E" CompositionName="Items">
+              <MultilingualTextItem ID="30" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text />
                 </AttributeList>
               </MultilingualTextItem>
-              <MultilingualTextItem ID="3F" CompositionName="Items">
+              <MultilingualTextItem ID="31" CompositionName="Items">
                 <AttributeList>
                   <Culture>cs-CZ</Culture>
                   <Text />
@@ -1514,15 +846,15 @@
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="40" CompositionName="Title">
+          <MultilingualText ID="32" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="41" CompositionName="Items">
+              <MultilingualTextItem ID="33" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>Settings enabled (main on/off)</Text>
                 </AttributeList>
               </MultilingualTextItem>
-              <MultilingualTextItem ID="42" CompositionName="Items">
+              <MultilingualTextItem ID="34" CompositionName="Items">
                 <AttributeList>
                   <Culture>cs-CZ</Culture>
                   <Text>T_settings enabled</Text>
@@ -1532,7 +864,7 @@
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="43" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="35" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -1656,15 +988,15 @@
           <ProgrammingLanguage>FBD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="44" CompositionName="Comment">
+          <MultilingualText ID="36" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="45" CompositionName="Items">
+              <MultilingualTextItem ID="37" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text />
                 </AttributeList>
               </MultilingualTextItem>
-              <MultilingualTextItem ID="46" CompositionName="Items">
+              <MultilingualTextItem ID="38" CompositionName="Items">
                 <AttributeList>
                   <Culture>cs-CZ</Culture>
                   <Text />
@@ -1672,15 +1004,15 @@
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="47" CompositionName="Title">
+          <MultilingualText ID="39" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="48" CompositionName="Items">
+              <MultilingualTextItem ID="3A" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>Control start TaktTimeCnt</Text>
                 </AttributeList>
               </MultilingualTextItem>
-              <MultilingualTextItem ID="49" CompositionName="Items">
+              <MultilingualTextItem ID="3B" CompositionName="Items">
                 <AttributeList>
                   <Culture>cs-CZ</Culture>
                   <Text>T_control stop_taktTime command</Text>
@@ -1690,7 +1022,7 @@
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="4A" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="3C" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -1814,15 +1146,15 @@
           <ProgrammingLanguage>FBD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="4B" CompositionName="Comment">
+          <MultilingualText ID="3D" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="4C" CompositionName="Items">
+              <MultilingualTextItem ID="3E" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text />
                 </AttributeList>
               </MultilingualTextItem>
-              <MultilingualTextItem ID="4D" CompositionName="Items">
+              <MultilingualTextItem ID="3F" CompositionName="Items">
                 <AttributeList>
                   <Culture>cs-CZ</Culture>
                   <Text />
@@ -1830,15 +1162,15 @@
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="4E" CompositionName="Title">
+          <MultilingualText ID="40" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="4F" CompositionName="Items">
+              <MultilingualTextItem ID="41" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>Control stop TaktTimeCnt</Text>
                 </AttributeList>
               </MultilingualTextItem>
-              <MultilingualTextItem ID="50" CompositionName="Items">
+              <MultilingualTextItem ID="42" CompositionName="Items">
                 <AttributeList>
                   <Culture>cs-CZ</Culture>
                   <Text>T_control start_taktTime command</Text>
@@ -1848,7 +1180,7 @@
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="51" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="43" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -1864,31 +1196,31 @@
         <ConstantValue>1</ConstantValue>
       </Constant>
     </Access>
-    <Access Scope="LiteralConstant" UId="23">
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="T_control" />
+        <Component Name="resetCounters" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="24">
       <Constant>
         <ConstantType>DInt</ConstantType>
         <ConstantValue>0</ConstantValue>
       </Constant>
     </Access>
-    <Access Scope="LocalVariable" UId="24">
-      <Symbol>
-        <Component Name="IO_control" />
-        <Component Name="resetCounters" />
-      </Symbol>
-    </Access>
     <Access Scope="LocalVariable" UId="25">
       <Symbol>
-        <Component Name="T_control" />
+        <Component Name="IO_control" />
         <Component Name="resetCounters" />
       </Symbol>
     </Access>
     <Part Name="Eq" UId="26">
       <TemplateValue Name="SrcType" Type="Type">DInt</TemplateValue>
     </Part>
-    <Part Name="Move" UId="27" DisabledENO="true">
+    <Part Name="Coil" UId="27" />
+    <Part Name="Move" UId="28" DisabledENO="true">
       <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
     </Part>
-    <Part Name="Coil" UId="28" />
   </Parts>
   <Wires>
     <Wire UId="29">
@@ -1901,38 +1233,38 @@
     </Wire>
     <Wire UId="31">
       <NameCon UId="26" Name="out" />
-      <NameCon UId="27" Name="en" />
+      <NameCon UId="27" Name="in" />
     </Wire>
     <Wire UId="32">
       <IdentCon UId="23" />
-      <NameCon UId="27" Name="in" />
+      <NameCon UId="27" Name="operand" />
     </Wire>
     <Wire UId="33">
-      <NameCon UId="27" Name="out1" />
-      <IdentCon UId="24" />
+      <NameCon UId="27" Name="out" />
+      <NameCon UId="28" Name="en" />
     </Wire>
     <Wire UId="34">
-      <NameCon UId="27" Name="eno" />
+      <IdentCon UId="24" />
       <NameCon UId="28" Name="in" />
     </Wire>
     <Wire UId="35">
+      <NameCon UId="28" Name="out1" />
       <IdentCon UId="25" />
-      <NameCon UId="28" Name="operand" />
     </Wire>
   </Wires>
 </FlgNet></NetworkSource>
           <ProgrammingLanguage>FBD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="52" CompositionName="Comment">
+          <MultilingualText ID="44" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="53" CompositionName="Items">
+              <MultilingualTextItem ID="45" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text />
                 </AttributeList>
               </MultilingualTextItem>
-              <MultilingualTextItem ID="54" CompositionName="Items">
+              <MultilingualTextItem ID="46" CompositionName="Items">
                 <AttributeList>
                   <Culture>cs-CZ</Culture>
                   <Text />
@@ -1940,15 +1272,15 @@
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="55" CompositionName="Title">
+          <MultilingualText ID="47" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="56" CompositionName="Items">
+              <MultilingualTextItem ID="48" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>Control reset counters</Text>
                 </AttributeList>
               </MultilingualTextItem>
-              <MultilingualTextItem ID="57" CompositionName="Items">
+              <MultilingualTextItem ID="49" CompositionName="Items">
                 <AttributeList>
                   <Culture>cs-CZ</Culture>
                   <Text>T_control resetCounters command</Text>
@@ -1958,7 +1290,7 @@
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="58" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="4A" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -1990,7 +1322,7 @@
             </Constant>
           </Access>
         </Component>
-        <Component Name="trigger" />
+        <Component Name="taktTimeEn" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="25">
@@ -2003,7 +1335,7 @@
             </Constant>
           </Access>
         </Component>
-        <Component Name="trigger" />
+        <Component Name="taktTimeEn" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="26">
@@ -2016,7 +1348,7 @@
             </Constant>
           </Access>
         </Component>
-        <Component Name="trigger" />
+        <Component Name="taktTimeEn" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="27">
@@ -2047,7 +1379,7 @@
             </Constant>
           </Access>
         </Component>
-        <Component Name="trigger" />
+        <Component Name="taktTimeEn" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="31">
@@ -2060,7 +1392,7 @@
             </Constant>
           </Access>
         </Component>
-        <Component Name="trigger" />
+        <Component Name="taktTimeEn" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="32">
@@ -2073,7 +1405,7 @@
             </Constant>
           </Access>
         </Component>
-        <Component Name="trigger" />
+        <Component Name="taktTimeEn" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="33">
@@ -2245,15 +1577,15 @@
           <ProgrammingLanguage>FBD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="59" CompositionName="Comment">
+          <MultilingualText ID="4B" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="5A" CompositionName="Items">
+              <MultilingualTextItem ID="4C" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text />
                 </AttributeList>
               </MultilingualTextItem>
-              <MultilingualTextItem ID="5B" CompositionName="Items">
+              <MultilingualTextItem ID="4D" CompositionName="Items">
                 <AttributeList>
                   <Culture>cs-CZ</Culture>
                   <Text />
@@ -2261,15 +1593,15 @@
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="5C" CompositionName="Title">
+          <MultilingualText ID="4E" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="5D" CompositionName="Items">
+              <MultilingualTextItem ID="4F" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>control.taktTimeEn</Text>
                 </AttributeList>
               </MultilingualTextItem>
-              <MultilingualTextItem ID="5E" CompositionName="Items">
+              <MultilingualTextItem ID="50" CompositionName="Items">
                 <AttributeList>
                   <Culture>cs-CZ</Culture>
                   <Text>Run flag - takt time</Text>
@@ -2279,7 +1611,7 @@
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="5F" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="51" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -2330,120 +1662,324 @@
     </Access>
     <Access Scope="LocalVariable" UId="25">
       <Symbol>
-        <Component Name="fpBit_resetCounters" />
+        <Component Name="IO_actualValues" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="26">
       <Symbol>
-        <Component Name="IO_actualValues" />
-      </Symbol>
-    </Access>
-    <Access Scope="LocalVariable" UId="27">
-      <Symbol>
         <Component Name="IO_PreviousValues" />
       </Symbol>
     </Access>
-    <Access Scope="LiteralConstant" UId="28">
+    <Access Scope="LiteralConstant" UId="27">
       <Constant>
         <ConstantType>DInt</ConstantType>
         <ConstantValue>0</ConstantValue>
       </Constant>
     </Access>
-    <Access Scope="LocalVariable" UId="29">
+    <Access Scope="LocalVariable" UId="28">
       <Symbol>
         <Component Name="IO_actualValues" />
         <Component Name="actual" />
       </Symbol>
     </Access>
-    <Access Scope="LocalVariable" UId="30">
+    <Access Scope="LocalVariable" UId="29">
       <Symbol>
         <Component Name="IO_actualValues" />
         <Component Name="ok" />
       </Symbol>
     </Access>
-    <Access Scope="LocalVariable" UId="31">
+    <Access Scope="LocalVariable" UId="30">
       <Symbol>
         <Component Name="IO_actualValues" />
         <Component Name="difference" />
       </Symbol>
     </Access>
-    <Access Scope="LocalVariable" UId="32">
+    <Access Scope="LocalVariable" UId="31">
       <Symbol>
         <Component Name="IO_actualValues" />
         <Component Name="counterTactTime" />
       </Symbol>
     </Access>
-    <Part Name="O" UId="33">
+    <Part Name="O" UId="32">
       <TemplateValue Name="Card" Type="Cardinality">4</TemplateValue>
     </Part>
-    <Part Name="PBox" UId="34" />
-    <Part Name="Move" UId="35" DisabledENO="true">
+    <Part Name="Move" UId="33" DisabledENO="true">
       <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
     </Part>
-    <Part Name="Move" UId="36" DisabledENO="true">
+    <Part Name="Move" UId="34" DisabledENO="true">
       <TemplateValue Name="Card" Type="Cardinality">4</TemplateValue>
     </Part>
   </Parts>
   <Wires>
-    <Wire UId="37">
+    <Wire UId="35">
       <IdentCon UId="21" />
-      <NameCon UId="33" Name="in1" />
+      <NameCon UId="32" Name="in1" />
+    </Wire>
+    <Wire UId="36">
+      <IdentCon UId="22" />
+      <NameCon UId="32" Name="in2" />
+    </Wire>
+    <Wire UId="37">
+      <IdentCon UId="23" />
+      <NameCon UId="32" Name="in3" />
     </Wire>
     <Wire UId="38">
-      <IdentCon UId="22" />
-      <NameCon UId="33" Name="in2" />
+      <IdentCon UId="24" />
+      <NameCon UId="32" Name="in4" />
     </Wire>
     <Wire UId="39">
-      <IdentCon UId="23" />
-      <NameCon UId="33" Name="in3" />
+      <NameCon UId="32" Name="out" />
+      <NameCon UId="33" Name="en" />
     </Wire>
     <Wire UId="40">
-      <IdentCon UId="24" />
-      <NameCon UId="33" Name="in4" />
+      <IdentCon UId="25" />
+      <NameCon UId="33" Name="in" />
     </Wire>
     <Wire UId="41">
-      <NameCon UId="33" Name="out" />
-      <NameCon UId="34" Name="in" />
+      <NameCon UId="33" Name="out1" />
+      <IdentCon UId="26" />
     </Wire>
     <Wire UId="42">
-      <IdentCon UId="25" />
-      <NameCon UId="34" Name="bit" />
+      <NameCon UId="33" Name="eno" />
+      <NameCon UId="34" Name="en" />
     </Wire>
     <Wire UId="43">
-      <NameCon UId="34" Name="out" />
-      <NameCon UId="35" Name="en" />
+      <IdentCon UId="27" />
+      <NameCon UId="34" Name="in" />
     </Wire>
     <Wire UId="44">
-      <IdentCon UId="26" />
-      <NameCon UId="35" Name="in" />
+      <NameCon UId="34" Name="out1" />
+      <IdentCon UId="28" />
     </Wire>
     <Wire UId="45">
-      <NameCon UId="35" Name="out1" />
-      <IdentCon UId="27" />
-    </Wire>
-    <Wire UId="46">
-      <NameCon UId="35" Name="eno" />
-      <NameCon UId="36" Name="en" />
-    </Wire>
-    <Wire UId="47">
-      <IdentCon UId="28" />
-      <NameCon UId="36" Name="in" />
-    </Wire>
-    <Wire UId="48">
-      <NameCon UId="36" Name="out1" />
+      <NameCon UId="34" Name="out2" />
       <IdentCon UId="29" />
     </Wire>
-    <Wire UId="49">
-      <NameCon UId="36" Name="out2" />
+    <Wire UId="46">
+      <NameCon UId="34" Name="out3" />
       <IdentCon UId="30" />
     </Wire>
-    <Wire UId="50">
-      <NameCon UId="36" Name="out3" />
+    <Wire UId="47">
+      <NameCon UId="34" Name="out4" />
       <IdentCon UId="31" />
     </Wire>
-    <Wire UId="51">
-      <NameCon UId="36" Name="out4" />
-      <IdentCon UId="32" />
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>FBD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="52" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="53" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="54" CompositionName="Items">
+                <AttributeList>
+                  <Culture>cs-CZ</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="55" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="56" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Save Previous values then clear actual values</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="57" CompositionName="Items">
+                <AttributeList>
+                  <Culture>cs-CZ</Culture>
+                  <Text>reset actual production</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="58" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="T_shiftTrigger" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>0</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="startDetect" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="IO_settingsShift1" />
+        <Component Name="targetEN" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="23">
+      <Constant>
+        <ConstantType>DInt</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="IO_settingsShift1" />
+        <Component Name="target" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="IO_settings" />
+        <Component Name="target" />
+      </Symbol>
+    </Access>
+    <Part Name="Eq" UId="26">
+      <TemplateValue Name="SrcType" Type="Type">DInt</TemplateValue>
+    </Part>
+    <Part Name="A" UId="27">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+    </Part>
+    <Part Name="Move" UId="28" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+  </Parts>
+  <Wires>
+    <Wire UId="29">
+      <IdentCon UId="22" />
+      <NameCon UId="26" Name="in1" />
+    </Wire>
+    <Wire UId="30">
+      <IdentCon UId="23" />
+      <NameCon UId="26" Name="in2" />
+    </Wire>
+    <Wire UId="31">
+      <NameCon UId="26" Name="out" />
+      <NameCon UId="27" Name="in2" />
+    </Wire>
+    <Wire UId="32">
+      <IdentCon UId="21" />
+      <NameCon UId="27" Name="in1" />
+    </Wire>
+    <Wire UId="33">
+      <NameCon UId="27" Name="out" />
+      <NameCon UId="28" Name="en" />
+    </Wire>
+    <Wire UId="34">
+      <IdentCon UId="24" />
+      <NameCon UId="28" Name="in" />
+    </Wire>
+    <Wire UId="35">
+      <NameCon UId="28" Name="out1" />
+      <IdentCon UId="25" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>FBD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="59" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="5A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="5B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>cs-CZ</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="5C" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="5D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>TMP Shift Traget</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="5E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>cs-CZ</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="5F" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="T_shiftTrigger" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>0</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="startDetect" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="IO_settingsShift1" />
+        <Component Name="targetEN" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="IO_settingsShift1" />
+        <Component Name="target" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="IO_settings" />
+        <Component Name="target" />
+      </Symbol>
+    </Access>
+    <Call UId="25">
+      <CallInfo Name="settShiftParTransfer" BlockType="FC">
+        <Parameter Name="settShiftParEN" Section="Input" Type="DInt" />
+        <Parameter Name="settShiftParVal" Section="Input" Type="DInt" />
+        <Parameter Name="settingsParameter" Section="Output" Type="DInt" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="26">
+      <IdentCon UId="21" />
+      <NameCon UId="25" Name="en" />
+    </Wire>
+    <Wire UId="27">
+      <IdentCon UId="22" />
+      <NameCon UId="25" Name="settShiftParEN" />
+    </Wire>
+    <Wire UId="28">
+      <IdentCon UId="23" />
+      <NameCon UId="25" Name="settShiftParVal" />
+    </Wire>
+    <Wire UId="29">
+      <NameCon UId="25" Name="settingsParameter" />
+      <IdentCon UId="24" />
     </Wire>
   </Wires>
 </FlgNet></NetworkSource>
@@ -2471,13 +2007,13 @@
               <MultilingualTextItem ID="64" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
-                  <Text>control.resetCounters</Text>
+                  <Text>#IO_settingsShift1.target - > #IO_settings.target</Text>
                 </AttributeList>
               </MultilingualTextItem>
               <MultilingualTextItem ID="65" CompositionName="Items">
                 <AttributeList>
                   <Culture>cs-CZ</Culture>
-                  <Text>reset actual production</Text>
+                  <Text />
                 </AttributeList>
               </MultilingualTextItem>
             </ObjectList>
@@ -2485,6 +2021,501 @@
         </ObjectList>
       </SW.Blocks.CompileUnit>
       <SW.Blocks.CompileUnit ID="66" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="T_shiftTrigger" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="startDetect" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="IO_settingsShift2" />
+        <Component Name="targetEN" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="IO_settingsShift2" />
+        <Component Name="target" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="IO_settings" />
+        <Component Name="target" />
+      </Symbol>
+    </Access>
+    <Call UId="25">
+      <CallInfo Name="settShiftParTransfer" BlockType="FC">
+        <Parameter Name="settShiftParEN" Section="Input" Type="DInt" />
+        <Parameter Name="settShiftParVal" Section="Input" Type="DInt" />
+        <Parameter Name="settingsParameter" Section="Output" Type="DInt" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="26">
+      <IdentCon UId="21" />
+      <NameCon UId="25" Name="en" />
+    </Wire>
+    <Wire UId="27">
+      <IdentCon UId="22" />
+      <NameCon UId="25" Name="settShiftParEN" />
+    </Wire>
+    <Wire UId="28">
+      <IdentCon UId="23" />
+      <NameCon UId="25" Name="settShiftParVal" />
+    </Wire>
+    <Wire UId="29">
+      <NameCon UId="25" Name="settingsParameter" />
+      <IdentCon UId="24" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>FBD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="67" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="68" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="69" CompositionName="Items">
+                <AttributeList>
+                  <Culture>cs-CZ</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="6A" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="6B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>#IO_settingsShift2.target - > #IO_settings.target</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="6C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>cs-CZ</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="6D" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="T_shiftTrigger" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>2</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="startDetect" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="IO_settingsShift3" />
+        <Component Name="targetEN" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="IO_settingsShift3" />
+        <Component Name="target" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="IO_settings" />
+        <Component Name="target" />
+      </Symbol>
+    </Access>
+    <Call UId="25">
+      <CallInfo Name="settShiftParTransfer" BlockType="FC">
+        <Parameter Name="settShiftParEN" Section="Input" Type="DInt" />
+        <Parameter Name="settShiftParVal" Section="Input" Type="DInt" />
+        <Parameter Name="settingsParameter" Section="Output" Type="DInt" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="26">
+      <IdentCon UId="21" />
+      <NameCon UId="25" Name="en" />
+    </Wire>
+    <Wire UId="27">
+      <IdentCon UId="22" />
+      <NameCon UId="25" Name="settShiftParEN" />
+    </Wire>
+    <Wire UId="28">
+      <IdentCon UId="23" />
+      <NameCon UId="25" Name="settShiftParVal" />
+    </Wire>
+    <Wire UId="29">
+      <NameCon UId="25" Name="settingsParameter" />
+      <IdentCon UId="24" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>FBD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="6E" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="6F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="70" CompositionName="Items">
+                <AttributeList>
+                  <Culture>cs-CZ</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="71" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="72" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>#IO_settingsShift3.target - > #IO_settings.target</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="73" CompositionName="Items">
+                <AttributeList>
+                  <Culture>cs-CZ</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="74" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="T_shiftTrigger" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>0</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="startDetect" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="IO_settingsShift1" />
+        <Component Name="taktTimeEN" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="IO_settingsShift1" />
+        <Component Name="taktTime" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="IO_settings" />
+        <Component Name="taktTime" />
+      </Symbol>
+    </Access>
+    <Call UId="25">
+      <CallInfo Name="settShiftParTransfer" BlockType="FC">
+        <Parameter Name="settShiftParEN" Section="Input" Type="DInt" />
+        <Parameter Name="settShiftParVal" Section="Input" Type="DInt" />
+        <Parameter Name="settingsParameter" Section="Output" Type="DInt" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="26">
+      <IdentCon UId="21" />
+      <NameCon UId="25" Name="en" />
+    </Wire>
+    <Wire UId="27">
+      <IdentCon UId="22" />
+      <NameCon UId="25" Name="settShiftParEN" />
+    </Wire>
+    <Wire UId="28">
+      <IdentCon UId="23" />
+      <NameCon UId="25" Name="settShiftParVal" />
+    </Wire>
+    <Wire UId="29">
+      <NameCon UId="25" Name="settingsParameter" />
+      <IdentCon UId="24" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>FBD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="75" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="76" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="77" CompositionName="Items">
+                <AttributeList>
+                  <Culture>cs-CZ</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="78" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="79" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>#IO_settingsShift1.taktTime - > #IO_settings.taktTime</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="7A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>cs-CZ</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="7B" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="T_shiftTrigger" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="startDetect" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="IO_settingsShift2" />
+        <Component Name="taktTimeEN" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="IO_settingsShift2" />
+        <Component Name="taktTime" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="IO_settings" />
+        <Component Name="taktTime" />
+      </Symbol>
+    </Access>
+    <Call UId="25">
+      <CallInfo Name="settShiftParTransfer" BlockType="FC">
+        <Parameter Name="settShiftParEN" Section="Input" Type="DInt" />
+        <Parameter Name="settShiftParVal" Section="Input" Type="DInt" />
+        <Parameter Name="settingsParameter" Section="Output" Type="DInt" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="26">
+      <IdentCon UId="21" />
+      <NameCon UId="25" Name="en" />
+    </Wire>
+    <Wire UId="27">
+      <IdentCon UId="22" />
+      <NameCon UId="25" Name="settShiftParEN" />
+    </Wire>
+    <Wire UId="28">
+      <IdentCon UId="23" />
+      <NameCon UId="25" Name="settShiftParVal" />
+    </Wire>
+    <Wire UId="29">
+      <NameCon UId="25" Name="settingsParameter" />
+      <IdentCon UId="24" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>FBD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="7C" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="7D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="7E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>cs-CZ</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="7F" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="80" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>#IO_settingsShift2.taktTime - > #IO_settings.taktTime</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="81" CompositionName="Items">
+                <AttributeList>
+                  <Culture>cs-CZ</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="82" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="T_shiftTrigger" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>2</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="startDetect" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="IO_settingsShift3" />
+        <Component Name="taktTimeEN" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="IO_settingsShift3" />
+        <Component Name="taktTime" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="IO_settings" />
+        <Component Name="taktTime" />
+      </Symbol>
+    </Access>
+    <Call UId="25">
+      <CallInfo Name="settShiftParTransfer" BlockType="FC">
+        <Parameter Name="settShiftParEN" Section="Input" Type="DInt" />
+        <Parameter Name="settShiftParVal" Section="Input" Type="DInt" />
+        <Parameter Name="settingsParameter" Section="Output" Type="DInt" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="26">
+      <IdentCon UId="21" />
+      <NameCon UId="25" Name="en" />
+    </Wire>
+    <Wire UId="27">
+      <IdentCon UId="22" />
+      <NameCon UId="25" Name="settShiftParEN" />
+    </Wire>
+    <Wire UId="28">
+      <IdentCon UId="23" />
+      <NameCon UId="25" Name="settShiftParVal" />
+    </Wire>
+    <Wire UId="29">
+      <NameCon UId="25" Name="settingsParameter" />
+      <IdentCon UId="24" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>FBD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="83" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="84" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="85" CompositionName="Items">
+                <AttributeList>
+                  <Culture>cs-CZ</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="86" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="87" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>#IO_settingsShift3.target - > #IO_settings.taktTime</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="88" CompositionName="Items">
+                <AttributeList>
+                  <Culture>cs-CZ</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="89" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -2548,15 +2579,15 @@
           <ProgrammingLanguage>FBD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="67" CompositionName="Comment">
+          <MultilingualText ID="8A" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="68" CompositionName="Items">
+              <MultilingualTextItem ID="8B" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text />
                 </AttributeList>
               </MultilingualTextItem>
-              <MultilingualTextItem ID="69" CompositionName="Items">
+              <MultilingualTextItem ID="8C" CompositionName="Items">
                 <AttributeList>
                   <Culture>cs-CZ</Culture>
                   <Text>
@@ -2565,15 +2596,15 @@
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="6A" CompositionName="Title">
+          <MultilingualText ID="8D" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="6B" CompositionName="Items">
+              <MultilingualTextItem ID="8E" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>Part produced</Text>
                 </AttributeList>
               </MultilingualTextItem>
-              <MultilingualTextItem ID="6C" CompositionName="Items">
+              <MultilingualTextItem ID="8F" CompositionName="Items">
                 <AttributeList>
                   <Culture>cs-CZ</Culture>
                   <Text>part produced</Text>
@@ -2583,7 +2614,7 @@
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="6D" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="90" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -2739,15 +2770,15 @@
           <ProgrammingLanguage>FBD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="6E" CompositionName="Comment">
+          <MultilingualText ID="91" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="6F" CompositionName="Items">
+              <MultilingualTextItem ID="92" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text />
                 </AttributeList>
               </MultilingualTextItem>
-              <MultilingualTextItem ID="70" CompositionName="Items">
+              <MultilingualTextItem ID="93" CompositionName="Items">
                 <AttributeList>
                   <Culture>cs-CZ</Culture>
                   <Text />
@@ -2755,15 +2786,15 @@
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="71" CompositionName="Title">
+          <MultilingualText ID="94" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="72" CompositionName="Items">
+              <MultilingualTextItem ID="95" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>Nok part</Text>
                 </AttributeList>
               </MultilingualTextItem>
-              <MultilingualTextItem ID="73" CompositionName="Items">
+              <MultilingualTextItem ID="96" CompositionName="Items">
                 <AttributeList>
                   <Culture>cs-CZ</Culture>
                   <Text>NOK part</Text>
@@ -2773,7 +2804,7 @@
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="74" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="97" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -2821,15 +2852,15 @@
           <ProgrammingLanguage>FBD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="75" CompositionName="Comment">
+          <MultilingualText ID="98" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="76" CompositionName="Items">
+              <MultilingualTextItem ID="99" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text />
                 </AttributeList>
               </MultilingualTextItem>
-              <MultilingualTextItem ID="77" CompositionName="Items">
+              <MultilingualTextItem ID="9A" CompositionName="Items">
                 <AttributeList>
                   <Culture>cs-CZ</Culture>
                   <Text />
@@ -2837,15 +2868,15 @@
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="78" CompositionName="Title">
+          <MultilingualText ID="9B" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="79" CompositionName="Items">
+              <MultilingualTextItem ID="9C" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>actualValues.diff</Text>
                 </AttributeList>
               </MultilingualTextItem>
-              <MultilingualTextItem ID="7A" CompositionName="Items">
+              <MultilingualTextItem ID="9D" CompositionName="Items">
                 <AttributeList>
                   <Culture>cs-CZ</Culture>
                   <Text>Diffrence</Text>
@@ -2855,7 +2886,7 @@
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="7B" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="9E" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -2879,7 +2910,7 @@
     </Access>
     <Access Scope="LocalVariable" UId="24">
       <Symbol>
-        <Component Name="T_resetTactTimeTimer" />
+        <Component Name="T_resetTaktTimeTimer" />
       </Symbol>
     </Access>
     <Part Name="Dec" UId="25" DisabledENO="false">
@@ -2920,15 +2951,15 @@
           <ProgrammingLanguage>FBD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="7C" CompositionName="Comment">
+          <MultilingualText ID="9F" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="7D" CompositionName="Items">
+              <MultilingualTextItem ID="A0" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text />
                 </AttributeList>
               </MultilingualTextItem>
-              <MultilingualTextItem ID="7E" CompositionName="Items">
+              <MultilingualTextItem ID="A1" CompositionName="Items">
                 <AttributeList>
                   <Culture>cs-CZ</Culture>
                   <Text />
@@ -2936,15 +2967,15 @@
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="7F" CompositionName="Title">
+          <MultilingualText ID="A2" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="80" CompositionName="Items">
+              <MultilingualTextItem ID="A3" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
-                  <Text>DEC differe, INC tactTimeCOunter</Text>
+                  <Text>DEC difference, INC tactTimeCounter</Text>
                 </AttributeList>
               </MultilingualTextItem>
-              <MultilingualTextItem ID="81" CompositionName="Items">
+              <MultilingualTextItem ID="A4" CompositionName="Items">
                 <AttributeList>
                   <Culture>cs-CZ</Culture>
                   <Text> Tact time counter, RST tact time timer</Text>
@@ -2954,7 +2985,7 @@
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="82" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="A5" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -2982,7 +3013,7 @@
     </Access>
     <Access Scope="LocalVariable" UId="25">
       <Symbol>
-        <Component Name="T_changeTactTimeTimer" />
+        <Component Name="T_changeTaktTimeTimer" />
       </Symbol>
     </Access>
     <Part Name="Ne" UId="26">
@@ -3027,15 +3058,15 @@
           <ProgrammingLanguage>FBD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="83" CompositionName="Comment">
+          <MultilingualText ID="A6" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="84" CompositionName="Items">
+              <MultilingualTextItem ID="A7" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text />
                 </AttributeList>
               </MultilingualTextItem>
-              <MultilingualTextItem ID="85" CompositionName="Items">
+              <MultilingualTextItem ID="A8" CompositionName="Items">
                 <AttributeList>
                   <Culture>cs-CZ</Culture>
                   <Text />
@@ -3043,15 +3074,15 @@
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="86" CompositionName="Title">
+          <MultilingualText ID="A9" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="87" CompositionName="Items">
+              <MultilingualTextItem ID="AA" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>CHANGE Tackt time </Text>
                 </AttributeList>
               </MultilingualTextItem>
-              <MultilingualTextItem ID="88" CompositionName="Items">
+              <MultilingualTextItem ID="AB" CompositionName="Items">
                 <AttributeList>
                   <Culture>cs-CZ</Culture>
                   <Text />
@@ -3061,7 +3092,7 @@
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="89" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="AC" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -3073,7 +3104,7 @@
     </Access>
     <Access Scope="LocalVariable" UId="22">
       <Symbol>
-        <Component Name="T_changeTactTimeTimer" />
+        <Component Name="T_changeTaktTimeTimer" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="23">
@@ -3084,12 +3115,12 @@
     </Access>
     <Access Scope="LocalVariable" UId="24">
       <Symbol>
-        <Component Name="T_resetTactTimeTimer" />
+        <Component Name="T_resetTaktTimeTimer" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="25">
       <Symbol>
-        <Component Name="T_changeTactTimeTimer" />
+        <Component Name="T_changeTaktTimeTimer" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="26">
@@ -3098,15 +3129,20 @@
         <Component Name="taktTime" />
       </Symbol>
     </Access>
-    <Part Name="A" UId="27">
+    <Access Scope="LocalVariable" UId="27">
+      <Symbol>
+        <Component Name="TaktTimeElapsed" />
+      </Symbol>
+    </Access>
+    <Part Name="A" UId="28">
       <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
       <Negated Name="in2" />
     </Part>
-    <Part Name="O" UId="28">
+    <Part Name="O" UId="29">
       <TemplateValue Name="Card" Type="Cardinality">3</TemplateValue>
     </Part>
-    <Part Name="TONR" Version="1.0" UId="29">
-      <Instance Scope="LocalVariable" UId="30">
+    <Part Name="TONR" Version="1.0" UId="30">
+      <Instance Scope="LocalVariable" UId="31">
         <Component Name="TIM_taktTime" />
       </Instance>
       <TemplateValue Name="time_type" Type="Type">Time</TemplateValue>
@@ -3115,54 +3151,54 @@
   <Wires>
     <Wire UId="32">
       <IdentCon UId="21" />
-      <NameCon UId="27" Name="in1" />
+      <NameCon UId="28" Name="in1" />
     </Wire>
     <Wire UId="33">
       <IdentCon UId="22" />
-      <NameCon UId="27" Name="in2" />
+      <NameCon UId="28" Name="in2" />
     </Wire>
     <Wire UId="34">
-      <NameCon UId="27" Name="out" />
-      <NameCon UId="29" Name="IN" />
+      <NameCon UId="28" Name="out" />
+      <NameCon UId="30" Name="IN" />
     </Wire>
     <Wire UId="35">
       <IdentCon UId="23" />
-      <NameCon UId="28" Name="in1" />
+      <NameCon UId="29" Name="in1" />
     </Wire>
     <Wire UId="36">
       <IdentCon UId="24" />
-      <NameCon UId="28" Name="in2" />
+      <NameCon UId="29" Name="in2" />
     </Wire>
     <Wire UId="37">
       <IdentCon UId="25" />
-      <NameCon UId="28" Name="in3" />
+      <NameCon UId="29" Name="in3" />
     </Wire>
     <Wire UId="38">
-      <NameCon UId="28" Name="out" />
-      <NameCon UId="29" Name="R" />
+      <NameCon UId="29" Name="out" />
+      <NameCon UId="30" Name="R" />
     </Wire>
     <Wire UId="39">
       <IdentCon UId="26" />
-      <NameCon UId="29" Name="PT" />
+      <NameCon UId="30" Name="PT" />
     </Wire>
     <Wire UId="40">
-      <NameCon UId="29" Name="ET" />
-      <OpenCon UId="31" />
+      <NameCon UId="30" Name="ET" />
+      <IdentCon UId="27" />
     </Wire>
   </Wires>
 </FlgNet></NetworkSource>
           <ProgrammingLanguage>FBD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="8A" CompositionName="Comment">
+          <MultilingualText ID="AD" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="8B" CompositionName="Items">
+              <MultilingualTextItem ID="AE" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text />
                 </AttributeList>
               </MultilingualTextItem>
-              <MultilingualTextItem ID="8C" CompositionName="Items">
+              <MultilingualTextItem ID="AF" CompositionName="Items">
                 <AttributeList>
                   <Culture>cs-CZ</Culture>
                   <Text />
@@ -3170,15 +3206,15 @@
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="8D" CompositionName="Title">
+          <MultilingualText ID="B0" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="8E" CompositionName="Items">
+              <MultilingualTextItem ID="B1" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>Takt time TIMER</Text>
                 </AttributeList>
               </MultilingualTextItem>
-              <MultilingualTextItem ID="8F" CompositionName="Items">
+              <MultilingualTextItem ID="B2" CompositionName="Items">
                 <AttributeList>
                   <Culture>cs-CZ</Culture>
                   <Text>Tact time timer</Text>
@@ -3188,7 +3224,7 @@
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="90" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="B3" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -3305,15 +3341,15 @@
           <ProgrammingLanguage>FBD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="91" CompositionName="Comment">
+          <MultilingualText ID="B4" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="92" CompositionName="Items">
+              <MultilingualTextItem ID="B5" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text />
                 </AttributeList>
               </MultilingualTextItem>
-              <MultilingualTextItem ID="93" CompositionName="Items">
+              <MultilingualTextItem ID="B6" CompositionName="Items">
                 <AttributeList>
                   <Culture>cs-CZ</Culture>
                   <Text />
@@ -3321,15 +3357,15 @@
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="94" CompositionName="Title">
+          <MultilingualText ID="B7" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="95" CompositionName="Items">
+              <MultilingualTextItem ID="B8" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>actualValues.state</Text>
                 </AttributeList>
               </MultilingualTextItem>
-              <MultilingualTextItem ID="96" CompositionName="Items">
+              <MultilingualTextItem ID="B9" CompositionName="Items">
                 <AttributeList>
                   <Culture>cs-CZ</Culture>
                   <Text>Tackt time state: 3: running / 2: paused / 1: stopped</Text>
@@ -3339,15 +3375,199 @@
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <MultilingualText ID="97" CompositionName="Title">
+      <SW.Blocks.CompileUnit ID="BA" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="IO_settings" />
+        <Component Name="target" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="IO_actualValues" />
+        <Component Name="target" />
+      </Symbol>
+    </Access>
+    <Part Name="Move" UId="23" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+  </Parts>
+  <Wires>
+    <Wire UId="25">
+      <OpenCon UId="24" />
+      <NameCon UId="23" Name="en" />
+    </Wire>
+    <Wire UId="26">
+      <IdentCon UId="21" />
+      <NameCon UId="23" Name="in" />
+    </Wire>
+    <Wire UId="27">
+      <NameCon UId="23" Name="out1" />
+      <IdentCon UId="22" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>FBD</ProgrammingLanguage>
+        </AttributeList>
         <ObjectList>
-          <MultilingualTextItem ID="98" CompositionName="Items">
+          <MultilingualText ID="BB" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="BC" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="BD" CompositionName="Items">
+                <AttributeList>
+                  <Culture>cs-CZ</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="BE" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="BF" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>settings.target -> actualValues.Target</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="C0" CompositionName="Items">
+                <AttributeList>
+                  <Culture>cs-CZ</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="C1" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="IO_settings" />
+        <Component Name="taktTime" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="IO_actualValues" />
+        <Component Name="taktTime" />
+      </Symbol>
+    </Access>
+    <Part Name="Move" UId="23" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+  </Parts>
+  <Wires>
+    <Wire UId="25">
+      <OpenCon UId="24" />
+      <NameCon UId="23" Name="en" />
+    </Wire>
+    <Wire UId="26">
+      <IdentCon UId="21" />
+      <NameCon UId="23" Name="in" />
+    </Wire>
+    <Wire UId="27">
+      <NameCon UId="23" Name="out1" />
+      <IdentCon UId="22" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>FBD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="C2" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="C3" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="C4" CompositionName="Items">
+                <AttributeList>
+                  <Culture>cs-CZ</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="C5" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="C6" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>settings.taktTime -> actualValues.taktTime</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="C7" CompositionName="Items">
+                <AttributeList>
+                  <Culture>cs-CZ</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="C8" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>FBD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="C9" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="CA" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="CB" CompositionName="Items">
+                <AttributeList>
+                  <Culture>cs-CZ</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="CC" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="CD" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="CE" CompositionName="Items">
+                <AttributeList>
+                  <Culture>cs-CZ</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <MultilingualText ID="CF" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="D0" CompositionName="Items">
             <AttributeList>
               <Culture>en-US</Culture>
               <Text />
             </AttributeList>
           </MultilingualTextItem>
-          <MultilingualTextItem ID="99" CompositionName="Items">
+          <MultilingualTextItem ID="D1" CompositionName="Items">
             <AttributeList>
               <Culture>cs-CZ</Culture>
               <Text />

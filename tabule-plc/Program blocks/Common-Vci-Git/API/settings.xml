@@ -31,18 +31,6 @@
         <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
       </AttributeList>
     </Member>
-    <Member Name="shiftTargetEn" Datatype="DInt" Remanence="Retain">
-      <AttributeList>
-        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
-        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
-      </AttributeList>
-    </Member>
-    <Member Name="shiftTaktTimeEn" Datatype="DInt" Remanence="Retain">
-      <AttributeList>
-        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
-        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
-      </AttributeList>
-    </Member>
   </Section>
 </Sections></Interface>
       <MemoryLayout>Optimized</MemoryLayout>

@@ -41,18 +41,6 @@
         <MultiLanguageText Lang="cs-CZ">0: ??  / 1: ??</MultiLanguageText>
       </Comment>
     </Member>
-    <Member Name="shiftTargetEn" Datatype="DInt">
-      <AttributeList>
-        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
-        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
-      </AttributeList>
-    </Member>
-    <Member Name="shiftTaktTimeEn" Datatype="DInt">
-      <AttributeList>
-        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
-        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
-      </AttributeList>
-    </Member>
   </Section>
 </Sections></Interface>
       <Name>UDT_settings</Name>
