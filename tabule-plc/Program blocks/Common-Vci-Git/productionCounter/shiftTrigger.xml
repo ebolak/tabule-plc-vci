@@ -37,7 +37,7 @@
         <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
       </AttributeList>
     </Member>
-    <Member Name="shiftStartDetect" Datatype="Bool" Remanence="Retain">
+    <Member Name="edgeShiftStartDetect" Datatype="Bool" Remanence="Retain">
       <AttributeList>
         <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
         <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
@@ -46,7 +46,9 @@
     </Member>
   </Section>
   <Section Name="InOut" />
-  <Section Name="Static" />
+  <Section Name="Static">
+    <Member Name="P_edgeShiftStartDetect" Datatype="Bool" />
+  </Section>
   <Section Name="Temp">
     <Member Name="T_shiftActive" Datatype="Bool" />
     <Member Name="T_break1Active" Datatype="Bool" />
@@ -55,6 +57,7 @@
     <Member Name="T_break4Active" Datatype="Bool" />
     <Member Name="T_break5Active" Datatype="Bool" />
     <Member Name="T_endShiftStartDetect" Datatype="Time_Of_Day" />
+    <Member Name="T_ShiftStartDetect" Datatype="Bool" />
   </Section>
   <Section Name="Constant" />
 </Sections></Interface>
@@ -116,7 +119,7 @@
     </Access>
     <Access Scope="LocalVariable" UId="26">
       <Symbol>
-        <Component Name="shiftStartDetect" />
+        <Component Name="edgeShiftStartDetect" />
       </Symbol>
     </Access>
     <Access Scope="LiteralConstant" UId="27">
@@ -983,7 +986,7 @@
     </Access>
     <Access Scope="LocalVariable" UId="25">
       <Symbol>
-        <Component Name="shiftStartDetect" />
+        <Component Name="T_ShiftStartDetect" />
       </Symbol>
     </Access>
     <Call UId="26">
@@ -1061,6 +1064,84 @@
         </ObjectList>
       </SW.Blocks.CompileUnit>
       <SW.Blocks.CompileUnit ID="43" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="T_ShiftStartDetect" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="P_edgeShiftStartDetect" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="edgeShiftStartDetect" />
+      </Symbol>
+    </Access>
+    <Part Name="PBox" UId="24" />
+    <Part Name="Coil" UId="25" />
+  </Parts>
+  <Wires>
+    <Wire UId="26">
+      <IdentCon UId="21" />
+      <NameCon UId="24" Name="in" />
+    </Wire>
+    <Wire UId="27">
+      <IdentCon UId="22" />
+      <NameCon UId="24" Name="bit" />
+    </Wire>
+    <Wire UId="28">
+      <NameCon UId="24" Name="out" />
+      <NameCon UId="25" Name="in" />
+    </Wire>
+    <Wire UId="29">
+      <IdentCon UId="23" />
+      <NameCon UId="25" Name="operand" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>FBD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="44" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="45" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="46" CompositionName="Items">
+                <AttributeList>
+                  <Culture>cs-CZ</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="47" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="48" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>edgeShiftStartDetect</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="49" CompositionName="Items">
+                <AttributeList>
+                  <Culture>cs-CZ</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="4A" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -1147,15 +1228,15 @@
           <ProgrammingLanguage>FBD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="44" CompositionName="Comment">
+          <MultilingualText ID="4B" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="45" CompositionName="Items">
+              <MultilingualTextItem ID="4C" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text />
                 </AttributeList>
               </MultilingualTextItem>
-              <MultilingualTextItem ID="46" CompositionName="Items">
+              <MultilingualTextItem ID="4D" CompositionName="Items">
                 <AttributeList>
                   <Culture>cs-CZ</Culture>
                   <Text />
@@ -1163,15 +1244,15 @@
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="47" CompositionName="Title">
+          <MultilingualText ID="4E" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="48" CompositionName="Items">
+              <MultilingualTextItem ID="4F" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>taktTimeEn</Text>
                 </AttributeList>
               </MultilingualTextItem>
-              <MultilingualTextItem ID="49" CompositionName="Items">
+              <MultilingualTextItem ID="50" CompositionName="Items">
                 <AttributeList>
                   <Culture>cs-CZ</Culture>
                   <Text>Output run trigger</Text>
@@ -1181,7 +1262,7 @@
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="4A" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="51" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -1211,15 +1292,15 @@
           <ProgrammingLanguage>FBD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="4B" CompositionName="Comment">
+          <MultilingualText ID="52" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="4C" CompositionName="Items">
+              <MultilingualTextItem ID="53" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text />
                 </AttributeList>
               </MultilingualTextItem>
-              <MultilingualTextItem ID="4D" CompositionName="Items">
+              <MultilingualTextItem ID="54" CompositionName="Items">
                 <AttributeList>
                   <Culture>cs-CZ</Culture>
                   <Text />
@@ -1227,15 +1308,15 @@
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="4E" CompositionName="Title">
+          <MultilingualText ID="55" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="4F" CompositionName="Items">
+              <MultilingualTextItem ID="56" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>Shift active</Text>
                 </AttributeList>
               </MultilingualTextItem>
-              <MultilingualTextItem ID="50" CompositionName="Items">
+              <MultilingualTextItem ID="57" CompositionName="Items">
                 <AttributeList>
                   <Culture>cs-CZ</Culture>
                   <Text />
@@ -1245,15 +1326,15 @@
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <MultilingualText ID="51" CompositionName="Title">
+      <MultilingualText ID="58" CompositionName="Title">
         <ObjectList>
-          <MultilingualTextItem ID="52" CompositionName="Items">
+          <MultilingualTextItem ID="59" CompositionName="Items">
             <AttributeList>
               <Culture>en-US</Culture>
               <Text />
             </AttributeList>
           </MultilingualTextItem>
-          <MultilingualTextItem ID="53" CompositionName="Items">
+          <MultilingualTextItem ID="5A" CompositionName="Items">
             <AttributeList>
               <Culture>cs-CZ</Culture>
               <Text />

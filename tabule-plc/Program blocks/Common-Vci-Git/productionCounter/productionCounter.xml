@@ -369,7 +369,7 @@
         <Parameter Name="shiftSettings" Section="Input" Type="&quot;UDT_settingsShift&quot;" />
         <Parameter Name="active" Section="Output" Type="Bool" />
         <Parameter Name="taktTimeEn" Section="Output" Type="Bool" />
-        <Parameter Name="shiftStartDetect" Section="Output" Type="Bool" />
+        <Parameter Name="edgeShiftStartDetect" Section="Output" Type="Bool" />
       </CallInfo>
     </Call>
   </Parts>
@@ -403,7 +403,7 @@
       <IdentCon UId="26" />
     </Wire>
     <Wire UId="38">
-      <NameCon UId="28" Name="shiftStartDetect" />
+      <NameCon UId="28" Name="edgeShiftStartDetect" />
       <IdentCon UId="27" />
     </Wire>
   </Wires>
@@ -520,7 +520,7 @@
         <Parameter Name="shiftSettings" Section="Input" Type="&quot;UDT_settingsShift&quot;" />
         <Parameter Name="active" Section="Output" Type="Bool" />
         <Parameter Name="taktTimeEn" Section="Output" Type="Bool" />
-        <Parameter Name="shiftStartDetect" Section="Output" Type="Bool" />
+        <Parameter Name="edgeShiftStartDetect" Section="Output" Type="Bool" />
       </CallInfo>
     </Call>
   </Parts>
@@ -554,7 +554,7 @@
       <IdentCon UId="26" />
     </Wire>
     <Wire UId="38">
-      <NameCon UId="28" Name="shiftStartDetect" />
+      <NameCon UId="28" Name="edgeShiftStartDetect" />
       <IdentCon UId="27" />
     </Wire>
   </Wires>
@@ -671,7 +671,7 @@
         <Parameter Name="shiftSettings" Section="Input" Type="&quot;UDT_settingsShift&quot;" />
         <Parameter Name="active" Section="Output" Type="Bool" />
         <Parameter Name="taktTimeEn" Section="Output" Type="Bool" />
-        <Parameter Name="shiftStartDetect" Section="Output" Type="Bool" />
+        <Parameter Name="edgeShiftStartDetect" Section="Output" Type="Bool" />
       </CallInfo>
     </Call>
   </Parts>
@@ -705,7 +705,7 @@
       <IdentCon UId="26" />
     </Wire>
     <Wire UId="38">
-      <NameCon UId="28" Name="shiftStartDetect" />
+      <NameCon UId="28" Name="edgeShiftStartDetect" />
       <IdentCon UId="27" />
     </Wire>
   </Wires>
