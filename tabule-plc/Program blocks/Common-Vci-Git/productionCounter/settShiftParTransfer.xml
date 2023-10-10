@@ -8,10 +8,10 @@
     <Member Name="settShiftParEN" Datatype="DInt" />
     <Member Name="settShiftParVal" Datatype="DInt" />
   </Section>
-  <Section Name="Output">
+  <Section Name="Output" />
+  <Section Name="InOut">
     <Member Name="settingsParameter" Datatype="DInt" />
   </Section>
-  <Section Name="InOut" />
   <Section Name="Temp" />
   <Section Name="Constant" />
   <Section Name="Return">
