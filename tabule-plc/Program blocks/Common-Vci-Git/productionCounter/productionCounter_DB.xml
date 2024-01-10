@@ -13,7 +13,8 @@
   <Section Name="Output" />
   <Section Name="InOut">
     <Member Name="IO_actualValues" Datatype="&quot;UDT_actualValues&quot;" />
-    <Member Name="IO_PreviousValues" Datatype="&quot;UDT_actualValues&quot;" />
+    <Member Name="IO_previousValues" Datatype="&quot;UDT_actualValues&quot;" />
+    <Member Name="IO_prePreviousValues" Datatype="&quot;UDT_actualValues&quot;" />
     <Member Name="IO_settings" Datatype="&quot;UDT_settings&quot;" />
     <Member Name="IO_control" Datatype="&quot;UDT_control&quot;" />
     <Member Name="IO_settingsShift1" Datatype="&quot;UDT_settingsShift&quot;" />
