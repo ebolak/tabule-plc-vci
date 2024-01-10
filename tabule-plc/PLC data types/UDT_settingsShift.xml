@@ -7,151 +7,116 @@
   <Section Name="None">
     <Member Name="shiftEN" Datatype="DInt">
       <AttributeList>
-        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
         <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
-        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
-        <BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute>
       </AttributeList>
     </Member>
     <Member Name="shiftBegin" Datatype="Time_Of_Day">
       <AttributeList>
-        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
         <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
-        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
-        <BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute>
       </AttributeList>
     </Member>
     <Member Name="shiftEnd" Datatype="Time_Of_Day">
       <AttributeList>
-        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
         <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
-        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
-        <BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute>
       </AttributeList>
     </Member>
     <Member Name="break1EN" Datatype="DInt">
       <AttributeList>
-        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
         <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
-        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
-        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
       </AttributeList>
     </Member>
     <Member Name="break1Begin" Datatype="Time_Of_Day">
       <AttributeList>
-        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
         <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
-        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
-        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
       </AttributeList>
     </Member>
     <Member Name="break1End" Datatype="Time_Of_Day">
       <AttributeList>
-        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
         <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
-        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
-        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
       </AttributeList>
     </Member>
     <Member Name="break2EN" Datatype="DInt">
       <AttributeList>
-        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
         <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
-        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
-        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
       </AttributeList>
     </Member>
     <Member Name="break2Begin" Datatype="Time_Of_Day">
       <AttributeList>
-        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
         <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
-        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
-        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
       </AttributeList>
     </Member>
     <Member Name="break2End" Datatype="Time_Of_Day">
       <AttributeList>
-        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
         <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
-        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
-        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
       </AttributeList>
     </Member>
     <Member Name="break3EN" Datatype="DInt">
       <AttributeList>
-        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
         <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
-        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
-        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
       </AttributeList>
     </Member>
     <Member Name="break3Begin" Datatype="Time_Of_Day">
       <AttributeList>
-        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
         <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
-        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
-        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
       </AttributeList>
     </Member>
     <Member Name="break3End" Datatype="Time_Of_Day">
       <AttributeList>
-        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
         <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
-        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
-        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
       </AttributeList>
     </Member>
     <Member Name="break4EN" Datatype="DInt">
       <AttributeList>
-        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
         <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
-        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
-        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
       </AttributeList>
     </Member>
     <Member Name="break4Begin" Datatype="Time_Of_Day">
       <AttributeList>
-        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
         <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
-        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
-        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
       </AttributeList>
     </Member>
     <Member Name="break4End" Datatype="Time_Of_Day">
       <AttributeList>
-        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
         <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
-        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
-        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
       </AttributeList>
     </Member>
     <Member Name="break5EN" Datatype="DInt">
       <AttributeList>
-        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
         <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
-        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
-        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
       </AttributeList>
     </Member>
     <Member Name="break5Begin" Datatype="Time_Of_Day">
       <AttributeList>
-        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
         <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
-        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
-        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
       </AttributeList>
     </Member>
     <Member Name="break5End" Datatype="Time_Of_Day">
       <AttributeList>
-        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
         <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
-        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
-        <BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="targetEN" Datatype="DInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="target" Datatype="DInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="taktTimeEN" Datatype="DInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="taktTime" Datatype="DInt">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
       </AttributeList>
     </Member>
   </Section>
 </Sections></Interface>
-      <IsFailsafeCompliant>false</IsFailsafeCompliant>
       <Name>UDT_settingsShift</Name>
       <Namespace />
     </AttributeList>

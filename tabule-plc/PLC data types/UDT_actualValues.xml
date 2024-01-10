@@ -7,55 +7,43 @@
   <Section Name="None">
     <Member Name="target" Datatype="DInt">
       <AttributeList>
-        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
         <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
         <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
-        <BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute>
       </AttributeList>
     </Member>
     <Member Name="actual" Datatype="DInt">
       <AttributeList>
-        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
         <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
         <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
-        <BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute>
       </AttributeList>
     </Member>
     <Member Name="ok" Datatype="DInt">
       <AttributeList>
-        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
         <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
         <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
-        <BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute>
       </AttributeList>
     </Member>
     <Member Name="difference" Datatype="DInt">
       <AttributeList>
-        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
         <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
         <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
-        <BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute>
       </AttributeList>
     </Member>
     <Member Name="counterTactTime" Datatype="DInt">
       <AttributeList>
-        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
         <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
         <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
-        <BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute>
       </AttributeList>
     </Member>
     <Member Name="state" Datatype="DInt">
       <AttributeList>
-        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
         <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
         <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
-        <BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute>
       </AttributeList>
     </Member>
+    <Member Name="taktTime" Datatype="DInt" />
   </Section>
 </Sections></Interface>
-      <IsFailsafeCompliant>false</IsFailsafeCompliant>
       <Name>UDT_actualValues</Name>
       <Namespace />
     </AttributeList>
