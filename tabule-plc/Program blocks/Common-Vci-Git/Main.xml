@@ -3,19 +3,14 @@
   <Engineering version="V18" />
   <SW.Blocks.OB ID="0">
     <AttributeList>
-      <AutoNumber>true</AutoNumber>
-      <HeaderAuthor />
-      <HeaderFamily />
-      <HeaderName />
-      <HeaderVersion>0.1</HeaderVersion>
       <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
   <Section Name="Input">
-    <Member Name="Initial_Call" Datatype="Bool" Accessibility="Public" Informative="true">
+    <Member Name="Initial_Call" Datatype="Bool" Informative="true">
       <Comment>
         <MultiLanguageText Lang="en-US">Initial call of this OB</MultiLanguageText>
       </Comment>
     </Member>
-    <Member Name="Remanence" Datatype="Bool" Accessibility="Public" Informative="true">
+    <Member Name="Remanence" Datatype="Bool" Informative="true">
       <Comment>
         <MultiLanguageText Lang="en-US">=True, if remanent data are available</MultiLanguageText>
       </Comment>
@@ -27,7 +22,6 @@
   </Section>
   <Section Name="Constant" />
 </Sections></Interface>
-      <IsIECCheckEnabled>false</IsIECCheckEnabled>
       <MemoryLayout>Optimized</MemoryLayout>
       <Name>Main</Name>
       <Namespace />
@@ -371,46 +365,52 @@
     </Access>
     <Access Scope="GlobalVariable" UId="25">
       <Symbol>
-        <Component Name="settings" />
+        <Component Name="prePreviousValues" />
       </Symbol>
     </Access>
     <Access Scope="GlobalVariable" UId="26">
       <Symbol>
-        <Component Name="control" />
+        <Component Name="settings" />
       </Symbol>
     </Access>
     <Access Scope="GlobalVariable" UId="27">
       <Symbol>
-        <Component Name="settingsShift" />
-        <Component Name="1" />
+        <Component Name="control" />
       </Symbol>
     </Access>
     <Access Scope="GlobalVariable" UId="28">
       <Symbol>
         <Component Name="settingsShift" />
-        <Component Name="2" />
+        <Component Name="1" />
       </Symbol>
     </Access>
     <Access Scope="GlobalVariable" UId="29">
       <Symbol>
         <Component Name="settingsShift" />
+        <Component Name="2" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="30">
+      <Symbol>
+        <Component Name="settingsShift" />
         <Component Name="3" />
       </Symbol>
     </Access>
-    <Access Scope="LocalVariable" UId="30">
+    <Access Scope="LocalVariable" UId="31">
       <Symbol>
         <Component Name="locTime" />
       </Symbol>
     </Access>
-    <Call UId="31">
+    <Call UId="32">
       <CallInfo Name="productionCounter" BlockType="FB">
-        <Instance Scope="GlobalVariable" UId="32">
+        <Instance Scope="GlobalVariable" UId="33">
           <Component Name="productionCounter_DB" />
         </Instance>
         <Parameter Name="I_partProduced" Section="Input" Type="Bool" />
         <Parameter Name="I_nokPart" Section="Input" Type="Bool" />
         <Parameter Name="IO_actualValues" Section="InOut" Type="&quot;UDT_actualValues&quot;" />
-        <Parameter Name="IO_PreviousValues" Section="InOut" Type="&quot;UDT_actualValues&quot;" />
+        <Parameter Name="IO_previousValues" Section="InOut" Type="&quot;UDT_actualValues&quot;" />
+        <Parameter Name="IO_prePreviousValues" Section="InOut" Type="&quot;UDT_actualValues&quot;" />
         <Parameter Name="IO_settings" Section="InOut" Type="&quot;UDT_settings&quot;" />
         <Parameter Name="IO_control" Section="InOut" Type="&quot;UDT_control&quot;" />
         <Parameter Name="IO_settingsShift1" Section="InOut" Type="&quot;UDT_settingsShift&quot;" />
@@ -421,49 +421,53 @@
     </Call>
   </Parts>
   <Wires>
-    <Wire UId="34">
-      <OpenCon UId="33" />
-      <NameCon UId="31" Name="en" />
-    </Wire>
     <Wire UId="35">
-      <IdentCon UId="21" />
-      <NameCon UId="31" Name="I_partProduced" />
+      <OpenCon UId="34" />
+      <NameCon UId="32" Name="en" />
     </Wire>
     <Wire UId="36">
-      <IdentCon UId="22" />
-      <NameCon UId="31" Name="I_nokPart" />
+      <IdentCon UId="21" />
+      <NameCon UId="32" Name="I_partProduced" />
     </Wire>
     <Wire UId="37">
-      <IdentCon UId="23" />
-      <NameCon UId="31" Name="IO_actualValues" />
+      <IdentCon UId="22" />
+      <NameCon UId="32" Name="I_nokPart" />
     </Wire>
     <Wire UId="38">
-      <IdentCon UId="24" />
-      <NameCon UId="31" Name="IO_PreviousValues" />
+      <IdentCon UId="23" />
+      <NameCon UId="32" Name="IO_actualValues" />
     </Wire>
     <Wire UId="39">
-      <IdentCon UId="25" />
-      <NameCon UId="31" Name="IO_settings" />
+      <IdentCon UId="24" />
+      <NameCon UId="32" Name="IO_previousValues" />
     </Wire>
     <Wire UId="40">
-      <IdentCon UId="26" />
-      <NameCon UId="31" Name="IO_control" />
+      <IdentCon UId="25" />
+      <NameCon UId="32" Name="IO_prePreviousValues" />
     </Wire>
     <Wire UId="41">
-      <IdentCon UId="27" />
-      <NameCon UId="31" Name="IO_settingsShift1" />
+      <IdentCon UId="26" />
+      <NameCon UId="32" Name="IO_settings" />
     </Wire>
     <Wire UId="42">
-      <IdentCon UId="28" />
-      <NameCon UId="31" Name="IO_settingsShift2" />
+      <IdentCon UId="27" />
+      <NameCon UId="32" Name="IO_control" />
     </Wire>
     <Wire UId="43">
-      <IdentCon UId="29" />
-      <NameCon UId="31" Name="IO_settingsShift3" />
+      <IdentCon UId="28" />
+      <NameCon UId="32" Name="IO_settingsShift1" />
     </Wire>
     <Wire UId="44">
+      <IdentCon UId="29" />
+      <NameCon UId="32" Name="IO_settingsShift2" />
+    </Wire>
+    <Wire UId="45">
       <IdentCon UId="30" />
-      <NameCon UId="31" Name="IO_locTime" />
+      <NameCon UId="32" Name="IO_settingsShift3" />
+    </Wire>
+    <Wire UId="46">
+      <IdentCon UId="31" />
+      <NameCon UId="32" Name="IO_locTime" />
     </Wire>
   </Wires>
 </FlgNet></NetworkSource>
