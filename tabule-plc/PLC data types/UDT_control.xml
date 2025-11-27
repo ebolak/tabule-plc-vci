@@ -1,16 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Document>
-  <Engineering version="V18" />
+  <Engineering version="V20" />
   <SW.Types.PlcStruct ID="0">
     <AttributeList>
       <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
   <Section Name="None">
     <Member Name="resetCounters" Datatype="DInt">
       <AttributeList>
-        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
         <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
-        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
-        <BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute>
       </AttributeList>
       <Comment>
         <MultiLanguageText Lang="cs-CZ">1: cmd active</MultiLanguageText>
@@ -18,10 +15,7 @@
     </Member>
     <Member Name="startTaktTimeCnt" Datatype="DInt">
       <AttributeList>
-        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
         <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
-        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
-        <BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute>
       </AttributeList>
       <Comment>
         <MultiLanguageText Lang="cs-CZ">1: cmd active</MultiLanguageText>
@@ -29,18 +23,16 @@
     </Member>
     <Member Name="stopTaktTimeCnt" Datatype="DInt">
       <AttributeList>
-        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute>
         <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
-        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute>
-        <BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute>
       </AttributeList>
       <Comment>
         <MultiLanguageText Lang="cs-CZ">1: cmd active</MultiLanguageText>
       </Comment>
     </Member>
+    <Member Name="actualMinus1" Datatype="DInt" />
+    <Member Name="actualPlus1" Datatype="DInt" />
   </Section>
 </Sections></Interface>
-      <IsFailsafeCompliant>false</IsFailsafeCompliant>
       <Name>UDT_control</Name>
       <Namespace />
     </AttributeList>
@@ -49,13 +41,13 @@
         <ObjectList>
           <MultilingualTextItem ID="2" CompositionName="Items">
             <AttributeList>
-              <Culture>en-US</Culture>
+              <Culture>cs-CZ</Culture>
               <Text />
             </AttributeList>
           </MultilingualTextItem>
           <MultilingualTextItem ID="3" CompositionName="Items">
             <AttributeList>
-              <Culture>cs-CZ</Culture>
+              <Culture>en-US</Culture>
               <Text />
             </AttributeList>
           </MultilingualTextItem>
@@ -65,13 +57,13 @@
         <ObjectList>
           <MultilingualTextItem ID="5" CompositionName="Items">
             <AttributeList>
-              <Culture>en-US</Culture>
+              <Culture>cs-CZ</Culture>
               <Text />
             </AttributeList>
           </MultilingualTextItem>
           <MultilingualTextItem ID="6" CompositionName="Items">
             <AttributeList>
-              <Culture>cs-CZ</Culture>
+              <Culture>en-US</Culture>
               <Text />
             </AttributeList>
           </MultilingualTextItem>
