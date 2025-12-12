@@ -24,6 +24,8 @@
     </Member>
     <Member Name="actualMinus1" Datatype="DInt" />
     <Member Name="actualPlus1" Datatype="DInt" />
+    <Member Name="okMinus1" Datatype="DInt" />
+    <Member Name="okPlus1" Datatype="DInt" />
   </Section>
 </Sections></Interface>
       <MemoryLayout>Optimized</MemoryLayout>
